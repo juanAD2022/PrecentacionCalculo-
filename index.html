@@ -1,14 +1,17 @@
 <!doctype html>
 <html lang="es">
+
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#101113">
-  <meta name="description" content="Presentación de cálculo sobre integrales iteradas, el teorema de Fubini y el cambio de orden de integración.">
+  <meta name="description"
+    content="Presentación de cálculo sobre integrales iteradas, el teorema de Fubini y el cambio de orden de integración.">
   <title>Integrales iteradas — Cálculo · UNIAJC</title>
   <link rel="preload" as="image" href="assets/hero-facade.jpg" fetchpriority="high">
   <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
   <div class="reading-progress" aria-hidden="true"><span id="readingProgress"></span></div>
 
@@ -24,8 +27,11 @@
       <a href="#cambio">04 <span>Región</span></a>
       <a href="#cierre">05 <span>Cierre</span></a>
     </nav>
-    <button class="fullscreen-button" type="button" aria-label="Activar pantalla completa" title="Pantalla completa (F)">
-      <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M7 3H3v4M13 3h4v4M3 13v4h4m10-4v4h-4"/></svg>
+    <button class="fullscreen-button" type="button" aria-label="Activar pantalla completa"
+      title="Pantalla completa (F)">
+      <svg viewBox="0 0 20 20" aria-hidden="true">
+        <path d="M7 3H3v4M13 3h4v4M3 13v4h4m10-4v4h-4" />
+      </svg>
     </button>
   </header>
 
@@ -36,7 +42,8 @@
       <div class="hero__grain" aria-hidden="true"></div>
 
       <div class="hero__content">
-        <p class="eyebrow eyebrow--light"><span class="eyebrow__line"></span>Cálculo · UNIAJC · Segundo corte · Semana 9</p>
+        <p class="eyebrow eyebrow--light"><span class="eyebrow__line"></span>Cálculo · UNIAJC · Segundo corte · Semana 9
+        </p>
         <h1 id="hero-title">Integrales<br><span>iteradas.</span></h1>
         <p class="hero__subtitle">Áreas en el plano <i>·</i> Integrales dobles <i>·</i> Volumen bajo una superficie</p>
 
@@ -48,15 +55,19 @@
             </div>
             <div class="hero__team">
               <span class="meta-label">Integrantes</span>
-              <p>Pablo Zuñiga <b>·</b> Jean Paul Reyes <b>·</b> Juan Carlos Alonso<br>Santiago Naranjo <b>·</b> Angie Paulette Murillo</p>
+              <p>Pablo Zuñiga <b>·</b> Jean Paul Reyes <b>·</b> Juan Carlos Alonso<br>Santiago Naranjo <b>·</b> Angie
+                Paulette Murillo</p>
             </div>
           </div>
-          <a class="outline-link" href="#concepto"><span>Explorar el tema</span><span class="outline-link__arrow" aria-hidden="true">↓</span></a>
+          <a class="outline-link" href="#concepto"><span>Explorar el tema</span><span class="outline-link__arrow"
+              aria-hidden="true">↓</span></a>
         </div>
       </div>
 
       <p class="hero__index" aria-hidden="true">MATEMÁTICAS <span>—</span> 2026</p>
-      <a class="image-credit" href="https://commons.wikimedia.org/wiki/File:M%C3%BCnster,_Westdeutsche_Lotterie_--_2018_--_0413.jpg" target="_blank" rel="noreferrer">Fotografía: Dietmar Rabich · CC BY-SA 4.0</a>
+      <a class="image-credit"
+        href="https://commons.wikimedia.org/wiki/File:M%C3%BCnster,_Westdeutsche_Lotterie_--_2018_--_0413.jpg"
+        target="_blank" rel="noreferrer">Fotografía: Dietmar Rabich · CC BY-SA 4.0</a>
     </section>
 
     <section class="chapter chapter--ivory" id="concepto" aria-labelledby="concepto-title">
@@ -64,13 +75,15 @@
         <header class="chapter-heading reveal">
           <p class="eyebrow"><span class="chapter-number">01</span> El concepto</p>
           <h2 id="concepto-title">Una integral<br>que contiene otra.</h2>
-          <p class="chapter-heading__intro">Una integral iterada se resuelve de adentro hacia afuera: primero integramos respecto de una variable y después respecto de la otra.</p>
+          <p class="chapter-heading__intro">Una integral iterada se resuelve de adentro hacia afuera: primero integramos
+            respecto de una variable y después respecto de la otra.</p>
         </header>
 
         <div class="concept-grid">
           <article class="formula-card formula-card--dark reveal">
             <div class="card-kicker"><span>NOTACIÓN GENERAL</span><span>01 / 05</span></div>
-            <div class="formula formula--display" aria-label="Integral de a a b, integral de c a d, f de x coma y, diferencial y, diferencial x">
+            <div class="formula formula--display"
+              aria-label="Integral de a a b, integral de c a d, f de x coma y, diferencial y, diferencial x">
               <span class="int"><span class="lim">b</span><span class="sym">∫</span><span class="lim">a</span></span>
               <span class="int"><span class="lim">d</span><span class="sym">∫</span><span class="lim">c</span></span>
               <span class="mrow"><em>f</em>(<em>x</em>, <em>y</em>)</span>
@@ -78,8 +91,10 @@
               <span class="d">d<em>x</em></span>
             </div>
             <div class="formula-card__legend">
-              <span><i class="legend-dot legend-dot--sand"></i> Integral interior: <em>y</em> va de <em>c</em> a <em>d</em></span>
-              <span><i class="legend-dot legend-dot--stone"></i> Integral exterior: <em>x</em> va de <em>a</em> a <em>b</em></span>
+              <span><i class="legend-dot legend-dot--sand"></i> Integral interior: <em>y</em> va de <em>c</em> a
+                <em>d</em></span>
+              <span><i class="legend-dot legend-dot--stone"></i> Integral exterior: <em>x</em> va de <em>a</em> a
+                <em>b</em></span>
             </div>
           </article>
 
@@ -114,12 +129,14 @@
         <header class="chapter-heading chapter-heading--light reveal">
           <p class="eyebrow eyebrow--light"><span class="chapter-number">02</span> Aplicación · Región rectangular</p>
           <h2 id="ejemplo-title">Resolver, paso<br>a paso.</h2>
-          <p class="chapter-heading__intro">Calculemos la integral iterada en el rectángulo <em>0 ≤ x ≤ 2</em>, <em>0 ≤ y ≤ 3</em>.</p>
+          <p class="chapter-heading__intro">Calculemos la integral iterada en el rectángulo <em>0 ≤ x ≤ 2</em>, <em>0 ≤
+              y ≤ 3</em>.</p>
         </header>
 
         <div class="example-intro reveal">
           <span class="meta-label">INTEGRAL A CALCULAR</span>
-          <div class="formula formula--display formula--line" aria-label="Integral de cero a dos, integral de cero a tres, x más dos y, diferencial y, diferencial x">
+          <div class="formula formula--display formula--line"
+            aria-label="Integral de cero a dos, integral de cero a tres, x más dos y, diferencial y, diferencial x">
             <span class="int"><span class="lim">2</span><span class="sym">∫</span><span class="lim">0</span></span>
             <span class="int"><span class="lim">3</span><span class="sym">∫</span><span class="lim">0</span></span>
             <span class="mrow">(<em>x</em> + 2<em>y</em>)</span>
@@ -129,7 +146,8 @@
 
         <div class="calculation-grid">
           <article class="calculation-card reveal">
-            <div class="calculation-card__top"><span class="step-label">PASO 01</span><span class="calculation-card__variable">d<em>y</em></span></div>
+            <div class="calculation-card__top"><span class="step-label">PASO 01</span><span
+                class="calculation-card__variable">d<em>y</em></span></div>
             <h3>La variable <em>x</em> es constante.</h3>
             <div class="calculation-lines">
               <p><span class="math-symbol">∫</span><sub>0</sub><sup>3</sup> (<em>x</em> + 2<em>y</em>) d<em>y</em></p>
@@ -139,7 +157,8 @@
           </article>
 
           <article class="calculation-card reveal">
-            <div class="calculation-card__top"><span class="step-label">PASO 02</span><span class="calculation-card__variable">d<em>x</em></span></div>
+            <div class="calculation-card__top"><span class="step-label">PASO 02</span><span
+                class="calculation-card__variable">d<em>x</em></span></div>
             <h3>Integramos el resultado.</h3>
             <div class="calculation-lines">
               <p><span class="math-symbol">∫</span><sub>0</sub><sup>2</sup> (3<em>x</em> + 9) d<em>x</em></p>
@@ -162,15 +181,21 @@
         <header class="chapter-heading reveal">
           <p class="eyebrow"><span class="chapter-number">03</span> El teorema</p>
           <h2 id="fubini-title">El orden puede<br>cambiar. El valor, no.</h2>
-          <p class="chapter-heading__intro">Si <em>f</em> es continua en el rectángulo <em>R = [a,b] × [c,d]</em>, podemos integrar en cualquiera de los dos órdenes.</p>
+          <p class="chapter-heading__intro">Si <em>f</em> es continua en el rectángulo <em>R = [a,b] × [c,d]</em>,
+            podemos integrar en cualquiera de los dos órdenes.</p>
         </header>
 
-        <div class="fubini-equation reveal" aria-label="Integral doble sobre R de f dA es igual a las integrales iteradas en ambos órdenes">
+        <div class="fubini-equation reveal"
+          aria-label="Integral doble sobre R de f dA es igual a las integrales iteradas en ambos órdenes">
           <span class="fubini-equation__double">∬<sub>R</sub> <em>f</em> d<em>A</em></span>
           <span class="fubini-equation__equals">=</span>
-          <span><span class="int"><span class="lim">b</span><span class="sym">∫</span><span class="lim">a</span></span><span class="int"><span class="lim">d</span><span class="sym">∫</span><span class="lim">c</span></span> <em>f</em> d<em>y</em> d<em>x</em></span>
+          <span><span class="int"><span class="lim">b</span><span class="sym">∫</span><span
+                class="lim">a</span></span><span class="int"><span class="lim">d</span><span class="sym">∫</span><span
+                class="lim">c</span></span> <em>f</em> d<em>y</em> d<em>x</em></span>
           <span class="fubini-equation__equals">=</span>
-          <span><span class="int"><span class="lim">d</span><span class="sym">∫</span><span class="lim">c</span></span><span class="int"><span class="lim">b</span><span class="sym">∫</span><span class="lim">a</span></span> <em>f</em> d<em>x</em> d<em>y</em></span>
+          <span><span class="int"><span class="lim">d</span><span class="sym">∫</span><span
+                class="lim">c</span></span><span class="int"><span class="lim">b</span><span class="sym">∫</span><span
+                class="lim">a</span></span> <em>f</em> d<em>x</em> d<em>y</em></span>
         </div>
 
         <div class="order-grid">
@@ -192,7 +217,8 @@
             </div>
           </article>
         </div>
-        <p class="fubini-caption reveal"><span class="caption-rule"></span>Dos recorridos sobre el mismo rectángulo. Un mismo resultado.</p>
+        <p class="fubini-caption reveal"><span class="caption-rule"></span>Dos recorridos sobre el mismo rectángulo. Un
+          mismo resultado.</p>
       </div>
     </section>
 
@@ -201,16 +227,19 @@
         <header class="chapter-heading chapter-heading--light reveal">
           <p class="eyebrow eyebrow--light"><span class="chapter-number">04</span> Cambiar el orden</p>
           <h2 id="cambio-title">Dibujar la región<br>abre otra ruta.</h2>
-          <p class="chapter-heading__intro">A veces, cambiar el orden transforma una integral difícil en una que sí podemos resolver.</p>
+          <p class="chapter-heading__intro">A veces, cambiar el orden transforma una integral difícil en una que sí
+            podemos resolver.</p>
         </header>
 
         <div class="region-layout">
           <div class="region-copy">
             <article class="problem-card reveal">
               <span class="meta-label">EL PROBLEMA</span>
-              <div class="formula formula--display formula--compact" aria-label="Integral de cero a uno, integral desde x hasta uno de e elevado a y al cuadrado, diferencial y, diferencial x">
+              <div class="formula formula--display formula--compact"
+                aria-label="Integral de cero a uno, integral desde x hasta uno de e elevado a y al cuadrado, diferencial y, diferencial x">
                 <span class="int"><span class="lim">1</span><span class="sym">∫</span><span class="lim">0</span></span>
-                <span class="int"><span class="lim">1</span><span class="sym">∫</span><span class="lim"><em>x</em></span></span>
+                <span class="int"><span class="lim">1</span><span class="sym">∫</span><span
+                    class="lim"><em>x</em></span></span>
                 <span class="mrow">e<sup><em>y</em><sup>2</sup></sup></span>
                 <span class="d">d<em>y</em></span><span class="d">d<em>x</em></span>
               </div>
@@ -219,38 +248,47 @@
 
             <div class="region-steps reveal">
               <span class="meta-label">LEEMOS LA REGIÓN</span>
-              <p><span class="step-index">A</span> <strong>Original:</strong> 0 ≤ <em>x</em> ≤ 1 y <em>x</em> ≤ <em>y</em> ≤ 1.</p>
-              <p><span class="step-index">B</span> <strong>Invertida:</strong> 0 ≤ <em>y</em> ≤ 1 y 0 ≤ <em>x</em> ≤ <em>y</em>.</p>
+              <p><span class="step-index">A</span> <strong>Original:</strong> 0 ≤ <em>x</em> ≤ 1 y <em>x</em> ≤
+                <em>y</em> ≤ 1.</p>
+              <p><span class="step-index">B</span> <strong>Invertida:</strong> 0 ≤ <em>y</em> ≤ 1 y 0 ≤ <em>x</em> ≤
+                <em>y</em>.</p>
             </div>
 
             <div class="solution-card reveal">
               <span class="meta-label">INTEGRAMOS PRIMERO EN x</span>
               <div class="solution-card__lines">
-                <p><span class="math-symbol">∫</span><sub>0</sub><sup>1</sup><span class="math-symbol">∫</span><sub>0</sub><sup><em>y</em></sup> e<sup><em>y</em><sup>2</sup></sup> d<em>x</em> d<em>y</em></p>
-                <p>= <span class="math-symbol">∫</span><sub>0</sub><sup>1</sup> <em>y</em>e<sup><em>y</em><sup>2</sup></sup> d<em>y</em></p>
-                <p>= [e<sup><em>y</em><sup>2</sup></sup>/2]<sub>0</sub><sup>1</sup> = <strong>(e − 1)/2 ≈ 0,859</strong></p>
+                <p><span class="math-symbol">∫</span><sub>0</sub><sup>1</sup><span
+                    class="math-symbol">∫</span><sub>0</sub><sup><em>y</em></sup> e<sup><em>y</em><sup>2</sup></sup>
+                  d<em>x</em> d<em>y</em></p>
+                <p>= <span class="math-symbol">∫</span><sub>0</sub><sup>1</sup>
+                  <em>y</em>e<sup><em>y</em><sup>2</sup></sup> d<em>y</em></p>
+                <p>= [e<sup><em>y</em><sup>2</sup></sup>/2]<sub>0</sub><sup>1</sup> = <strong>(e − 1)/2 ≈ 0,859</strong>
+                </p>
               </div>
             </div>
           </div>
 
           <figure class="region-figure reveal">
-            <div class="region-figure__top"><span>LA REGIÓN <em>R</em></span><span>0 ≤ <em>x</em> ≤ <em>y</em> ≤ 1</span></div>
-            <svg viewBox="0 0 440 390" role="img" aria-label="Región triangular delimitada por x igual a cero, y igual a x y y igual a uno, con vértices cero cero, cero uno y uno uno">
+            <div class="region-figure__top"><span>LA REGIÓN <em>R</em></span><span>0 ≤ <em>x</em> ≤ <em>y</em> ≤
+                1</span></div>
+            <svg viewBox="0 0 440 390" role="img"
+              aria-label="Región triangular delimitada por x igual a cero, y igual a x y y igual a uno, con vértices cero cero, cero uno y uno uno">
               <defs>
-                <pattern id="regionHatch" width="9" height="9" patternTransform="rotate(45)" patternUnits="userSpaceOnUse">
-                  <line x1="0" y1="0" x2="0" y2="9" class="hatch-line"/>
+                <pattern id="regionHatch" width="9" height="9" patternTransform="rotate(45)"
+                  patternUnits="userSpaceOnUse">
+                  <line x1="0" y1="0" x2="0" y2="9" class="hatch-line" />
                 </pattern>
               </defs>
-              <line x1="86" y1="48" x2="86" y2="317" class="plot-axis"/>
-              <line x1="86" y1="317" x2="370" y2="317" class="plot-axis"/>
-              <polygon points="86,317 86,48 370,48" class="plot-region"/>
-              <polygon points="86,317 86,48 370,48" fill="url(#regionHatch)"/>
-              <line x1="86" y1="317" x2="370" y2="48" class="plot-diagonal"/>
-              <line x1="86" y1="48" x2="370" y2="48" class="plot-boundary"/>
-              <line x1="86" y1="48" x2="86" y2="317" class="plot-boundary"/>
-              <circle cx="86" cy="317" r="5" class="plot-point"/>
-              <circle cx="86" cy="48" r="5" class="plot-point"/>
-              <circle cx="370" cy="48" r="5" class="plot-point"/>
+              <line x1="86" y1="48" x2="86" y2="317" class="plot-axis" />
+              <line x1="86" y1="317" x2="370" y2="317" class="plot-axis" />
+              <polygon points="86,317 86,48 370,48" class="plot-region" />
+              <polygon points="86,317 86,48 370,48" fill="url(#regionHatch)" />
+              <line x1="86" y1="317" x2="370" y2="48" class="plot-diagonal" />
+              <line x1="86" y1="48" x2="370" y2="48" class="plot-boundary" />
+              <line x1="86" y1="48" x2="86" y2="317" class="plot-boundary" />
+              <circle cx="86" cy="317" r="5" class="plot-point" />
+              <circle cx="86" cy="48" r="5" class="plot-point" />
+              <circle cx="370" cy="48" r="5" class="plot-point" />
               <text x="380" y="323" class="plot-axis-label">x</text>
               <text x="73" y="40" class="plot-axis-label">y</text>
               <text x="84" y="344" class="plot-point-label">(0, 0)</text>
@@ -273,14 +311,26 @@
         </header>
 
         <div class="takeaways">
-          <article class="takeaway reveal"><span>01</span><h3>Iterar</h3><p>Resolver de adentro hacia afuera, tratando la otra variable como constante.</p></article>
-          <article class="takeaway takeaway--sand reveal"><span>02</span><h3>Fubini</h3><p>En un rectángulo, si la función es continua, el orden no cambia el valor.</p></article>
-          <article class="takeaway takeaway--dark reveal"><span>03</span><h3>Dibujar</h3><p>Ver la región permite cambiar el orden y elegir una ruta más simple.</p></article>
+          <article class="takeaway reveal"><span>01</span>
+            <h3>Iterar</h3>
+            <p>Resolver de adentro hacia afuera, tratando la otra variable como constante.</p>
+          </article>
+          <article class="takeaway takeaway--sand reveal"><span>02</span>
+            <h3>Fubini</h3>
+            <p>En un rectángulo, si la función es continua, el orden no cambia el valor.</p>
+          </article>
+          <article class="takeaway takeaway--dark reveal"><span>03</span>
+            <h3>Dibujar</h3>
+            <p>Ver la región permite cambiar el orden y elegir una ruta más simple.</p>
+          </article>
         </div>
 
         <footer class="next-topic reveal">
-          <div><span class="meta-label">A CONTINUACIÓN</span><h3>Jean Paul Reyes</h3></div>
-          <a class="next-topic__link" href="#area-doble">Áreas en el plano con<br>integrales dobles <span aria-hidden="true">→</span></a>
+          <div><span class="meta-label">A CONTINUACIÓN</span>
+            <h3>Jean Paul Reyes</h3>
+          </div>
+          <a class="next-topic__link" href="#area-doble">Áreas en el plano con<br>integrales dobles <span
+              aria-hidden="true">→</span></a>
           <a href="#inicio" class="back-to-top" aria-label="Volver al inicio">↑</a>
         </footer>
       </div>
@@ -299,7 +349,8 @@
         <header class="chapter-heading reveal">
           <p class="eyebrow"><span class="chapter-number">06</span> Idea central</p>
           <h2 id="area-doble-title">El área de una región<br>es una integral doble.</h2>
-          <p class="chapter-heading__intro">Si tenemos una región plana <em>R</em>, su área se obtiene integrando la función constante <em>1</em>.</p>
+          <p class="chapter-heading__intro">Si tenemos una región plana <em>R</em>, su área se obtiene integrando la
+            función constante <em>1</em>.</p>
         </header>
 
         <div class="area-intro-layout">
@@ -317,8 +368,10 @@
           </article>
 
           <aside class="area-explainer reveal">
-            <p>Una integral doble de <em>f</em>(<em>x</em>, <em>y</em>) suma el valor de <em>f</em> sobre cada pedacito de área <em>dA</em>.</p>
-            <p>Si <em>f = 1</em>, cada pedacito aporta <em>1 × dA</em>, y lo que se suma es simplemente el área de los pedacitos.</p>
+            <p>Una integral doble de <em>f</em>(<em>x</em>, <em>y</em>) suma el valor de <em>f</em> sobre cada pedacito
+              de área <em>dA</em>.</p>
+            <p>Si <em>f = 1</em>, cada pedacito aporta <em>1 × dA</em>, y lo que se suma es simplemente el área de los
+              pedacitos.</p>
           </aside>
         </div>
 
@@ -333,7 +386,9 @@
           </div>
         </div>
 
-        <p class="area-caption reveal"><span class="caption-rule"></span>La integral doble se evalúa como integral iterada. Lo difícil casi siempre es plantear los límites, y para eso clasificamos las regiones en tipo I y tipo II.</p>
+        <p class="area-caption reveal"><span class="caption-rule"></span>La integral doble se evalúa como integral
+          iterada. Lo difícil casi siempre es plantear los límites, y para eso clasificamos las regiones en tipo I y
+          tipo II.</p>
       </div>
     </section>
 
@@ -342,31 +397,34 @@
         <header class="chapter-heading chapter-heading--light reveal">
           <p class="eyebrow eyebrow--light"><span class="chapter-number">07</span> Clasificación</p>
           <h2 id="tipos-title">Dos formas<br>de recortar la misma región.</h2>
-          <p class="chapter-heading__intro">Una región es tipo I si la recorren rectas verticales, y tipo II si la recorren rectas horizontales. La fórmula es la misma; cambian los límites.</p>
+          <p class="chapter-heading__intro">Una región es tipo I si la recorren rectas verticales, y tipo II si la
+            recorren rectas horizontales. La fórmula es la misma; cambian los límites.</p>
         </header>
 
         <div class="type-grid">
           <article class="type-panel type-panel--light reveal">
             <div class="type-panel__head"><span>TIPO I</span><span>Verticalmente simple</span></div>
             <h3>Rectas <strong>verticales</strong> entran y salen.</h3>
-            <p class="type-panel__definition">Limitada arriba y abajo por curvas y a los lados por rectas verticales, con <em>g</em>₁(<em>x</em>) ≤ <em>g</em>₂(<em>x</em>) en [<em>a</em>, <em>b</em>].</p>
+            <p class="type-panel__definition">Limitada arriba y abajo por curvas y a los lados por rectas verticales,
+              con <em>g</em>₁(<em>x</em>) ≤ <em>g</em>₂(<em>x</em>) en [<em>a</em>, <em>b</em>].</p>
             <figure class="mini-plot">
-              <svg viewBox="0 0 320 250" role="img" aria-label="Región entre la curva inferior g uno de x igual a cero y la curva superior g dos de x igual a uno menos x al cuadrado, recorrida con franjas verticales">
-                <line x1="40" y1="210" x2="300" y2="210" class="plot-axis"/>
-                <line x1="60" y1="30" x2="60" y2="225" class="plot-axis"/>
-                <path d="M60,210 L60,40 Q170,40 280,210 Z" class="plot-region"/>
-                <line x1="82.0" y1="210" x2="82.0" y2="41.7" class="plot-strip"/>
-                <line x1="104.0" y1="210" x2="104.0" y2="46.8" class="plot-strip"/>
-                <line x1="126.0" y1="210" x2="126.0" y2="55.3" class="plot-strip"/>
-                <line x1="148.0" y1="210" x2="148.0" y2="67.2" class="plot-strip"/>
-                <line x1="170.0" y1="210" x2="170.0" y2="82.5" class="plot-strip"/>
-                <line x1="192.0" y1="210" x2="192.0" y2="101.2" class="plot-strip"/>
-                <line x1="214.0" y1="210" x2="214.0" y2="123.3" class="plot-strip"/>
-                <line x1="236.0" y1="210" x2="236.0" y2="148.8" class="plot-strip"/>
-                <line x1="258.0" y1="210" x2="258.0" y2="177.7" class="plot-strip"/>
-                <path d="M60,40 Q170,40 280,210" class="plot-boundary"/>
-                <line x1="60" y1="210" x2="280" y2="210" class="plot-boundary"/>
-                <line x1="60" y1="40" x2="60" y2="210" class="plot-boundary"/>
+              <svg viewBox="0 0 320 250" role="img"
+                aria-label="Región entre la curva inferior g uno de x igual a cero y la curva superior g dos de x igual a uno menos x al cuadrado, recorrida con franjas verticales">
+                <line x1="40" y1="210" x2="300" y2="210" class="plot-axis" />
+                <line x1="60" y1="30" x2="60" y2="225" class="plot-axis" />
+                <path d="M60,210 L60,40 Q170,40 280,210 Z" class="plot-region" />
+                <line x1="82.0" y1="210" x2="82.0" y2="41.7" class="plot-strip" />
+                <line x1="104.0" y1="210" x2="104.0" y2="46.8" class="plot-strip" />
+                <line x1="126.0" y1="210" x2="126.0" y2="55.3" class="plot-strip" />
+                <line x1="148.0" y1="210" x2="148.0" y2="67.2" class="plot-strip" />
+                <line x1="170.0" y1="210" x2="170.0" y2="82.5" class="plot-strip" />
+                <line x1="192.0" y1="210" x2="192.0" y2="101.2" class="plot-strip" />
+                <line x1="214.0" y1="210" x2="214.0" y2="123.3" class="plot-strip" />
+                <line x1="236.0" y1="210" x2="236.0" y2="148.8" class="plot-strip" />
+                <line x1="258.0" y1="210" x2="258.0" y2="177.7" class="plot-strip" />
+                <path d="M60,40 Q170,40 280,210" class="plot-boundary" />
+                <line x1="60" y1="210" x2="280" y2="210" class="plot-boundary" />
+                <line x1="60" y1="40" x2="60" y2="210" class="plot-boundary" />
                 <text x="300" y="226" class="plot-axis-label">x</text>
                 <text x="46" y="36" class="plot-axis-label">y</text>
                 <text x="52" y="226" text-anchor="end" class="plot-point-label">a</text>
@@ -377,8 +435,11 @@
               <figcaption>Una recta vertical entra por <em>g</em>₁ y sale por <em>g</em>₂.</figcaption>
             </figure>
             <div class="type-panel__math">
-              <p><span class="math-symbol">∫</span><sub><em>a</em></sub><sup><em>b</em></sup><span class="math-symbol">∫</span><sub><em>g</em>₁(<em>x</em>)</sub><sup><em>g</em>₂(<em>x</em>)</sup> d<em>y</em> d<em>x</em></p>
-              <p>= <span class="math-symbol">∫</span><sub><em>a</em></sub><sup><em>b</em></sup> [ <em>g</em>₂(<em>x</em>) − <em>g</em>₁(<em>x</em>) ] d<em>x</em></p>
+              <p><span class="math-symbol">∫</span><sub><em>a</em></sub><sup><em>b</em></sup><span
+                  class="math-symbol">∫</span><sub><em>g</em>₁(<em>x</em>)</sub><sup><em>g</em>₂(<em>x</em>)</sup>
+                d<em>y</em> d<em>x</em></p>
+              <p>= <span class="math-symbol">∫</span><sub><em>a</em></sub><sup><em>b</em></sup> [
+                <em>g</em>₂(<em>x</em>) − <em>g</em>₁(<em>x</em>) ] d<em>x</em></p>
             </div>
             <p class="type-panel__order">Primero d<em>y</em> · después d<em>x</em></p>
           </article>
@@ -386,24 +447,26 @@
           <article class="type-panel type-panel--dark reveal">
             <div class="type-panel__head"><span>TIPO II</span><span>Horizontalmente simple</span></div>
             <h3>Rectas <strong>horizontales</strong> entran y salen.</h3>
-            <p class="type-panel__definition">Limitada a izquierda y derecha por curvas y arriba y abajo por rectas horizontales, con <em>h</em>₁(<em>y</em>) ≤ <em>h</em>₂(<em>y</em>) en [<em>c</em>, <em>d</em>].</p>
+            <p class="type-panel__definition">Limitada a izquierda y derecha por curvas y arriba y abajo por rectas
+              horizontales, con <em>h</em>₁(<em>y</em>) ≤ <em>h</em>₂(<em>y</em>) en [<em>c</em>, <em>d</em>].</p>
             <figure class="mini-plot">
-              <svg viewBox="0 0 320 250" role="img" aria-label="La misma región recorrida con franjas horizontales, desde la curva izquierda h uno de y igual a cero hasta la curva derecha h dos de y">
-                <line x1="40" y1="210" x2="300" y2="210" class="plot-axis"/>
-                <line x1="60" y1="30" x2="60" y2="225" class="plot-axis"/>
-                <path d="M60,210 L60,40 Q170,40 280,210 Z" class="plot-region"/>
-                <line x1="60" y1="193.0" x2="268.7" y2="193.0" class="plot-strip"/>
-                <line x1="60" y1="176.0" x2="256.8" y2="176.0" class="plot-strip"/>
-                <line x1="60" y1="159.0" x2="244.1" y2="159.0" class="plot-strip"/>
-                <line x1="60" y1="142.0" x2="230.4" y2="142.0" class="plot-strip"/>
-                <line x1="60" y1="125.0" x2="215.6" y2="125.0" class="plot-strip"/>
-                <line x1="60" y1="108.0" x2="199.1" y2="108.0" class="plot-strip"/>
-                <line x1="60" y1="91.0" x2="180.5" y2="91.0" class="plot-strip"/>
-                <line x1="60" y1="74.0" x2="158.4" y2="74.0" class="plot-strip"/>
-                <line x1="60" y1="57.0" x2="129.6" y2="57.0" class="plot-strip"/>
-                <path d="M60,40 Q170,40 280,210" class="plot-boundary"/>
-                <line x1="60" y1="210" x2="280" y2="210" class="plot-boundary"/>
-                <line x1="60" y1="40" x2="60" y2="210" class="plot-boundary"/>
+              <svg viewBox="0 0 320 250" role="img"
+                aria-label="La misma región recorrida con franjas horizontales, desde la curva izquierda h uno de y igual a cero hasta la curva derecha h dos de y">
+                <line x1="40" y1="210" x2="300" y2="210" class="plot-axis" />
+                <line x1="60" y1="30" x2="60" y2="225" class="plot-axis" />
+                <path d="M60,210 L60,40 Q170,40 280,210 Z" class="plot-region" />
+                <line x1="60" y1="193.0" x2="268.7" y2="193.0" class="plot-strip" />
+                <line x1="60" y1="176.0" x2="256.8" y2="176.0" class="plot-strip" />
+                <line x1="60" y1="159.0" x2="244.1" y2="159.0" class="plot-strip" />
+                <line x1="60" y1="142.0" x2="230.4" y2="142.0" class="plot-strip" />
+                <line x1="60" y1="125.0" x2="215.6" y2="125.0" class="plot-strip" />
+                <line x1="60" y1="108.0" x2="199.1" y2="108.0" class="plot-strip" />
+                <line x1="60" y1="91.0" x2="180.5" y2="91.0" class="plot-strip" />
+                <line x1="60" y1="74.0" x2="158.4" y2="74.0" class="plot-strip" />
+                <line x1="60" y1="57.0" x2="129.6" y2="57.0" class="plot-strip" />
+                <path d="M60,40 Q170,40 280,210" class="plot-boundary" />
+                <line x1="60" y1="210" x2="280" y2="210" class="plot-boundary" />
+                <line x1="60" y1="40" x2="60" y2="210" class="plot-boundary" />
                 <text x="300" y="226" class="plot-axis-label">x</text>
                 <text x="46" y="36" class="plot-axis-label">y</text>
                 <text x="52" y="216" text-anchor="end" class="plot-point-label">c</text>
@@ -414,8 +477,11 @@
               <figcaption>Una recta horizontal entra por <em>h</em>₁ y sale por <em>h</em>₂.</figcaption>
             </figure>
             <div class="type-panel__math">
-              <p><span class="math-symbol">∫</span><sub><em>c</em></sub><sup><em>d</em></sup><span class="math-symbol">∫</span><sub><em>h</em>₁(<em>y</em>)</sub><sup><em>h</em>₂(<em>y</em>)</sup> d<em>x</em> d<em>y</em></p>
-              <p>= <span class="math-symbol">∫</span><sub><em>c</em></sub><sup><em>d</em></sup> [ <em>h</em>₂(<em>y</em>) − <em>h</em>₁(<em>y</em>) ] d<em>y</em></p>
+              <p><span class="math-symbol">∫</span><sub><em>c</em></sub><sup><em>d</em></sup><span
+                  class="math-symbol">∫</span><sub><em>h</em>₁(<em>y</em>)</sub><sup><em>h</em>₂(<em>y</em>)</sup>
+                d<em>x</em> d<em>y</em></p>
+              <p>= <span class="math-symbol">∫</span><sub><em>c</em></sub><sup><em>d</em></sup> [
+                <em>h</em>₂(<em>y</em>) − <em>h</em>₁(<em>y</em>) ] d<em>y</em></p>
             </div>
             <p class="type-panel__order">Primero d<em>x</em> · después d<em>y</em></p>
           </article>
@@ -428,15 +494,44 @@
         <header class="chapter-heading reveal">
           <p class="eyebrow"><span class="chapter-number">08</span> Método práctico</p>
           <h2 id="limites-title">Cómo plantear<br>los límites.</h2>
-          <p class="chapter-heading__intro">El paso que más se malogresa: escribir los límites de la integral interior. Esta es la rutina que funciona.</p>
+          <p class="chapter-heading__intro">El paso que más se malogresa: escribir los límites de la integral interior.
+            Esta es la rutina que funciona.</p>
         </header>
 
         <ol class="method-list">
-          <li class="method-step reveal"><span class="method-step__index">01</span><div><h3>Dibuja la región.</h3><p>Es el paso más importante. Sin gráfica es fácil equivocarse.</p></div></li>
-          <li class="method-step reveal"><span class="method-step__index">02</span><div><h3>Halla los puntos de intersección.</h3><p>Igala las ecuaciones de las curvas que encierran la región.</p></div></li>
-          <li class="method-step reveal"><span class="method-step__index">03</span><div><h3>Elige el tipo.</h3><p>Si al cortar con una recta vertical siempre entras y sales por las mismas curvas, es tipo I. Si lo mismo ocurre con las horizontales, es tipo II. Si una elección te obliga a partir la región, prueba la otra.</p></div></li>
-          <li class="method-step reveal"><span class="method-step__index">04</span><div><h3>Escribe los límites.</h3><p>Variable exterior: límites constantes, el rango total de la región. Variable interior: límites que dependen de la exterior, las curvas de entrada y de salida.</p></div></li>
-          <li class="method-step reveal"><span class="method-step__index">05</span><div><h3>Integra de adentro hacia afuera.</h3><p>Primero la integral interior y después la exterior.</p></div></li>
+          <li class="method-step reveal"><span class="method-step__index">01</span>
+            <div>
+              <h3>Dibuja la región.</h3>
+              <p>Es el paso más importante. Sin gráfica es fácil equivocarse.</p>
+            </div>
+          </li>
+          <li class="method-step reveal"><span class="method-step__index">02</span>
+            <div>
+              <h3>Halla los puntos de intersección.</h3>
+              <p>Igala las ecuaciones de las curvas que encierran la región.</p>
+            </div>
+          </li>
+          <li class="method-step reveal"><span class="method-step__index">03</span>
+            <div>
+              <h3>Elige el tipo.</h3>
+              <p>Si al cortar con una recta vertical siempre entras y sales por las mismas curvas, es tipo I. Si lo
+                mismo ocurre con las horizontales, es tipo II. Si una elección te obliga a partir la región, prueba la
+                otra.</p>
+            </div>
+          </li>
+          <li class="method-step reveal"><span class="method-step__index">04</span>
+            <div>
+              <h3>Escribe los límites.</h3>
+              <p>Variable exterior: límites constantes, el rango total de la región. Variable interior: límites que
+                dependen de la exterior, las curvas de entrada y de salida.</p>
+            </div>
+          </li>
+          <li class="method-step reveal"><span class="method-step__index">05</span>
+            <div>
+              <h3>Integra de adentro hacia afuera.</h3>
+              <p>Primero la integral interior y después la exterior.</p>
+            </div>
+          </li>
         </ol>
 
         <div class="criteria-grid">
@@ -449,7 +544,8 @@
           </article>
           <article class="criteria-card criteria-card--sand reveal">
             <span class="criteria-card__label">Despejar puede crear ramas</span>
-            <p>Si una curva es <em>x</em> = <em>y</em>², despejar <em>y</em> = ±√<em>x</em> te daría dos ramas; como tipo II es una sola curva y todo se simplifica.</p>
+            <p>Si una curva es <em>x</em> = <em>y</em>², despejar <em>y</em> = ±√<em>x</em> te daría dos ramas; como
+              tipo II es una sola curva y todo se simplifica.</p>
           </article>
           <article class="criteria-card reveal">
             <span class="criteria-card__label">Regiones que hay que partir</span>
@@ -467,7 +563,8 @@
         </header>
 
         <div class="example-area-intro reveal">
-          <p class="example-area-intro__problem">Calcular el área de la región encerrada por <em>y</em> = <em>x</em>² y <em>y</em> = <em>x</em>.</p>
+          <p class="example-area-intro__problem">Calcular el área de la región encerrada por <em>y</em> = <em>x</em>² y
+            <em>y</em> = <em>x</em>.</p>
           <div class="example-area-intro__points">
             <span class="meta-label">INTERSECCIONES</span>
             <p><em>x</em>² = <em>x</em> &nbsp;→&nbsp; <em>x</em> = 0 o <em>x</em> = 1</p>
@@ -477,9 +574,11 @@
         <div class="example-area-grid">
           <article class="example-area-card reveal">
             <div class="example-area-card__top"><span>COMO TIPO I</span><span>d<em>y</em> → d<em>x</em></span></div>
-            <p>Entre <em>x</em> = 0 y <em>x</em> = 1 la curva inferior es <em>y</em> = <em>x</em>² y la superior es <em>y</em> = <em>x</em>.</p>
+            <p>Entre <em>x</em> = 0 y <em>x</em> = 1 la curva inferior es <em>y</em> = <em>x</em>² y la superior es
+              <em>y</em> = <em>x</em>.</p>
             <div class="example-area-card__math">
-              <p><span class="math-symbol">∫</span><sub>0</sub><sup>1</sup><span class="math-symbol">∫</span><sub><em>x</em>²</sub><sup><em>x</em></sup> d<em>y</em> d<em>x</em></p>
+              <p><span class="math-symbol">∫</span><sub>0</sub><sup>1</sup><span
+                  class="math-symbol">∫</span><sub><em>x</em>²</sub><sup><em>x</em></sup> d<em>y</em> d<em>x</em></p>
               <p>= <span class="math-symbol">∫</span><sub>0</sub><sup>1</sup> (<em>x</em> − <em>x</em>²) d<em>x</em></p>
               <p>= [ <em>x</em>²/2 − <em>x</em>³/3 ]<sub>0</sub><sup>1</sup></p>
               <p class="example-area-card__result">= 1/2 − 1/3 = <strong>1/6</strong></p>
@@ -488,9 +587,11 @@
 
           <article class="example-area-card example-area-card--dark reveal">
             <div class="example-area-card__top"><span>COMO TIPO II</span><span>d<em>x</em> → d<em>y</em></span></div>
-            <p>Despejando <em>x</em> en función de <em>y</em>, la curva izquierda es <em>x</em> = <em>y</em> y la derecha <em>x</em> = √<em>y</em>, con <em>y</em> entre 0 y 1.</p>
+            <p>Despejando <em>x</em> en función de <em>y</em>, la curva izquierda es <em>x</em> = <em>y</em> y la
+              derecha <em>x</em> = √<em>y</em>, con <em>y</em> entre 0 y 1.</p>
             <div class="example-area-card__math">
-              <p><span class="math-symbol">∫</span><sub>0</sub><sup>1</sup><span class="math-symbol">∫</span><sub><em>y</em></sub><sup>√<em>y</em></sup> d<em>x</em> d<em>y</em></p>
+              <p><span class="math-symbol">∫</span><sub>0</sub><sup>1</sup><span
+                  class="math-symbol">∫</span><sub><em>y</em></sub><sup>√<em>y</em></sup> d<em>x</em> d<em>y</em></p>
               <p>= <span class="math-symbol">∫</span><sub>0</sub><sup>1</sup> (√<em>y</em> − <em>y</em>) d<em>y</em></p>
               <p>= [ (2/3)<em>y</em><sup>3/2</sup> − <em>y</em>²/2 ]<sub>0</sub><sup>1</sup></p>
               <p class="example-area-card__result">= 2/3 − 1/2 = <strong>1/6</strong></p>
@@ -500,22 +601,24 @@
 
         <figure class="lens-figure reveal">
           <div class="region-figure__top"><span>LA REGIÓN</span><span>0 ≤ <em>x</em> ≤ 1</span></div>
-          <svg viewBox="0 0 320 250" role="img" aria-label="Región encerrada entre la parábola y igual a x al cuadrado y la recta y igual a x, con intersecciones en cero cero y uno uno">
-            <line x1="40" y1="210" x2="300" y2="210" class="plot-axis"/>
-            <line x1="60" y1="30" x2="60" y2="225" class="plot-axis"/>
-            <path d="M60,210 Q170,210 280,40 Z" class="plot-region"/>
-            <path d="M60,210 Q170,210 280,40" class="plot-boundary"/>
-            <line x1="60" y1="210" x2="280" y2="40" class="plot-boundary"/>
-            <circle cx="60" cy="210" r="5" class="plot-point"/>
-            <circle cx="280" cy="40" r="5" class="plot-point"/>
+          <svg viewBox="0 0 320 250" role="img"
+            aria-label="Región encerrada entre la parábola y igual a x al cuadrado y la recta y igual a x, con intersecciones en cero cero y uno uno">
+            <line x1="40" y1="210" x2="300" y2="210" class="plot-axis" />
+            <line x1="60" y1="30" x2="60" y2="225" class="plot-axis" />
+            <path d="M60,210 Q170,210 280,40 Z" class="plot-region" />
+            <path d="M60,210 Q170,210 280,40" class="plot-boundary" />
+            <line x1="60" y1="210" x2="280" y2="40" class="plot-boundary" />
+            <circle cx="60" cy="210" r="5" class="plot-point" />
+            <circle cx="280" cy="40" r="5" class="plot-point" />
             <text x="300" y="226" class="plot-axis-label">x</text>
             <text x="46" y="36" class="plot-axis-label">y</text>
             <text x="68" y="226" class="plot-point-label">(0, 0)</text>
             <text x="272" y="30" text-anchor="end" class="plot-point-label">(1, 1)</text>
-            <text x="248" y="52" class="plot-boundary-label">y = x</text>
-            <text x="250" y="112" class="plot-boundary-label">y = x²</text>
+            <text x="280" y="52" class="plot-boundary-label">y = x</text>
+            <text x="280" y="112" class="plot-boundary-label">y = x²</text>
           </svg>
-          <figcaption>Los dos órdenes recorren la misma región y dan 1/6: el área no depende de cómo la recorras.</figcaption>
+          <figcaption>Los dos órdenes recorren la misma región y dan 1/6: el área no depende de cómo la recorras.
+          </figcaption>
         </figure>
       </div>
     </section>
@@ -528,13 +631,24 @@
         </header>
 
         <div class="takeaways">
-          <article class="takeaway reveal"><span>01</span><h3>Área</h3><p>El área de una región es la integral doble de la función constante 1.</p></article>
-          <article class="takeaway takeaway--sand reveal"><span>02</span><h3>Tipos</h3><p>Tipo I con franjas verticales, tipo II con horizontales. Mismo resultado, distinto orden.</p></article>
-          <article class="takeaway takeaway--dark reveal"><span>03</span><h3>Límites</h3><p>Dibuja, halla las intersecciones y escribe la variable interior en función de la exterior.</p></article>
+          <article class="takeaway reveal"><span>01</span>
+            <h3>Área</h3>
+            <p>El área de una región es la integral doble de la función constante 1.</p>
+          </article>
+          <article class="takeaway takeaway--sand reveal"><span>02</span>
+            <h3>Tipos</h3>
+            <p>Tipo I con franjas verticales, tipo II con horizontales. Mismo resultado, distinto orden.</p>
+          </article>
+          <article class="takeaway takeaway--dark reveal"><span>03</span>
+            <h3>Límites</h3>
+            <p>Dibuja, halla las intersecciones y escribe la variable interior en función de la exterior.</p>
+          </article>
         </div>
 
         <footer class="next-topic reveal">
-          <div><span class="meta-label">A CONTINUACIÓN</span><h3>Integrales dobles</h3></div>
+          <div><span class="meta-label">A CONTINUACIÓN</span>
+            <h3>Integrales dobles</h3>
+          </div>
           <p>Volumen bajo<br>una superficie</p>
           <a href="#inicio" class="back-to-top" aria-label="Volver al inicio">↑</a>
         </footer>
@@ -544,9 +658,11 @@
 
   <footer class="site-footer">
     <span>UNIAJC <i>/</i> CÁLCULO · SEGUNDO CORTE</span>
-    <a href="https://commons.wikimedia.org/wiki/File:M%C3%BCnster,_Westdeutsche_Lotterie_--_2018_--_0413.jpg" target="_blank" rel="noreferrer">Imagen: Dietmar Rabich · CC BY-SA 4.0</a>
+    <a href="https://commons.wikimedia.org/wiki/File:M%C3%BCnster,_Westdeutsche_Lotterie_--_2018_--_0413.jpg"
+      target="_blank" rel="noreferrer">Imagen: Dietmar Rabich · CC BY-SA 4.0</a>
   </footer>
 
   <script src="script.js"></script>
 </body>
+
 </html>
