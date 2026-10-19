@@ -762,6 +762,106 @@ em { font-style: italic; }
 .next-topic__link:hover { color: var(--ink); }
 .next-topic__link:hover span { transform: translateX(4px); }
 
+/* Volume as double integral ------------------------------------------------- */
+
+.volume-idea { display: grid; grid-template-columns: minmax(0, 1.12fr) minmax(0, 1fr); gap: var(--grid-gap); align-items: stretch; }
+
+.volume-figure { margin: 0; padding: clamp(1.2rem, 2.6vw, 2.2rem); background: #e9e4dc; display: flex; flex-direction: column; }
+.volume-figure svg { display: block; width: 100%; height: auto; overflow: visible; }
+.volume-figure figcaption { margin-top: auto; padding-top: 1rem; border-top: 1px solid var(--line-light); color: #69665f; font-size: var(--text-sm); line-height: 1.5; }
+
+.iso-base { fill: rgba(232, 212, 183, 0.88); stroke: var(--slate); stroke-width: 1.4; }
+.stem { stroke: rgba(32, 43, 53, 0.75); stroke-width: 1.4; }
+.stem-tip { fill: var(--slate); }
+.dome-mesh { fill: none; stroke: rgba(32, 43, 53, 0.4); stroke-width: 1.2; stroke-dasharray: 4 4; }
+.iso-label { fill: #343c40; font: italic 15px var(--font-math); }
+
+.volume-elements { display: grid; grid-template-columns: 1fr; gap: var(--grid-gap); }
+.volume-element { padding: clamp(1.25rem, 2.4vw, 2rem); background: #e9e4dc; }
+.volume-element--sand { background: var(--sand); }
+.volume-element--dark { color: var(--paper); background: var(--slate); }
+.volume-element__index { color: var(--stone); font-size: var(--text-xs); font-weight: 670; letter-spacing: 0.14em; text-transform: uppercase; }
+.volume-element--sand .volume-element__index { color: #716858; }
+.volume-element--dark .volume-element__index { color: var(--sand); }
+.volume-element h3 { margin: 1.1rem 0 0.5rem; font-size: var(--text-h3); font-weight: 560; letter-spacing: -0.045em; }
+.volume-element p { margin: 0; color: #5f5d57; font-size: var(--text-sm); line-height: 1.55; }
+.volume-element--sand p { color: #443c2d; }
+.volume-element--dark p { color: var(--muted-dark); }
+
+/* Rectangular orders and limits --------------------------------------------- */
+
+.pairing { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--grid-gap); margin-top: var(--grid-gap); }
+.pairing__item { padding: clamp(1.3rem, 2.5vw, 2rem); border: 1px solid rgba(245, 245, 242, 0.19); background: rgba(245, 245, 242, 0.04); }
+.pairing__item p { margin: 0.9rem 0 0; color: var(--muted-dark); font-size: var(--text-sm); line-height: 1.6; }
+.pairing__item strong { color: var(--paper); font-weight: 640; }
+
+.note-dark { display: flex; align-items: center; gap: 0.8rem; max-width: 68ch; margin: clamp(2rem, 4vw, 3rem) 0 0; color: var(--muted-dark); font-size: var(--text-sm); line-height: 1.5; }
+.note-dark .caption-rule { flex: 0 0 auto; background: var(--sand); }
+
+/* Polar coordinates --------------------------------------------------------- */
+
+.polar-layout { display: grid; grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr); gap: clamp(2rem, 5vw, 5rem); align-items: start; }
+.polar-copy { display: flex; flex-direction: column; gap: var(--grid-gap); }
+
+.polar-formula-card { padding: clamp(1.4rem, 2.8vw, 2.4rem); background: var(--ivory); border: 1px solid rgba(16, 17, 19, 0.16); }
+.polar-formula-card .meta-label { color: #716858; }
+.polar-formula-card .formula { margin-top: 1.4rem; }
+
+.polar-legend { margin: 0; display: grid; border-top: 1px solid rgba(16, 17, 19, 0.2); }
+.polar-legend > div { display: grid; grid-template-columns: minmax(7rem, auto) minmax(0, 1fr); gap: 1.2rem; align-items: baseline; padding: 1.05rem 0; border-bottom: 1px solid rgba(16, 17, 19, 0.16); }
+.polar-legend dt { font-family: var(--font-math); font-size: 1.15rem; }
+.polar-legend dd { margin: 0; color: #443c2d; font-size: var(--text-sm); line-height: 1.55; }
+.polar-legend strong { color: var(--ink); font-weight: 660; }
+
+.polar-figures { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--grid-gap); align-items: start; }
+
+.polar-ray { stroke: rgba(16, 17, 19, 0.28); stroke-width: 1; }
+.polar-circle { fill: none; stroke: rgba(16, 17, 19, 0.34); stroke-width: 1; stroke-dasharray: 3 4; }
+.polar-ring { fill: none; stroke: var(--slate); stroke-width: 2; }
+.polar-elem { fill: rgba(32, 43, 53, 0.16); stroke: var(--slate); stroke-width: 1.4; }
+.polar-theta-arc { fill: none; stroke: #716858; stroke-width: 1.6; stroke-dasharray: 4 3; }
+.polar-leader { stroke: rgba(16, 17, 19, 0.45); stroke-width: 1; }
+.polar-svg-label { fill: #343c40; font: italic 14px var(--font-math); }
+.polar-svg-tick { fill: #605e58; font: 13px var(--font-sans); }
+
+.cs-axis { stroke: rgba(16, 17, 19, 0.4); stroke-width: 1.5; }
+.cs-axis--mid { stroke: rgba(16, 17, 19, 0.22); stroke-width: 1; stroke-dasharray: 3 4; }
+.cs-fill { fill: rgba(232, 212, 183, 0.7); stroke: none; }
+.cs-curve { fill: none; stroke: var(--slate); stroke-width: 2.4; }
+.cs-label { fill: var(--ink); font: italic 15px var(--font-math); }
+.cs-tick { fill: #605e58; font: 13px var(--font-sans); }
+
+/* Volume practice ----------------------------------------------------------- */
+
+.practice-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--grid-gap); }
+
+.practice-card { display: flex; flex-direction: column; padding: clamp(1.4rem, 2.8vw, 2.3rem); background: #e9e4dc; }
+.practice-card--dark { color: var(--paper); background: var(--ink); }
+
+.practice-card__top { display: flex; justify-content: space-between; align-items: baseline; gap: 1rem; color: var(--stone); font-size: var(--text-xs); font-weight: 660; letter-spacing: 0.13em; }
+.practice-card__top span:first-child { color: #746955; }
+.practice-card--dark .practice-card__top span:first-child { color: var(--sand); }
+.practice-card__top span:last-child { letter-spacing: 0.03em; text-transform: none; }
+
+.practice-card__statement { margin: 1.1rem 0 0; color: #5f5d57; font-size: var(--text-sm); line-height: 1.55; }
+.practice-card--dark .practice-card__statement { color: var(--muted-dark); }
+
+.practice-card .mini-plot { width: min(100%, 250px); margin-top: 1.3rem; }
+
+.practice-card__math { margin-top: auto; padding-top: 1.2rem; border-top: 1px solid rgba(16, 17, 19, 0.18); font-family: var(--font-math); font-size: clamp(1rem, 1.5vw, 1.3rem); line-height: 1.7; }
+.practice-card--dark .practice-card__math { border-color: var(--line-dark); }
+.practice-card__math p { margin: 0.3rem 0; }
+.practice-card__math .math-symbol { font-size: 1.4em; }
+.practice-card__sub { padding-left: 1rem; color: #5f5d57; font-size: 0.92em; }
+.practice-card--dark .practice-card__sub { color: var(--muted-dark); }
+.practice-card__result { margin-top: 0.7rem; padding-top: 0.7rem; border-top: 1px solid rgba(16, 17, 19, 0.18); font-size: 1.15em; }
+.practice-card--dark .practice-card__result { border-color: var(--line-dark); color: var(--sand); }
+
+.js .volume-elements .reveal:nth-child(2),
+.js .polar-figures .reveal:nth-child(2),
+.js .practice-grid .reveal:nth-child(2) { transition-delay: 90ms; }
+.js .volume-elements .reveal:nth-child(3) { transition-delay: 160ms; }
+
 /* Scroll reveal ----------------------------------------------------------- */
 
 .js .reveal { opacity: 0; transform: translateY(18px); transition: opacity 650ms ease, transform 650ms cubic-bezier(0.2, 0.7, 0.2, 1); }
@@ -908,4 +1008,24 @@ button:focus-visible { outline: 2px solid currentColor; outline-offset: 4px; }
   .method-step h3 { font-size: 1.1rem; }
   .example-area-intro { gap: 1rem; }
   .next-topic__link { grid-column: 1; grid-row: 2; font-size: 1.2rem; }
+}
+
+/* Responsive — volume as double integral components -------------------------- */
+
+@media (max-width: 900px) {
+  .volume-idea { grid-template-columns: 1fr; }
+  .volume-elements { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .polar-layout { grid-template-columns: 1fr; gap: 2rem; }
+}
+
+@media (max-width: 620px) {
+  .volume-elements { grid-template-columns: 1fr; }
+  .volume-element { padding: 1.3rem; }
+  .pairing { grid-template-columns: 1fr; gap: 0.75rem; }
+  .pairing__item { padding: 1.3rem; }
+  .polar-figures { grid-template-columns: 1fr; }
+  .polar-legend > div { grid-template-columns: 1fr; gap: 0.35rem; }
+  .practice-grid { grid-template-columns: 1fr; gap: 0.75rem; }
+  .practice-card { padding: 1.3rem; }
+  .practice-card__math { font-size: 1.05rem; }
 }

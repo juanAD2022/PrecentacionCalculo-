@@ -25,7 +25,8 @@
       <a href="#ejemplo">02 <span>Ejemplo</span></a>
       <a href="#fubini">03 <span>Fubini</span></a>
       <a href="#cambio">04 <span>Región</span></a>
-      <a href="#cierre">05 <span>Cierre</span></a>
+      <a href="#area-doble"><span>Áreas</span></a>
+      <a href="#volumen"><span>Volumen</span></a>
     </nav>
     <button class="fullscreen-button" type="button" aria-label="Activar pantalla completa"
       title="Pantalla completa (F)">
@@ -676,9 +677,368 @@
 
         <footer class="next-topic reveal">
           <div><span class="meta-label">A CONTINUACIÓN</span>
-            <h3>Integrales dobles</h3>
+            <h3>Santiago Naranjo</h3>
           </div>
-          <p>Volumen bajo<br>una superficie</p>
+          <a class="next-topic__link" href="#volumen">Integral doble<br>como volumen <span aria-hidden="true">→</span></a>
+          <a href="#inicio" class="back-to-top" aria-label="Volver al inicio">↑</a>
+        </footer>
+      </div>
+    </section>
+
+    <div class="part-band">
+      <div class="part-band__inner">
+        <span class="part-band__label">Tercera parte</span>
+        <p class="part-band__title">Integral doble<br>como volumen</p>
+        <span class="part-band__author">Santiago Naranjo</span>
+      </div>
+    </div>
+
+    <section class="chapter chapter--ivory" id="volumen" aria-labelledby="volumen-title">
+      <div class="chapter__inner">
+        <header class="chapter-heading reveal">
+          <p class="eyebrow"><span class="chapter-number">11</span> Idea de volumen</p>
+          <h2 id="volumen-title">De un área plana<br>a un volumen.</h2>
+          <p class="chapter-heading__intro">Una integral doble extiende la idea a una superficie <em>z = f(x,y)</em> en
+            el espacio y mide el volumen que queda bajo ella.</p>
+        </header>
+
+        <div class="volume-idea">
+          <figure class="volume-figure reveal">
+            <svg viewBox="0 0 470 313" role="img"
+              aria-label="Diagrama isométrico: sobre una región base R se levantan columnas de altura f de x coma y hasta una superficie techo, de modo que el volumen es la suma de esas columnas">
+              <polygon points="235.0,45.4 446.0,167.2 235.0,289.0 24.0,167.2" class="iso-base" />
+              <line x1="235.0" y1="75.9" x2="235.0" y2="26.1" class="stem" />
+              <circle cx="235.0" cy="26.1" r="2.4" class="stem-tip" />
+              <line x1="182.2" y1="106.3" x2="182.2" y2="40.3" class="stem" />
+              <circle cx="182.2" cy="40.3" r="2.4" class="stem-tip" />
+              <line x1="287.8" y1="106.3" x2="287.8" y2="40.3" class="stem" />
+              <circle cx="287.8" cy="40.3" r="2.4" class="stem-tip" />
+              <line x1="129.5" y1="136.8" x2="129.5" y2="70.8" class="stem" />
+              <circle cx="129.5" cy="70.8" r="2.4" class="stem-tip" />
+              <line x1="235.0" y1="136.8" x2="235.0" y2="54.5" class="stem" />
+              <circle cx="235.0" cy="54.5" r="2.4" class="stem-tip" />
+              <line x1="340.5" y1="136.8" x2="340.5" y2="70.8" class="stem" />
+              <circle cx="340.5" cy="70.8" r="2.4" class="stem-tip" />
+              <line x1="76.8" y1="167.2" x2="76.8" y2="117.5" class="stem" />
+              <circle cx="76.8" cy="117.5" r="2.4" class="stem-tip" />
+              <line x1="182.2" y1="167.2" x2="182.2" y2="85.0" class="stem" />
+              <circle cx="182.2" cy="85.0" r="2.4" class="stem-tip" />
+              <line x1="287.8" y1="167.2" x2="287.8" y2="85.0" class="stem" />
+              <circle cx="287.8" cy="85.0" r="2.4" class="stem-tip" />
+              <line x1="393.2" y1="167.2" x2="393.2" y2="117.5" class="stem" />
+              <circle cx="393.2" cy="117.5" r="2.4" class="stem-tip" />
+              <line x1="129.5" y1="197.7" x2="129.5" y2="131.7" class="stem" />
+              <circle cx="129.5" cy="131.7" r="2.4" class="stem-tip" />
+              <line x1="235.0" y1="197.7" x2="235.0" y2="115.4" class="stem" />
+              <circle cx="235.0" cy="115.4" r="2.4" class="stem-tip" />
+              <line x1="340.5" y1="197.7" x2="340.5" y2="131.7" class="stem" />
+              <circle cx="340.5" cy="131.7" r="2.4" class="stem-tip" />
+              <line x1="182.2" y1="228.1" x2="182.2" y2="162.1" class="stem" />
+              <circle cx="182.2" cy="162.1" r="2.4" class="stem-tip" />
+              <line x1="287.8" y1="228.1" x2="287.8" y2="162.1" class="stem" />
+              <circle cx="287.8" cy="162.1" r="2.4" class="stem-tip" />
+              <line x1="235.0" y1="258.6" x2="235.0" y2="208.8" class="stem" />
+              <circle cx="235.0" cy="208.8" r="2.4" class="stem-tip" />
+              <polyline
+                points="235.0,24.1 224.4,24.0 213.9,24.6 203.3,25.8 192.8,27.7 182.2,30.2 171.7,33.3 161.1,37.2 150.6,41.6 140.1,46.7 129.5,52.5 119.0,58.9 108.4,66.0 97.8,73.7 87.3,82.1 76.8,91.1 66.2,100.7 55.6,111.1 45.1,122.0 34.5,133.6 24.0,145.9"
+                class="dome-mesh" />
+              <polyline
+                points="340.5,52.5 329.9,52.4 319.4,53.0 308.9,54.2 298.3,56.1 287.8,58.6 277.2,61.8 266.6,65.6 256.1,70.0 245.5,75.2 235.0,80.9 224.4,87.3 213.9,94.4 203.3,102.1 192.8,110.5 182.2,119.5 171.7,129.2 161.1,139.5 150.6,150.5 140.0,162.1 129.5,174.3"
+                class="dome-mesh" />
+              <polyline
+                points="446.0,145.9 435.4,145.8 424.9,146.4 414.3,147.6 403.8,149.5 393.2,152.0 382.7,155.2 372.1,159.0 361.6,163.4 351.0,168.6 340.5,174.3 329.9,180.7 319.4,187.8 308.9,195.5 298.3,203.9 287.8,212.9 277.2,222.6 266.6,232.9 256.1,243.8 245.5,255.5 235.0,267.7"
+                class="dome-mesh" />
+              <polyline
+                points="235.0,24.1 245.5,24.0 256.1,24.6 266.6,25.8 277.2,27.7 287.8,30.2 298.3,33.3 308.9,37.2 319.4,41.6 329.9,46.7 340.5,52.5 351.0,58.9 361.6,66.0 372.1,73.7 382.7,82.1 393.2,91.1 403.8,100.7 414.3,111.1 424.9,122.0 435.4,133.6 446.0,145.9"
+                class="dome-mesh" />
+              <polyline
+                points="129.5,52.5 140.1,52.4 150.6,53.0 161.2,54.2 171.7,56.1 182.2,58.6 192.8,61.8 203.3,65.6 213.9,70.0 224.4,75.2 235.0,80.9 245.6,87.3 256.1,94.4 266.6,102.1 277.2,110.5 287.8,119.5 298.3,129.2 308.9,139.5 319.4,150.5 329.9,162.1 340.5,174.3"
+                class="dome-mesh" />
+              <polyline
+                points="24.0,145.9 34.6,145.8 45.1,146.4 55.7,147.6 66.2,149.5 76.8,152.0 87.3,155.2 97.9,159.0 108.4,163.4 119.0,168.6 129.5,174.3 140.1,180.7 150.6,187.8 161.2,195.5 171.7,203.9 182.2,212.9 192.8,222.6 203.3,232.9 213.9,243.8 224.5,255.5 235.0,267.7"
+                class="dome-mesh" />
+              <text x="235" y="14" text-anchor="middle" class="iso-label">z = f(x, y)</text>
+              <text x="235" y="307" text-anchor="middle" class="iso-label">Base R</text>
+            </svg>
+            <figcaption>Cada punto de la base tiene una columna de altura <em>f(x,y)</em>. El volumen es la suma de
+              todas: <em>V</em> = ∬<sub><em>R</em></sub> <em>f</em> d<em>A</em>.</figcaption>
+          </figure>
+
+          <div class="volume-elements">
+            <article class="volume-element reveal">
+              <span class="volume-element__index">Base</span>
+              <h3>La región <em>R</em></h3>
+              <p>El “suelo” o base. Sus límites son los de la integral doble; representa el ancho y la profundidad.</p>
+            </article>
+            <article class="volume-element volume-element--sand reveal">
+              <span class="volume-element__index">Techo</span>
+              <h3>La superficie <em>z = f(x,y)</em></h3>
+              <p>Un número solo da un techo plano; expresiones como <em>x² + y²</em> dan un techo curvo.</p>
+            </article>
+            <article class="volume-element volume-element--dark reveal">
+              <span class="volume-element__index">Resultado</span>
+              <h3>El volumen</h3>
+              <p>El número final: la cantidad total de espacio bajo la superficie.</p>
+            </article>
+          </div>
+        </div>
+
+        <p class="area-caption reveal"><span class="caption-rule"></span>Interpretación geométrica válida cuando
+          <em>f(x,y) ≥ 0</em> sobre la región.</p>
+      </div>
+    </section>
+
+    <section class="chapter chapter--slate" id="rectangulares" aria-labelledby="rect-title">
+      <div class="chapter__inner">
+        <header class="chapter-heading chapter-heading--light reveal">
+          <p class="eyebrow eyebrow--light"><span class="chapter-number">12</span> Coordenadas rectangulares</p>
+          <h2 id="rect-title">Sumar columnas<br>en dos órdenes.</h2>
+          <p class="chapter-heading__intro">El volumen se calcula como integral iterada. Elegir el orden es elegir cómo
+            recorrer la base.</p>
+        </header>
+
+        <div class="order-grid">
+          <article class="order-card order-card--dark reveal">
+            <div class="order-card__label"><span>TIPO I</span><span>d<em>y</em> → d<em>x</em></span></div>
+            <h3>Primero en <em>y</em>, después en <em>x</em>.</h3>
+            <p class="order-card__aside">La integral interna toma límites en función de <em>x</em>.</p>
+            <div class="order-card__math">
+              <p><span class="math-symbol">∫</span><sub><em>a</em></sub><sup><em>b</em></sup><span
+                  class="math-symbol">∫</span><sub><em>g</em>₁(<em>x</em>)</sub><sup><em>g</em>₂(<em>x</em>)</sup>
+                <em>f</em>(<em>x</em>,<em>y</em>) d<em>y</em> d<em>x</em></p>
+            </div>
+          </article>
+          <article class="order-card order-card--light reveal">
+            <div class="order-card__label"><span>TIPO II</span><span>d<em>x</em> → d<em>y</em></span></div>
+            <h3>Primero en <em>x</em>, después en <em>y</em>.</h3>
+            <p class="order-card__aside">La integral interna toma límites en función de <em>y</em>.</p>
+            <div class="order-card__math">
+              <p><span class="math-symbol">∫</span><sub><em>c</em></sub><sup><em>d</em></sup><span
+                  class="math-symbol">∫</span><sub><em>h</em>₁(<em>y</em>)</sub><sup><em>h</em>₂(<em>y</em>)</sup>
+                <em>f</em>(<em>x</em>,<em>y</em>) d<em>x</em> d<em>y</em></p>
+            </div>
+          </article>
+        </div>
+
+        <div class="pairing reveal">
+          <div class="pairing__item">
+            <span class="step-label">INTEGRAL INTERNA</span>
+            <p>Sus límites dependen de la <strong>variable exterior</strong>: son las curvas de entrada y de salida.
+            </p>
+          </div>
+          <div class="pairing__item">
+            <span class="step-label">INTEGRAL EXTERNA</span>
+            <p>Sus límites son <strong>constantes</strong>: el rango total de la región en esa variable.</p>
+          </div>
+        </div>
+
+        <p class="note-dark reveal"><span class="caption-rule"></span>Si la base es un rectángulo
+          <em>[a,b] × [c,d]</em>, los límites internos también son constantes y cada diferencial va con su variable.
+        </p>
+      </div>
+    </section>
+
+    <section class="chapter chapter--sand" id="polares" aria-labelledby="polares-title">
+      <div class="chapter__inner">
+        <header class="chapter-heading reveal">
+          <p class="eyebrow"><span class="chapter-number">13</span> Coordenadas polares</p>
+          <h2 id="polares-title">Cuando la base<br>es circular.</h2>
+          <p class="chapter-heading__intro">Para bases circulares conviene describir la región con radio <em>r</em> y
+            ángulo <em>θ</em>. El elemento de área cambia.</p>
+        </header>
+
+        <div class="polar-layout">
+          <div class="polar-copy">
+            <article class="polar-formula-card reveal">
+              <span class="meta-label">LA INTEGRAL EN POLARES</span>
+              <div class="formula formula--compact"
+                aria-label="Integral de alfa a beta, integral de r uno a r dos, de f de r coseno teta coma r seno teta por r, d r d teta">
+                <span class="int"><span class="lim">β</span><span class="sym">∫</span><span class="lim">α</span></span>
+                <span class="int"><span class="lim"><em>r</em>₂</span><span class="sym">∫</span><span
+                    class="lim"><em>r</em>₁</span></span>
+                <span class="mrow"><em>f</em>(<em>r</em> cos <em>θ</em>, <em>r</em> sin <em>θ</em>) ·
+                  <em>r</em></span>
+                <span class="d">d<em>r</em></span><span class="d">d<em>θ</em></span>
+              </div>
+            </article>
+
+            <dl class="polar-legend">
+              <div class="reveal">
+                <dt><em>θ</em> externa</dt>
+                <dd><strong>Ángulo de giro.</strong> α es el ángulo inicial y β el final.</dd>
+              </div>
+              <div class="reveal">
+                <dt><em>r</em> interna</dt>
+                <dd><strong>Radio.</strong> <em>r</em>₁ es el radio interior y <em>r</em>₂ el exterior.</dd>
+              </div>
+              <div class="reveal">
+                <dt><em>r dr dθ</em></dt>
+                <dd><strong>Es dA.</strong> La <em>r</em> es obligatoria: compensa que los anillos se hacen más grandes
+                  con el radio.</dd>
+              </div>
+            </dl>
+          </div>
+
+          <div class="polar-figures">
+            <figure class="mini-plot reveal">
+              <svg viewBox="0 0 300 300" role="img"
+                aria-label="Disco unitario visto desde arriba, con anillos concéntricos de radio r, rayos por ángulo teta y un elemento de área destacado entre dos radios">
+                <line x1="150" y1="150" x2="265" y2="150" class="polar-ray" />
+                <line x1="150" y1="150" x2="231.3" y2="68.7" class="polar-ray" />
+                <line x1="150" y1="150" x2="150" y2="35" class="polar-ray" />
+                <line x1="150" y1="150" x2="68.7" y2="68.7" class="polar-ray" />
+                <line x1="150" y1="150" x2="35" y2="150" class="polar-ray" />
+                <line x1="150" y1="150" x2="68.7" y2="231.3" class="polar-ray" />
+                <line x1="150" y1="150" x2="150" y2="265" class="polar-ray" />
+                <line x1="150" y1="150" x2="231.3" y2="231.3" class="polar-ray" />
+                <circle cx="150" cy="150" r="28.8" class="polar-circle" />
+                <circle cx="150" cy="150" r="57.5" class="polar-circle" />
+                <circle cx="150" cy="150" r="86.2" class="polar-circle" />
+                <circle cx="150" cy="150" r="115" class="polar-ring" />
+                <path
+                  d="M224.7,106.9 L222.3,103.0 L219.8,99.3 L217.0,95.7 L214.1,92.3 L211.0,89.0 L207.7,85.9 L204.3,83.0 L200.7,80.2 L197.0,77.7 L193.1,75.3 L178.8,100.2 L181.3,101.8 L183.8,103.5 L186.2,105.3 L188.5,107.3 L190.7,109.3 L192.7,111.5 L194.7,113.8 L196.5,116.2 L198.2,118.7 L199.8,121.2 Z"
+                  class="polar-elem" />
+                <polyline points="190.3,150 189.6,143 187.8,136.2 184.9,129.9" class="polar-theta-arc" />
+                <circle cx="150" cy="150" r="3" class="plot-point" />
+                <line x1="150" y1="70" x2="198" y2="96" class="polar-leader" />
+                <text x="150" y="66" text-anchor="middle" class="polar-svg-label">dA = r dr dθ</text>
+                <text x="160" y="40" class="polar-svg-label">r = 1</text>
+                <text x="206" y="168" class="polar-svg-label">r</text>
+                <text x="200" y="132" class="polar-svg-label">θ</text>
+                <text x="272" y="154" class="polar-svg-tick">x</text>
+                <text x="158" y="42" class="polar-svg-tick">y</text>
+              </svg>
+              <figcaption>La base circular se barre con anillos de radio <em>r</em> y ángulos <em>θ</em>.</figcaption>
+            </figure>
+
+            <figure class="mini-plot reveal">
+              <svg viewBox="0 0 300 250" role="img"
+                aria-label="Perfil de la cúpula z igual a cuatro menos r al cuadrado: altura cuatro en el centro y tres en el borde">
+                <line x1="30" y1="220" x2="278" y2="220" class="cs-axis" />
+                <line x1="160" y1="230" x2="160" y2="52" class="cs-axis--mid" />
+                <path
+                  d="M50,100 L61,92.4 L72,85.6 L83,79.6 L94,74.4 L105,70 L116,66.4 L127,63.6 L138,61.6 L149,60.4 L160,60 L171,60.4 L182,61.6 L193,63.6 L204,66.4 L215,70 L226,74.4 L237,79.6 L248,85.6 L259,92.4 L270,100 L270,220 L50,220 Z"
+                  class="cs-fill" />
+                <path
+                  d="M50,100 L61,92.4 L72,85.6 L83,79.6 L94,74.4 L105,70 L116,66.4 L127,63.6 L138,61.6 L149,60.4 L160,60 L171,60.4 L182,61.6 L193,63.6 L204,66.4 L215,70 L226,74.4 L237,79.6 L248,85.6 L259,92.4 L270,100"
+                  class="cs-curve" />
+                <circle cx="160" cy="60" r="3" class="plot-point" />
+                <text x="160" y="46" text-anchor="middle" class="cs-label">z = 4 − r²</text>
+                <text x="276" y="238" class="cs-tick">r</text>
+                <text x="168" y="66" class="cs-tick">z = 4</text>
+                <text x="270" y="112" class="cs-tick">z = 3</text>
+              </svg>
+              <figcaption>El techo <em>z = 4 − r²</em> es una cúpula: altura 4 en el centro y 3 en el borde.
+              </figcaption>
+            </figure>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="chapter chapter--ivory" id="practica-volumen" aria-labelledby="practica-title">
+      <div class="chapter__inner">
+        <header class="chapter-heading reveal">
+          <p class="eyebrow"><span class="chapter-number">14</span> Práctica</p>
+          <h2 id="practica-title">Dos bases,<br>dos volúmenes.</h2>
+          <p class="chapter-heading__intro">Uno con coordenadas rectangulares sobre un rectángulo y otro con polares
+            sobre un disco.</p>
+        </header>
+
+        <div class="practice-grid">
+          <article class="practice-card reveal">
+            <div class="practice-card__top"><span>PROBLEMA 1 · RECTANGULAR</span><span>d<em>x</em> d<em>y</em></span>
+            </div>
+            <p class="practice-card__statement">Volumen bajo <em>f(x,y) = 2x + y</em> sobre <em>R</em>: 0 ≤ <em>x</em> ≤
+              1, 0 ≤ <em>y</em> ≤ 2.</p>
+            <figure class="mini-plot">
+              <svg viewBox="0 0 150 160" role="img"
+                aria-label="Región rectangular de x de cero a uno y y de cero a dos, con una franja vertical">
+                <line x1="20" y1="130" x2="112" y2="130" class="plot-axis" />
+                <line x1="30" y1="140" x2="30" y2="8" class="plot-axis" />
+                <rect x="30" y="20" width="70" height="110" class="plot-region" />
+                <line x1="72" y1="130" x2="72" y2="20" class="plot-strip" />
+                <rect x="30" y="20" width="70" height="110" fill="none" class="plot-boundary" />
+                <text x="112" y="146" class="plot-axis-label">x</text>
+                <text x="22" y="14" class="plot-axis-label">y</text>
+                <text x="100" y="146" text-anchor="middle" class="plot-point-label">1</text>
+                <text x="20" y="24" class="plot-point-label">2</text>
+                <text x="30" y="146" text-anchor="middle" class="plot-point-label">0</text>
+              </svg>
+            </figure>
+            <div class="practice-card__math">
+              <p><span class="math-symbol">∫</span><sub>0</sub><sup>2</sup><span
+                  class="math-symbol">∫</span><sub>0</sub><sup>1</sup> (2<em>x</em> + <em>y</em>) d<em>x</em>
+                d<em>y</em></p>
+              <p class="practice-card__sub">Interna: ∫₀¹ (2<em>x</em> + <em>y</em>) d<em>x</em> = [<em>x</em>² +
+                <em>yx</em>]₀¹ = 1 + <em>y</em></p>
+              <p class="practice-card__sub">Externa: ∫₀² (1 + <em>y</em>) d<em>y</em> = [<em>y</em> +
+                <em>y</em>²/2]₀² = 2 + 2</p>
+              <p class="practice-card__result">V = <strong>4</strong> unidades cúbicas</p>
+            </div>
+          </article>
+
+          <article class="practice-card practice-card--dark reveal">
+            <div class="practice-card__top"><span>PROBLEMA 2 · POLAR</span><span><em>r</em> d<em>r</em> d<em>θ</em></span>
+            </div>
+            <p class="practice-card__statement">Volumen bajo <em>z = 4 − r²</em> sobre el disco <em>r</em> ≤ 1.</p>
+            <figure class="mini-plot">
+              <svg viewBox="0 0 150 160" role="img"
+                aria-label="Disco unitario con radio r igual a uno, recorrido con anillos de radio r y ángulo teta">
+                <circle cx="75" cy="85" r="55" class="plot-region" />
+                <circle cx="75" cy="85" r="55" fill="none" class="plot-boundary" />
+                <circle cx="75" cy="85" r="27.5" fill="none" class="polar-circle" />
+                <line x1="75" y1="85" x2="120" y2="53.5" class="plot-boundary" />
+                <circle cx="75" cy="85" r="3" class="plot-point" />
+                <text x="86" y="30" class="plot-boundary-label">r = 1</text>
+                <text x="102" y="76" class="plot-boundary-label">r</text>
+              </svg>
+            </figure>
+            <div class="practice-card__math">
+              <p><span class="math-symbol">∫</span><sub>0</sub><sup>2π</sup><span
+                  class="math-symbol">∫</span><sub>0</sub><sup>1</sup> (4 − <em>r</em>²) <em>r</em> d<em>r</em>
+                d<em>θ</em></p>
+              <p class="practice-card__sub">Expandir: (4 − <em>r</em>²)<em>r</em> = 4<em>r</em> − <em>r</em>³</p>
+              <p class="practice-card__sub">Interna: ∫₀¹ (4<em>r</em> − <em>r</em>³) d<em>r</em> = [2<em>r</em>² −
+                <em>r</em>⁴/4]₀¹ = 2 − 1/4 = 7/4</p>
+              <p class="practice-card__sub">Externa: ∫₀²π (7/4) d<em>θ</em> = (7/4)(2π)</p>
+              <p class="practice-card__result">V = <strong>7π/2</strong> unidades cúbicas</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="chapter chapter--ink chapter--closing" id="cierre-volumen" aria-labelledby="cierre-volumen-title">
+      <div class="chapter__inner">
+        <header class="chapter-heading chapter-heading--light reveal">
+          <p class="eyebrow eyebrow--light"><span class="chapter-number">15</span> Síntesis</p>
+          <h2 id="cierre-volumen-title">El volumen<br>bajo la superficie.</h2>
+        </header>
+
+        <div class="takeaways">
+          <article class="takeaway reveal"><span>01</span>
+            <h3>Idea</h3>
+            <p>Una integral doble suma columnas de altura <em>f(x,y)</em> sobre la base: es el volumen bajo la
+              superficie.</p>
+          </article>
+          <article class="takeaway takeaway--sand reveal"><span>02</span>
+            <h3>Coordenadas</h3>
+            <p>Rectangulares para bases rectangulares; polares, con d<em>A</em> = <em>r</em> d<em>r</em> d<em>θ</em>,
+              para bases circulares.</p>
+          </article>
+          <article class="takeaway takeaway--dark reveal"><span>03</span>
+            <h3>Práctica</h3>
+            <p>Sobre el rectángulo, V = 4; sobre el disco, V = 7π/2. La cúpula da un valor coherente con su altura.
+            </p>
+          </article>
+        </div>
+
+        <footer class="next-topic reveal">
+          <div><span class="meta-label">CIERRE</span>
+            <h3>UNIAJC · Cálculo</h3>
+          </div>
+          <p>Segundo corte<br>Semana 9</p>
           <a href="#inicio" class="back-to-top" aria-label="Volver al inicio">↑</a>
         </footer>
       </div>
