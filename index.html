@@ -218,8 +218,8 @@
             </div>
           </article>
         </div>
-        <p class="fubini-caption reveal"><span class="caption-rule"></span>Dos recorridos sobre el mismo rectángulo. Un
-          mismo resultado.</p>
+        <p class="fubini-caption reveal"><span class="caption-rule"></span><span class="caption-text">Dos recorridos sobre el mismo rectángulo. Un
+          mismo resultado.</span></p>
       </div>
     </section>
 
@@ -387,9 +387,9 @@
           </div>
         </div>
 
-        <p class="area-caption reveal"><span class="caption-rule"></span>La integral doble se evalúa como integral
+        <p class="area-caption reveal"><span class="caption-rule"></span><span class="caption-text">La integral doble se evalúa como integral
           iterada. Lo difícil casi siempre es plantear los límites, y para eso clasificamos las regiones en tipo I y
-          tipo II.</p>
+          tipo II.</span></p>
       </div>
     </section>
 
@@ -783,8 +783,8 @@
           </div>
         </div>
 
-        <p class="area-caption reveal"><span class="caption-rule"></span>Interpretación geométrica válida cuando
-          <em>f(x,y) ≥ 0</em> sobre la región.</p>
+        <p class="area-caption reveal"><span class="caption-rule"></span><span class="caption-text">Interpretación geométrica válida cuando
+          <em>f(x,y) ≥ 0</em> sobre la región.</span></p>
       </div>
     </section>
 
@@ -832,9 +832,8 @@
           </div>
         </div>
 
-        <p class="note-dark reveal"><span class="caption-rule"></span>Si la base es un rectángulo
-          <em>[a,b] × [c,d]</em>, los límites internos también son constantes y cada diferencial va con su variable.
-        </p>
+        <p class="note-dark reveal"><span class="caption-rule"></span><span class="caption-text">Si la base es un rectángulo
+          <em>[a,b] × [c,d]</em>, los límites internos también son constantes y cada diferencial va con su variable.</span></p>
       </div>
     </section>
 
@@ -1006,13 +1005,281 @@
             </div>
           </article>
         </div>
+
+        <footer class="next-topic reveal">
+          <div>
+            <span class="meta-label">A CONTINUACIÓN</span>
+            <h3>Angie Paulette</h3>
+          </div>
+          <a class="next-topic__link" href="#elementos-volumen">Integral doble con base<br>al volumen <span
+              aria-hidden="true">→</span></a>
+          <a href="#inicio" class="back-to-top" aria-label="Volver al inicio">↑</a>
+        </footer>
+      </div>
+    </section>
+
+    <div class="part-band part-band--practica">
+      <div class="part-band__inner">
+        <span class="part-band__label">Continuación · Práctica</span>
+        <p class="part-band__title">Integral doble con<br>base al volumen</p>
+        <span class="part-band__author">Angie Paulette</span>
+      </div>
+    </div>
+
+    <section class="chapter chapter--slate" id="elementos-volumen" aria-labelledby="elementos-title">
+      <div class="chapter__inner">
+        <header class="chapter-heading chapter-heading--light reveal">
+          <p class="eyebrow eyebrow--light"><span class="chapter-number">15</span> Práctica · Los tres elementos</p>
+          <h2 id="elementos-title">Base, techo<br>y resultado.</h2>
+          <p class="chapter-heading__intro">Una integral doble que mide volumen siempre tiene las mismas tres piezas.
+            Antes de integrar, identifícalas.</p>
+        </header>
+
+        <div class="criteria-grid">
+          <article class="criteria-card reveal">
+            <span class="criteria-card__label">Región <em>R</em> · el suelo</span>
+            <ul class="criteria-card__list">
+              <li>Son los <strong>límites numéricos</strong> de la integral doble (∬).</li>
+              <li>Representan el <strong>ancho</strong> y la <strong>profundidad</strong> de la base de la figura.</li>
+            </ul>
+          </article>
+          <article class="criteria-card criteria-card--sand reveal">
+            <span class="criteria-card__label">Techo · <em>z</em> = <em>f</em>(<em>x</em>, <em>y</em>)</span>
+            <ul class="criteria-card__list">
+              <li>La <strong>ecuación</strong> que va dentro de las integrales: dicta la <strong>altura</strong>.</li>
+              <li>Si es un <strong>número solo</strong>: techo <strong>plano</strong>.</li>
+              <li>Si trae <strong>variables</strong> (<em>x</em>² + <em>y</em>²): techo <strong>curvo</strong>.</li>
+            </ul>
+          </article>
+          <article class="criteria-card reveal">
+            <span class="criteria-card__label">Resultado · el espacio</span>
+            <ul class="criteria-card__list">
+              <li>Al aplicar la integral doble se obtiene un <strong>número final</strong>.</li>
+              <li>Ese número es la <strong>cantidad total de espacio</strong> bajo la superficie.</li>
+            </ul>
+          </article>
+        </div>
+
+        <div class="volume-equation reveal">
+          <div class="formula formula--display"
+            aria-label="Integral doble sobre la región R de f de x coma y, dA, igual a integral de c a d, integral de a a b, f de x coma y, diferencial x, diferencial y">
+            <span class="dbl">∬<sub><em>R</em></sub></span>
+            <span class="mrow"><em>f</em>(<em>x</em>, <em>y</em>)</span>
+            <span class="d">d<em>A</em></span>
+            <span class="op">=</span>
+            <span class="int"><span class="lim"><em>d</em></span><span class="sym">∫</span><span class="lim"><em>c</em></span></span>
+            <span class="int"><span class="lim"><em>b</em></span><span class="sym">∫</span><span class="lim"><em>a</em></span></span>
+            <span class="mrow"><em>f</em>(<em>x</em>, <em>y</em>)</span>
+            <span class="d">d<em>x</em></span>
+            <span class="d">d<em>y</em></span>
+          </div>
+          <p class="volume-equation__note">La doble integral sobre la región <em>R</em> no cambia de significado: se
+            escribe como una integral iterada. Los límites numéricos (<em>a</em>, <em>b</em>, <em>c</em>,
+            <em>d</em>) son la <strong>región</strong>; la función que viaja dentro es el <strong>techo</strong>.</p>
+        </div>
+
+        <div class="sweep-grid">
+          <article class="sweep-card reveal">
+            <div class="sweep-card__label"><span>BARRIDO</span><span>d<em>x</em> d<em>y</em></span></div>
+            <h3>Franjas verticales.</h3>
+            <p>La integral interna recorre <em>x</em> y la externa <em>y</em>. La región se corta en franjas
+              verticales y, al subir cada franja hasta el techo, se obtiene un <strong>prisma</strong> de altura
+              <em>f</em>(<em>x</em>, <em>y</em>).</p>
+          </article>
+          <article class="sweep-card reveal">
+            <div class="sweep-card__label"><span>BARRIDO</span><span>d<em>y</em> d<em>x</em></span></div>
+            <h3>Franjas horizontales.</h3>
+            <p>La integral interna recorre <em>y</em> y la externa <em>x</em>. Las franjas ahora son horizontales; los
+              prismas se arman igual, pero en otro orden.</p>
+          </article>
+        </div>
+
+        <p class="note-dark reveal"><span class="caption-rule"></span><span class="caption-text">En una base <strong>rectangular</strong> los dos
+          barridos dan el mismo número (Fubini). En una base <strong>curva</strong>, elegí el que no te obligue a partir
+          la región.</span></p>
+
+        <figure class="ceiling-compare reveal">
+          <div class="ceiling-compare__row">
+            <div class="ceiling-plot">
+              <div class="ceiling-plot__top"><span>TECHO PLANO</span><span><em>z</em> = 5</span></div>
+              <svg viewBox="0 0 300 220" role="img"
+                aria-label="Vista de perfil de la base con un techo plano: una línea horizontal a altura constante sobre la región R, con columnas de igual altura">
+                <line x1="40" y1="170" x2="260" y2="170" class="ceiling-edge" />
+<line x1="40" y1="100" x2="260" y2="100" class="ceiling-roof" />
+<line x1="40" y1="100" x2="40" y2="170" class="ceiling-hatch" />
+<line x1="62" y1="100" x2="62" y2="170" class="ceiling-hatch" />
+<line x1="84" y1="100" x2="84" y2="170" class="ceiling-hatch" />
+<line x1="106" y1="100" x2="106" y2="170" class="ceiling-hatch" />
+<line x1="128" y1="100" x2="128" y2="170" class="ceiling-hatch" />
+<line x1="150" y1="100" x2="150" y2="170" class="ceiling-hatch" />
+<line x1="172" y1="100" x2="172" y2="170" class="ceiling-hatch" />
+<line x1="194" y1="100" x2="194" y2="170" class="ceiling-hatch" />
+<line x1="216" y1="100" x2="216" y2="170" class="ceiling-hatch" />
+<line x1="238" y1="100" x2="238" y2="170" class="ceiling-hatch" />
+<line x1="260" y1="100" x2="260" y2="170" class="ceiling-hatch" />
+<line x1="40" y1="100" x2="40" y2="170" class="ceiling-edge" />
+<line x1="260" y1="100" x2="260" y2="170" class="ceiling-edge" />
+<polygon points="40,170 260,170 260,190 40,190" class="ceiling-base" />
+<text x="150" y="208" text-anchor="middle" class="iso-label">Región R</text>
+<text x="44" y="90" class="iso-label">z = 5</text>
+              </svg>
+            </div>
+            <div class="ceiling-plot">
+              <div class="ceiling-plot__top"><span>TECHO CURVO</span><span><em>z</em> = 4 − <em>x</em>² − <em>y</em>²</span></div>
+              <svg viewBox="0 0 300 220" role="img"
+                aria-label="Vista de perfil de la base con un techo curvo: una cúpula sobre la región R, con columnas que crecen hacia el centro y menguan en los bordes">
+                <line x1="40" y1="170" x2="260" y2="170" class="ceiling-edge" />
+<line x1="40" y1="130.1" x2="40" y2="170" class="ceiling-hatch" />
+<line x1="51" y1="117.7" x2="51" y2="170" class="ceiling-hatch" />
+<line x1="62" y1="106.7" x2="62" y2="170" class="ceiling-hatch" />
+<line x1="73" y1="96.9" x2="73" y2="170" class="ceiling-hatch" />
+<line x1="84" y1="88.4" x2="84" y2="170" class="ceiling-hatch" />
+<line x1="95" y1="81.3" x2="95" y2="170" class="ceiling-hatch" />
+<line x1="106" y1="75.4" x2="106" y2="170" class="ceiling-hatch" />
+<line x1="117" y1="70.9" x2="117" y2="170" class="ceiling-hatch" />
+<line x1="128" y1="67.6" x2="128" y2="170" class="ceiling-hatch" />
+<line x1="139" y1="65.7" x2="139" y2="170" class="ceiling-hatch" />
+<line x1="150" y1="65" x2="150" y2="170" class="ceiling-hatch" />
+<line x1="161" y1="65.7" x2="161" y2="170" class="ceiling-hatch" />
+<line x1="172" y1="67.6" x2="172" y2="170" class="ceiling-hatch" />
+<line x1="183" y1="70.9" x2="183" y2="170" class="ceiling-hatch" />
+<line x1="194" y1="75.4" x2="194" y2="170" class="ceiling-hatch" />
+<line x1="205" y1="81.3" x2="205" y2="170" class="ceiling-hatch" />
+<line x1="216" y1="88.4" x2="216" y2="170" class="ceiling-hatch" />
+<line x1="227" y1="96.9" x2="227" y2="170" class="ceiling-hatch" />
+<line x1="238" y1="106.7" x2="238" y2="170" class="ceiling-hatch" />
+<line x1="249" y1="117.7" x2="249" y2="170" class="ceiling-hatch" />
+<line x1="260" y1="130.1" x2="260" y2="170" class="ceiling-hatch" />
+<polyline points="40,130.1 45.5,123.8 51,117.7 56.5,112 62,106.7 67.5,101.6 73,96.9 78.5,92.5 84,88.4 89.5,84.7 95,81.3 100.5,78.2 106,75.4 111.5,73 117,70.9 122.5,69.1 128,67.6 133.5,66.5 139,65.7 144.5,65.2 150,65 155.5,65.2 161,65.7 166.5,66.5 172,67.6 177.5,69.1 183,70.9 188.5,73 194,75.4 199.5,78.2 205,81.3 210.5,84.7 216,88.4 221.5,92.5 227,96.9 232.5,101.6 238,106.7 243.5,112 249,117.7 254.5,123.8 260,130.1" class="ceiling-roof" />
+<line x1="40" y1="130.1" x2="40" y2="170" class="ceiling-edge" />
+<line x1="260" y1="130.1" x2="260" y2="170" class="ceiling-edge" />
+<polygon points="40,170 260,170 260,190 40,190" class="ceiling-base" />
+<text x="150" y="208" text-anchor="middle" class="iso-label">Región R</text>
+<text x="150" y="52" text-anchor="middle" class="iso-label">z = 4 − x² − y²</text>
+              </svg>
+            </div>
+          </div>
+          <figcaption>Misma base, dos techos. Con un número solo la altura no cambia de punto en punto y la tapa es
+            un plano. Con variables la altura cambia y la tapa se curva.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="chapter chapter--sand" id="carpa-volumen" aria-labelledby="carpa-title">
+      <div class="chapter__inner">
+        <header class="chapter-heading reveal">
+          <p class="eyebrow"><span class="chapter-number">16</span> Práctica · Techo irregular</p>
+          <h2 id="carpa-title">La carpa: cuando<br>la base es redonda.</h2>
+          <p class="chapter-heading__intro">Si el techo es irregular y la base circular, la fórmula no cambia de
+            estructura: cambia la manera de describir la base, con radio y ángulo.</p>
+        </header>
+
+        <div class="polar-layout">
+          <div class="polar-copy">
+            <article class="polar-formula-card reveal">
+              <span class="meta-label">LA FÓRMULA EN POLARES</span>
+              <div class="formula formula--compact"
+                aria-label="Integral de alfa a beta, integral de r uno a r dos, de f de r coseno teta coma r seno teta por r, diferencial r, diferencial teta">
+                <span class="int"><span class="lim">β</span><span class="sym">∫</span><span class="lim">α</span></span>
+                <span class="mark">1</span>
+                <span class="int"><span class="lim"><em>r</em>₂</span><span class="sym">∫</span><span class="lim"><em>r</em>₁</span></span>
+                <span class="mark">2</span>
+                <span class="mrow"><em>f</em>(<em>r</em> cos <em>θ</em>, <em>r</em> sin <em>θ</em>)</span>
+                <span class="mark">3</span>
+                <span class="mrow">· <em>r</em></span>
+                <span class="d">d<em>r</em></span><span class="d">d<em>θ</em></span>
+                <span class="mark">4</span>
+              </div>
+            </article>
+
+            <dl class="polar-legend">
+              <div class="reveal">
+                <dt><span class="mark">1</span><span>α → β</span></dt>
+                <dd><strong>Integral externa: el giro.</strong> <em>α</em> es el ángulo inicial donde empieza el barrido
+                  y <em>β</em> el ángulo final donde termina.</dd>
+              </div>
+              <div class="reveal">
+                <dt><span class="mark">2</span><span><em>r</em>₁ → <em>r</em>₂</span></dt>
+                <dd><strong>Integral interna: el radio.</strong> <em>r</em>₁ es el radio interior de la base y
+                  <em>r</em>₂ el radio exterior.</dd>
+              </div>
+              <div class="reveal">
+                <dt><span class="mark">3</span><span><em>f</em>(<em>r</em> cos <em>θ</em>, <em>r</em> sin <em>θ</em>)</span></dt>
+                <dd><strong>El techo.</strong> Es la misma <em>z</em> = <em>f</em>(<em>x</em>, <em>y</em>) escrita de otra
+                  forma, con <em>x</em> = <em>r</em> cos <em>θ</em> e <em>y</em> = <em>r</em> sin <em>θ</em>.</dd>
+              </div>
+              <div class="reveal">
+                <dt><span class="mark">4</span><span><em>r</em> d<em>r</em> d<em>θ</em></span></dt>
+                <dd><strong>Es dA.</strong> La <em>r</em> es obligatoria: un anillo de radio <em>r</em> es <em>r</em>
+                  veces más grande que uno de radio 1, y esa deformación hay que compensarla.</dd>
+              </div>
+            </dl>
+          </div>
+
+          <div class="polar-figures">
+            <figure class="mini-plot reveal">
+              <svg viewBox="0 0 265 250" role="img"
+                aria-label="Sector anular visto desde arriba: entre el radio interior r uno y el radio exterior r dos, y entre los ángulos alfa y beta, con un elemento de área marcado en un anillo de grosor dr y arco r d teta">
+                <path d="M 233.8,108 L 232.7,105.2 L 231.4,102.4 L 230,99.6 L 228.6,96.9 L 227.1,94.2 L 225.5,91.6 L 223.9,89 L 222.2,86.4 L 220.4,83.9 L 218.6,81.4 L 216.6,79 L 214.7,76.7 L 212.6,74.4 L 210.5,72.1 L 208.3,70 L 206.1,67.8 L 203.8,65.8 L 201.5,63.8 L 199.1,61.8 L 196.6,60 L 194.1,58.2 L 191.6,56.5 L 189,54.8 L 186.4,53.2 L 183.7,51.7 L 181,50.3 L 178.2,48.9 L 175.4,47.6 L 172.6,46.4 L 169.7,45.3 L 166.8,44.2 L 163.9,43.3 L 161,42.4 L 158,41.6 L 155,40.8 L 152,40.2 L 149,39.6 L 145.9,39.1 L 142.9,38.7 L 139.8,38.4 L 136.7,38.2 L 133.7,38.1 L 130.6,38 L 127.5,38 L 124.4,38.1 L 121.4,38.3 L 118.3,38.6 L 125.2,104.3 L 126.5,104.1 L 127.7,104.1 L 129,104 L 130.2,104 L 131.5,104 L 132.8,104.1 L 134,104.2 L 135.3,104.3 L 136.5,104.5 L 137.8,104.7 L 139,104.9 L 140.3,105.2 L 141.5,105.5 L 142.7,105.8 L 143.9,106.2 L 145.1,106.6 L 146.3,107 L 147.5,107.5 L 148.6,107.9 L 149.8,108.5 L 150.9,109 L 152,109.6 L 153.1,110.2 L 154.2,110.9 L 155.3,111.6 L 156.3,112.3 L 157.4,113 L 158.4,113.8 L 159.4,114.6 L 160.3,115.4 L 161.3,116.3 L 162.2,117.1 L 163.1,118 L 163.9,118.9 L 164.8,119.9 L 165.6,120.9 L 166.4,121.8 L 167.1,122.9 L 167.9,123.9 L 168.6,124.9 L 169.2,126 L 169.9,127.1 L 170.5,128.2 L 171.1,129.3 L 171.6,130.5 L 172.2,131.6 L 172.7,132.8 Z" class="carpa-base" />
+<polyline points="233.8,108 232.7,105.2 231.4,102.4 230,99.6 228.6,96.9 227.1,94.2 225.5,91.6 223.9,89 222.2,86.4 220.4,83.9 218.6,81.4 216.6,79 214.7,76.7 212.6,74.4 210.5,72.1 208.3,70 206.1,67.8 203.8,65.8 201.5,63.8 199.1,61.8 196.6,60 194.1,58.2 191.6,56.5 189,54.8 186.4,53.2 183.7,51.7 181,50.3 178.2,48.9 175.4,47.6 172.6,46.4 169.7,45.3 166.8,44.2 163.9,43.3 161,42.4 158,41.6 155,40.8 152,40.2 149,39.6 145.9,39.1 142.9,38.7 139.8,38.4 136.7,38.2 133.7,38.1 130.6,38 127.5,38 124.4,38.1 121.4,38.3 118.3,38.6" class="carpa-edge" />
+<polyline points="125.2,104.3 126.5,104.1 127.7,104.1 129,104 130.2,104 131.5,104 132.8,104.1 134,104.2 135.3,104.3 136.5,104.5 137.8,104.7 139,104.9 140.3,105.2 141.5,105.5 142.7,105.8 143.9,106.2 145.1,106.6 146.3,107 147.5,107.5 148.6,107.9 149.8,108.5 150.9,109 152,109.6 153.1,110.2 154.2,110.9 155.3,111.6 156.3,112.3 157.4,113 158.4,113.8 159.4,114.6 160.3,115.4 161.3,116.3 162.2,117.1 163.1,118 163.9,118.9 164.8,119.9 165.6,120.9 166.4,121.8 167.1,122.9 167.9,123.9 168.6,124.9 169.2,126 169.9,127.1 170.5,128.2 171.1,129.3 171.6,130.5 172.2,131.6 172.7,132.8" class="carpa-edge" />
+<line x1="172.7" y1="132.8" x2="233.8" y2="108" class="carpa-edge" />
+<line x1="125.2" y1="104.3" x2="118.3" y2="38.6" class="carpa-edge" />
+<line x1="154.1" y1="140.3" x2="246.8" y2="102.8" class="carpa-ray" />
+<line x1="127.3" y1="124.1" x2="116.8" y2="24.7" class="carpa-ray" />
+<path d="M 182.2,92 L 196.9,75.7 A 100,100 0 0 0 176.9,61.7 L 166.6,81.1 A 78,78 0 0 1 182.2,92 Z" class="ann-elem" />
+<line x1="182.2" y1="92" x2="196.9" y2="75.7" class="ann-mark" />
+<text x="206" y="101" class="ann-label">dr</text>
+<text x="198.4" y="60.1" class="ann-label">r dθ</text>
+<text x="168" y="146" text-anchor="middle" class="carpa-label">r₁</text>
+<text x="240" y="120" text-anchor="middle" class="carpa-label">r₂</text>
+<text x="250" y="94" text-anchor="middle" class="carpa-label">α</text>
+<text x="108" y="22" text-anchor="middle" class="carpa-label">β</text>
+<circle cx="130" cy="150" r="3" class="carpa-center" />
+<text x="137" y="155" class="carpa-label">O</text>
+              </svg>
+              <figcaption>La base circular descrita con radio y ángulo: <em>r</em>₁ a <em>r</em>₂ y <em>α</em> a
+                <em>β</em>. El elemento marcado es el <em>dA</em> que se integra.</figcaption>
+            </figure>
+
+            <figure class="mini-plot reveal">
+              <svg viewBox="0 0 285 230" role="img"
+                aria-label="Corte en el plano r z de la carpa: el techo z igual a cuatro menos r al cuadrado arranca en z igual a cuatro en el centro y baja hasta el suelo en r igual a dos, con la banda entre r medio y r uno destacada">
+                <path d="M 40,20 40,20 L 44.5,20.1 L 48.9,20.3 L 53.4,20.7 L 57.9,21.2 L 62.3,21.9 L 66.8,22.8 L 71.3,23.8 L 75.7,24.9 L 80.2,26.2 L 84.7,27.7 L 89.1,29.3 L 93.6,31.1 L 98.1,33 L 102.6,35.1 L 107,37.3 L 111.5,39.7 L 116,42.2 L 120.4,44.9 L 124.9,47.8 L 129.4,50.8 L 133.8,53.9 L 138.3,57.2 L 142.8,60.7 L 147.2,64.3 L 151.7,68.1 L 156.2,72 L 160.6,76.1 L 165.1,80.3 L 169.6,84.7 L 174,89.3 L 178.5,94 L 183,98.8 L 187.4,103.8 L 191.9,109 L 196.4,114.3 L 200.9,119.7 L 205.3,125.4 L 209.8,131.1 L 214.3,137.1 L 218.7,143.1 L 223.2,149.4 L 227.7,155.8 L 232.1,162.3 L 236.6,169 L 241.1,175.8 L 245.5,182.8 L 250,190 L 250,190 L 40,190 Z" class="carpa-fill" />
+<path d="M 92.5,30.6 92.5,30.6 L 94.7,31.5 L 96.9,32.5 L 99.1,33.4 L 101.2,34.5 L 103.4,35.5 L 105.6,36.6 L 107.8,37.7 L 110,38.9 L 112.2,40.1 L 114.4,41.3 L 116.6,42.6 L 118.8,43.9 L 120.9,45.3 L 123.1,46.6 L 125.3,48.1 L 127.5,49.5 L 129.7,51 L 131.9,52.5 L 134.1,54.1 L 136.2,55.7 L 138.4,57.4 L 140.6,59 L 142.8,60.7 L 145,62.5 L 145,190 L 92.5,190 Z" class="carpa-band" />
+<polyline points="40,20 44.5,20.1 48.9,20.3 53.4,20.7 57.9,21.2 62.3,21.9 66.8,22.8 71.3,23.8 75.7,24.9 80.2,26.2 84.7,27.7 89.1,29.3 93.6,31.1 98.1,33 102.6,35.1 107,37.3 111.5,39.7 116,42.2 120.4,44.9 124.9,47.8 129.4,50.8 133.8,53.9 138.3,57.2 142.8,60.7 147.2,64.3 151.7,68.1 156.2,72 160.6,76.1 165.1,80.3 169.6,84.7 174,89.3 178.5,94 183,98.8 187.4,103.8 191.9,109 196.4,114.3 200.9,119.7 205.3,125.4 209.8,131.1 214.3,137.1 218.7,143.1 223.2,149.4 227.7,155.8 232.1,162.3 236.6,169 241.1,175.8 245.5,182.8 250,190" class="carpa-curve" />
+<line x1="92.5" y1="30.6" x2="92.5" y2="190" class="carpa-guide" />
+<line x1="145" y1="62.5" x2="145" y2="190" class="carpa-guide" />
+<line x1="20" y1="190" x2="264" y2="190" class="carpa-axis" />
+<line x1="40" y1="200" x2="40" y2="12" class="carpa-axis" />
+<text x="268" y="195" class="carpa-label">r</text>
+<text x="24" y="16" class="carpa-label">z</text>
+<text x="178" y="82" class="carpa-label">z = 4 − r²</text>
+<text x="96" y="21" text-anchor="middle" class="carpa-label">r₁</text>
+<text x="149" y="52" text-anchor="middle" class="carpa-label">r₂</text>
+<text x="40" y="216" text-anchor="middle" class="carpa-tick">0</text>
+<text x="145" y="216" text-anchor="middle" class="carpa-tick">1</text>
+<text x="250" y="216" text-anchor="middle" class="carpa-tick">2</text>
+<text x="26" y="195" text-anchor="end" class="carpa-tick">0</text>
+<text x="26" y="110" text-anchor="end" class="carpa-tick">2</text>
+<text x="26" y="25" text-anchor="end" class="carpa-tick">4</text>
+              </svg>
+              <figcaption>El techo <em>z</em> = 4 − <em>r</em>² sobre la banda <em>r</em>₁ a <em>r</em>₂: entre el radio
+                interior y el exterior la altura va de 4 − <em>r</em>₁² a 4 − <em>r</em>₂².</figcaption>
+            </figure>
+          </div>
+        </div>
+
+        <p class="note-sand reveal"><span class="caption-rule"></span><span class="caption-text"><strong>Prueba de la <em>r</em>:</strong> sin
+          ella, el área del disco <em>r</em> ≤ 1 saldría ∫₀²π∫₀¹ 1 d<em>r</em> d<em>θ</em> = 2π, cuando el área
+          correcta es π. La <em>r</em> no es decorativa: es la que compensa el área circular.</span></p>
       </div>
     </section>
 
     <section class="chapter chapter--ink chapter--closing" id="cierre-volumen" aria-labelledby="cierre-volumen-title">
       <div class="chapter__inner">
         <header class="chapter-heading chapter-heading--light reveal">
-          <p class="eyebrow eyebrow--light"><span class="chapter-number">15</span> Síntesis</p>
+          <p class="eyebrow eyebrow--light"><span class="chapter-number">17</span> Síntesis</p>
           <h2 id="cierre-volumen-title">El volumen<br>bajo la superficie.</h2>
         </header>
 

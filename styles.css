@@ -551,7 +551,8 @@ em { font-style: italic; }
 .order-card--dark .order-card__result { color: var(--sand); }
 .order-card--light .order-card__result { color: #66583f; }
 .fubini-caption { display: flex; align-items: center; gap: 0.8rem; margin: 1.5rem 0 0; color: #716858; font-size: var(--text-sm); }
-.caption-rule { width: 2rem; height: 1px; background: #786d59; }
+.caption-rule { width: 2rem; height: 1px; background: #786d59; flex: 0 0 auto; }
+.caption-text { flex: 1 1 auto; min-width: 0; }
 
 /* Changing the region ----------------------------------------------------- */
 
@@ -599,10 +600,11 @@ em { font-style: italic; }
 .takeaways { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--grid-gap); }
 .takeaway { min-height: 220px; padding: clamp(1.4rem, 2.6vw, 2.3rem); background: #e9e4dc; }
 .takeaway > span { color: var(--stone); font-size: var(--text-xs); font-weight: 660; letter-spacing: 0.13em; }
-.takeaway h3 { margin: 2rem 0 0.5rem; font-size: clamp(1.65rem, 3vw, 2.8rem); font-weight: 580; letter-spacing: -0.06em; }
+.takeaway h3 { margin: 2rem 0 0.5rem; color: var(--ink); font-size: clamp(1.65rem, 3vw, 2.8rem); font-weight: 580; letter-spacing: -0.06em; }
 .takeaway p { max-width: 34ch; margin: 0; color: #68665f; font-size: var(--text-sm); }
 .takeaway--sand { background: var(--sand); }
 .takeaway--dark { color: var(--paper); background: var(--slate); }
+.takeaway--dark h3 { color: var(--paper); }
 .takeaway--dark > span { color: var(--sand); }
 .takeaway--dark p { color: var(--muted-dark); }
 
@@ -715,7 +717,7 @@ em { font-style: italic; }
 
 .criteria-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr)); gap: var(--grid-gap); margin-top: clamp(2.5rem, 5vw, 4rem); }
 
-.criteria-card { padding: clamp(1.3rem, 2.5vw, 2rem); background: #e9e4dc; }
+.criteria-card { padding: clamp(1.3rem, 2.5vw, 2rem); color: var(--ink); background: #e9e4dc; }
 .criteria-card--sand { background: var(--sand); }
 .criteria-card__label { color: #6d6a63; font-size: var(--text-xs); font-weight: 670; letter-spacing: 0.14em; text-transform: uppercase; }
 .criteria-card--sand .criteria-card__label { color: #716858; }
@@ -783,7 +785,8 @@ em { font-style: italic; }
 .volume-element__index { color: var(--stone); font-size: var(--text-xs); font-weight: 670; letter-spacing: 0.14em; text-transform: uppercase; }
 .volume-element--sand .volume-element__index { color: #716858; }
 .volume-element--dark .volume-element__index { color: var(--sand); }
-.volume-element h3 { margin: 1.1rem 0 0.5rem; font-size: var(--text-h3); font-weight: 560; letter-spacing: -0.045em; }
+.volume-element h3 { margin: 1.1rem 0 0.5rem; color: var(--ink); font-size: var(--text-h3); font-weight: 560; letter-spacing: -0.045em; }
+.volume-element--dark h3 { color: var(--paper); }
 .volume-element p { margin: 0; color: #5f5d57; font-size: var(--text-sm); line-height: 1.55; }
 .volume-element--sand p { color: #443c2d; }
 .volume-element--dark p { color: var(--muted-dark); }
@@ -861,6 +864,72 @@ em { font-style: italic; }
 .js .polar-figures .reveal:nth-child(2),
 .js .practice-grid .reveal:nth-child(2) { transition-delay: 90ms; }
 .js .volume-elements .reveal:nth-child(3) { transition-delay: 160ms; }
+
+/* Practical reinforcement — base, ceiling and result ------------------------ */
+
+.volume-equation { margin-top: var(--grid-gap); padding: clamp(1.5rem, 3vw, 2.6rem); border: 1px solid rgba(245, 245, 242, 0.19); background: rgba(245, 245, 242, 0.04); }
+.volume-equation .formula { justify-content: center; }
+.volume-equation .dbl { color: var(--paper); }
+.volume-equation .op { color: var(--sand); }
+.volume-equation .d { color: var(--sand); }
+.volume-equation__note { max-width: 70ch; margin: 1.6rem 0 0; padding-top: 1.2rem; border-top: 1px solid rgba(245, 245, 242, 0.16); color: var(--muted-dark); font-size: var(--text-sm); line-height: 1.6; }
+.volume-equation__note strong { color: var(--paper); font-weight: 640; }
+
+.sweep-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--grid-gap); margin-top: var(--grid-gap); }
+.sweep-card { padding: clamp(1.3rem, 2.5vw, 2rem); border: 1px solid rgba(245, 245, 242, 0.19); background: rgba(245, 245, 242, 0.04); }
+.sweep-card__label { display: flex; justify-content: space-between; align-items: baseline; gap: 1rem; color: var(--stone); font-size: var(--text-xs); font-weight: 660; letter-spacing: 0.13em; }
+.sweep-card__label span:last-child { color: var(--sand); font-family: var(--font-math); font-size: 1.15rem; font-weight: 500; letter-spacing: 0.03em; text-transform: none; }
+.sweep-card h3 { margin: 1.5rem 0 0.6rem; font-size: var(--text-h3); font-weight: 540; letter-spacing: -0.045em; }
+.sweep-card p { margin: 0; color: var(--muted-dark); font-size: var(--text-sm); line-height: 1.6; }
+.sweep-card strong { color: var(--paper); font-weight: 640; }
+
+/* Flat and curved ceiling --------------------------------------------------- */
+
+.ceiling-compare { margin: var(--grid-gap) 0 0; padding: clamp(1.2rem, 2.6vw, 2.2rem); color: var(--ink); background: #e9e4dc; }
+.ceiling-compare__row { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--grid-gap); }
+.ceiling-plot { display: flex; flex-direction: column; }
+.ceiling-plot__top { display: flex; justify-content: space-between; align-items: baseline; gap: 1rem; color: #6a675f; font-size: var(--text-xs); font-weight: 660; letter-spacing: 0.13em; }
+.ceiling-plot__top span:last-child { color: #443c2d; font-family: var(--font-math); font-size: 1.05rem; font-weight: 500; letter-spacing: 0.02em; text-transform: none; }
+.ceiling-compare svg { display: block; width: 100%; height: auto; margin-top: 1rem; overflow: visible; }
+.ceiling-compare figcaption { margin-top: 1.4rem; padding-top: 1rem; border-top: 1px solid var(--line-light); color: #69665f; font-size: var(--text-sm); line-height: 1.5; }
+
+.ceiling-base { fill: rgba(232, 212, 183, 0.85); stroke: var(--slate); stroke-width: 1.4; }
+.ceiling-roof { fill: none; stroke: var(--slate); stroke-width: 2.2; }
+.ceiling-hatch { stroke: rgba(32, 43, 53, 0.2); stroke-width: 1; }
+.ceiling-edge { stroke: var(--slate); stroke-width: 1.4; }
+
+/* Annotated polar formula ---------------------------------------------------- */
+
+.mark { display: inline-grid; place-items: center; width: 1.2em; height: 1.2em; border: 1px solid var(--slate); border-radius: 50%; color: var(--slate); font-family: var(--font-sans); font-size: 0.5em; font-weight: 700; line-height: 1; vertical-align: middle; }
+.formula .mark { margin: 0 0.06em; }
+
+.polar-legend--annotated > div { display: flex; gap: 1.2rem; align-items: baseline; }
+.polar-legend--annotated dt { flex: 0 0 11.5rem; display: flex; align-items: center; gap: 0.55rem; }
+.polar-legend--annotated dd { flex: 1 1 0; min-width: 0; }
+.polar-legend--annotated .mark { flex: 0 0 auto; font-size: 0.72em; }
+
+.note-sand { display: flex; align-items: center; gap: 0.8rem; max-width: 74ch; margin: var(--grid-gap) 0 0; color: #4c4a45; font-size: var(--text-sm); line-height: 1.55; }
+.note-sand .caption-rule { flex: 0 0 auto; background: #6a5c46; }
+.note-sand strong { color: var(--ink); font-weight: 660; }
+
+/* Carpa diagrams ------------------------------------------------------------- */
+
+.carpa-base { fill: rgba(232, 212, 183, 0.72); stroke: none; }
+.carpa-edge { fill: none; stroke: var(--slate); stroke-width: 1.6; }
+.carpa-ray { stroke: rgba(16, 17, 19, 0.26); stroke-width: 1; stroke-dasharray: 4 4; }
+.carpa-center { fill: var(--slate); }
+.carpa-label { fill: #343c40; font: italic 14px var(--font-math); }
+
+.ann-elem { fill: rgba(32, 43, 53, 0.2); stroke: var(--slate); stroke-width: 1.4; }
+.ann-mark { stroke: var(--slate); stroke-width: 2; }
+.ann-label { fill: var(--ink); font: italic 13px var(--font-math); }
+
+.carpa-fill { fill: rgba(232, 212, 183, 0.42); stroke: none; }
+.carpa-band { fill: rgba(232, 212, 183, 0.88); stroke: none; }
+.carpa-curve { fill: none; stroke: var(--slate); stroke-width: 2.4; }
+.carpa-guide { stroke: rgba(16, 17, 19, 0.3); stroke-width: 1; stroke-dasharray: 4 3; }
+.carpa-axis { stroke: rgba(16, 17, 19, 0.4); stroke-width: 1.5; }
+.carpa-tick { fill: #605e58; font: 13px var(--font-sans); }
 
 /* Scroll reveal ----------------------------------------------------------- */
 
@@ -1028,4 +1097,24 @@ button:focus-visible { outline: 2px solid currentColor; outline-offset: 4px; }
   .practice-grid { grid-template-columns: 1fr; gap: 0.75rem; }
   .practice-card { padding: 1.3rem; }
   .practice-card__math { font-size: 1.05rem; }
+}
+
+/* Responsive — practical reinforcement components ---------------------------- */
+
+@media (max-width: 900px) {
+  .sweep-grid { grid-template-columns: 1fr; }
+  .ceiling-compare__row { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 620px) {
+  .volume-equation { padding: 1.3rem; }
+  .volume-equation .formula { justify-content: flex-start; font-size: clamp(1.25rem, 6.4vw, 1.85rem); }
+  .volume-equation__note { font-size: 0.9rem; }
+  .sweep-card { padding: 1.3rem; }
+  .sweep-card h3 { margin: 1.15rem 0 0.5rem; }
+  .ceiling-compare { padding: 1rem; }
+  .ceiling-plot__top { font-size: 0.6rem; }
+  .ceiling-plot__top span:last-child { font-size: 0.95rem; }
+  .polar-legend--annotated > div { display: grid; grid-template-columns: 1fr; gap: 0.4rem; }
+  .note-sand { font-size: 0.9rem; align-items: flex-start; }
 }
