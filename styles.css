@@ -628,10 +628,14 @@ em { font-style: italic; }
 /* Plot strips (shared with the region diagrams) ----------------------------- */
 
 .plot-strip { stroke: rgba(32, 43, 53, 0.28); stroke-width: 1; }
+.plot-strip--h { stroke: rgba(32, 43, 53, 0.16); stroke-width: 1; }
 
 /* Part divider -------------------------------------------------------------- */
 
 .part-band { padding: clamp(3.5rem, 7vw, 6rem) var(--page-gutter); color: var(--paper); background: var(--slate); border-top: 1px solid var(--line-dark); border-bottom: 1px solid var(--line-dark); }
+
+.part-band--practica { padding: clamp(2.5rem, 5vw, 4rem) var(--page-gutter); background: var(--ink); border-left: 3px solid var(--sand); }
+.part-band--practica .part-band__title { font-size: clamp(2rem, 4.5vw, 4rem); }
 
 .part-band__inner { width: min(100%, var(--content-width)); margin: 0 auto; display: flex; flex-direction: column; gap: 0.5rem; }
 

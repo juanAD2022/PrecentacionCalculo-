@@ -340,14 +340,14 @@
       <div class="part-band__inner">
         <span class="part-band__label">Segunda parte</span>
         <p class="part-band__title">Áreas en el plano<br>con integrales dobles</p>
-        <span class="part-band__author">Jean Paul Reyes</span>
+        <span class="part-band__author">Teoría: Jean Paul Reyes · Práctica: Juan Carlos Alonso</span>
       </div>
     </div>
 
     <section class="chapter chapter--ivory" id="area-doble" aria-labelledby="area-doble-title">
       <div class="chapter__inner">
         <header class="chapter-heading reveal">
-          <p class="eyebrow"><span class="chapter-number">06</span> Idea central</p>
+          <p class="eyebrow"><span class="chapter-number">06</span> Teoría · Idea central</p>
           <h2 id="area-doble-title">El área de una región<br>es una integral doble.</h2>
           <p class="chapter-heading__intro">Si tenemos una región plana <em>R</em>, su área se obtiene integrando la
             función constante <em>1</em>.</p>
@@ -395,7 +395,7 @@
     <section class="chapter chapter--slate" id="tipos" aria-labelledby="tipos-title">
       <div class="chapter__inner">
         <header class="chapter-heading chapter-heading--light reveal">
-          <p class="eyebrow eyebrow--light"><span class="chapter-number">07</span> Clasificación</p>
+          <p class="eyebrow eyebrow--light"><span class="chapter-number">07</span> Teoría · Clasificación</p>
           <h2 id="tipos-title">Dos formas<br>de recortar la misma región.</h2>
           <p class="chapter-heading__intro">Una región es tipo I si la recorren rectas verticales, y tipo II si la
             recorren rectas horizontales. La fórmula es la misma; cambian los límites.</p>
@@ -492,7 +492,7 @@
     <section class="chapter chapter--ivory" id="limites" aria-labelledby="limites-title">
       <div class="chapter__inner">
         <header class="chapter-heading reveal">
-          <p class="eyebrow"><span class="chapter-number">08</span> Método práctico</p>
+          <p class="eyebrow"><span class="chapter-number">08</span> Teoría · Método práctico</p>
           <h2 id="limites-title">Cómo plantear<br>los límites.</h2>
           <p class="chapter-heading__intro">El paso que más se malogresa: escribir los límites de la integral interior.
             Esta es la rutina que funciona.</p>
@@ -555,69 +555,97 @@
       </div>
     </section>
 
+    <div class="part-band part-band--practica">
+      <div class="part-band__inner">
+        <span class="part-band__label">Continuación</span>
+        <p class="part-band__title">Práctica</p>
+        <span class="part-band__author">Juan Carlos Alonso</span>
+      </div>
+    </div>
+
     <section class="chapter chapter--sand" id="ejemplo-area" aria-labelledby="ejemplo-area-title">
       <div class="chapter__inner">
         <header class="chapter-heading reveal">
-          <p class="eyebrow"><span class="chapter-number">09</span> Ejemplo resuelto</p>
-          <h2 id="ejemplo-area-title">El área entre <em>y</em> = <em>x</em>²<br>y <em>y</em> = <em>x</em>.</h2>
+          <p class="eyebrow"><span class="chapter-number">09</span> Práctica · Ejemplo resuelto</p>
+          <h2 id="ejemplo-area-title">El área bajo <em>y</em> = <em>x</em>²<br>entre <em>x</em> = −1 y <em>x</em> = 1.</h2>
         </header>
 
         <div class="example-area-intro reveal">
-          <p class="example-area-intro__problem">Calcular el área de la región encerrada por <em>y</em> = <em>x</em>² y
-            <em>y</em> = <em>x</em>.</p>
+          <p class="example-area-intro__problem">Calcular el área de la región encerrada por la parábola
+            <em>y</em> = <em>x</em>² y el eje <em>x</em>, para <em>x</em> entre −1 y 1.</p>
           <div class="example-area-intro__points">
-            <span class="meta-label">INTERSECCIONES</span>
-            <p><em>x</em>² = <em>x</em> &nbsp;→&nbsp; <em>x</em> = 0 o <em>x</em> = 1</p>
+            <span class="meta-label">LÍMITES EN X</span>
+            <p>−1 ≤ <em>x</em> ≤ 1 &nbsp;y&nbsp; 0 ≤ <em>y</em> ≤ <em>x</em>²</p>
           </div>
         </div>
 
         <div class="example-area-grid">
           <article class="example-area-card reveal">
             <div class="example-area-card__top"><span>COMO TIPO I</span><span>d<em>y</em> → d<em>x</em></span></div>
-            <p>Entre <em>x</em> = 0 y <em>x</em> = 1 la curva inferior es <em>y</em> = <em>x</em>² y la superior es
-              <em>y</em> = <em>x</em>.</p>
+            <p>Con franjas verticales, cada corte entra por el eje <em>x</em> (<em>y</em> = 0) y sale por la parábola
+              (<em>y</em> = <em>x</em>²). Una sola integral alcanza.</p>
             <div class="example-area-card__math">
-              <p><span class="math-symbol">∫</span><sub>0</sub><sup>1</sup><span
-                  class="math-symbol">∫</span><sub><em>x</em>²</sub><sup><em>x</em></sup> d<em>y</em> d<em>x</em></p>
-              <p>= <span class="math-symbol">∫</span><sub>0</sub><sup>1</sup> (<em>x</em> − <em>x</em>²) d<em>x</em></p>
-              <p>= [ <em>x</em>²/2 − <em>x</em>³/3 ]<sub>0</sub><sup>1</sup></p>
-              <p class="example-area-card__result">= 1/2 − 1/3 = <strong>1/6</strong></p>
+              <p><span class="math-symbol">∫</span><sub>−1</sub><sup>1</sup><span
+                  class="math-symbol">∫</span><sub>0</sub><sup><em>x</em>²</sup> 1 d<em>y</em> d<em>x</em></p>
+              <p>= <span class="math-symbol">∫</span><sub>−1</sub><sup>1</sup> <em>x</em>² d<em>x</em></p>
+              <p>= [ <em>x</em>³/3 ]<sub>−1</sub><sup>1</sup> = 1/3 − (−1/3)</p>
+              <p class="example-area-card__result">= <strong>2/3</strong></p>
             </div>
           </article>
 
           <article class="example-area-card example-area-card--dark reveal">
             <div class="example-area-card__top"><span>COMO TIPO II</span><span>d<em>x</em> → d<em>y</em></span></div>
-            <p>Despejando <em>x</em> en función de <em>y</em>, la curva izquierda es <em>x</em> = <em>y</em> y la
-              derecha <em>x</em> = √<em>y</em>, con <em>y</em> entre 0 y 1.</p>
+            <p>Con franjas horizontales, para cada <em>y</em> el corte atraviesa <strong>dos tramos separados</strong>:
+              de <em>x</em> = −1 a <em>x</em> = −√<em>y</em> y de <em>x</em> = √<em>y</em> a <em>x</em> = 1. Hay que
+              partir la región.</p>
             <div class="example-area-card__math">
               <p><span class="math-symbol">∫</span><sub>0</sub><sup>1</sup><span
-                  class="math-symbol">∫</span><sub><em>y</em></sub><sup>√<em>y</em></sup> d<em>x</em> d<em>y</em></p>
-              <p>= <span class="math-symbol">∫</span><sub>0</sub><sup>1</sup> (√<em>y</em> − <em>y</em>) d<em>y</em></p>
-              <p>= [ (2/3)<em>y</em><sup>3/2</sup> − <em>y</em>²/2 ]<sub>0</sub><sup>1</sup></p>
-              <p class="example-area-card__result">= 2/3 − 1/2 = <strong>1/6</strong></p>
+                  class="math-symbol">∫</span><sub>−1</sub><sup>−√<em>y</em></sup> 1 d<em>x</em> d<em>y</em> +
+                <span class="math-symbol">∫</span><sub>0</sub><sup>1</sup><span
+                  class="math-symbol">∫</span><sub>√<em>y</em></sub><sup>1</sup> 1 d<em>x</em> d<em>y</em></p>
+              <p>= <span class="math-symbol">∫</span><sub>0</sub><sup>1</sup> 2(1 − √<em>y</em>) d<em>y</em></p>
+              <p>= [ 2<em>y</em> − (4/3)<em>y</em><sup>3/2</sup> ]<sub>0</sub><sup>1</sup> = 2 − 4/3</p>
+              <p class="example-area-card__result">= <strong>2/3</strong></p>
             </div>
           </article>
         </div>
 
         <figure class="lens-figure reveal">
-          <div class="region-figure__top"><span>LA REGIÓN</span><span>0 ≤ <em>x</em> ≤ 1</span></div>
-          <svg viewBox="0 0 320 250" role="img"
-            aria-label="Región encerrada entre la parábola y igual a x al cuadrado y la recta y igual a x, con intersecciones en cero cero y uno uno">
-            <line x1="40" y1="210" x2="300" y2="210" class="plot-axis" />
-            <line x1="60" y1="30" x2="60" y2="225" class="plot-axis" />
-            <path d="M60,210 Q170,210 280,40 Z" class="plot-region" />
-            <path d="M60,210 Q170,210 280,40" class="plot-boundary" />
-            <line x1="60" y1="210" x2="280" y2="40" class="plot-boundary" />
-            <circle cx="60" cy="210" r="5" class="plot-point" />
-            <circle cx="280" cy="40" r="5" class="plot-point" />
-            <text x="300" y="226" class="plot-axis-label">x</text>
-            <text x="46" y="36" class="plot-axis-label">y</text>
-            <text x="68" y="226" class="plot-point-label">(0, 0)</text>
-            <text x="272" y="30" text-anchor="end" class="plot-point-label">(1, 1)</text>
-            <text x="280" y="52" class="plot-boundary-label">y = x</text>
-            <text x="280" y="112" class="plot-boundary-label">y = x²</text>
+          <div class="region-figure__top"><span>LA REGIÓN</span><span>−1 ≤ <em>x</em> ≤ 1</span></div>
+          <svg viewBox="0 0 320 260" role="img"
+            aria-label="Región bajo la parábola y igual a x al cuadrado, sobre el eje x, entre x igual a menos uno y uno, con franjas verticales que la recorren de una vez y franjas horizontales que la parten en dos tramos">
+            <line x1="30" y1="220" x2="300" y2="220" class="plot-axis" />
+            <line x1="170" y1="40" x2="170" y2="235" class="plot-axis" />
+            <path d="M50,220 L50,60 L56,75.6 L62,90.4 L68,104.4 L74,117.6 L80,130 L86,141.6 L92,152.4 L98,162.4 L104,171.6 L110,180 L116,187.6 L122,194.4 L128,200.4 L134,205.6 L140,210 L146,213.6 L152,216.4 L158,218.4 L164,219.6 L170,220 L176,219.6 L182,218.4 L188,216.4 L194,213.6 L200,210 L206,205.6 L212,200.4 L218,194.4 L224,187.6 L230,180 L236,171.6 L242,162.4 L248,152.4 L254,141.6 L260,130 L266,117.6 L272,104.4 L278,90.4 L284,75.6 L290,60 L290,220 Z" class="plot-region" />
+            <path d="M50,220 L50,60 L56,75.6 L62,90.4 L68,104.4 L74,117.6 L80,130 L86,141.6 L92,152.4 L98,162.4 L104,171.6 L110,180 L116,187.6 L122,194.4 L128,200.4 L134,205.6 L140,210 L146,213.6 L152,216.4 L158,218.4 L164,219.6 L170,220 L176,219.6 L182,218.4 L188,216.4 L194,213.6 L200,210 L206,205.6 L212,200.4 L218,194.4 L224,187.6 L230,180 L236,171.6 L242,162.4 L248,152.4 L254,141.6 L260,130 L266,117.6 L272,104.4 L278,90.4 L284,75.6 L290,60" class="plot-boundary" fill="none" />
+            <line x1="50" y1="220" x2="290" y2="220" class="plot-boundary" />
+            <line x1="62.0" y1="220" x2="62.0" y2="90.4" class="plot-strip" />
+            <line x1="98.0" y1="220" x2="98.0" y2="162.4" class="plot-strip" />
+            <line x1="134.0" y1="220" x2="134.0" y2="205.6" class="plot-strip" />
+            <line x1="206.0" y1="220" x2="206.0" y2="205.6" class="plot-strip" />
+            <line x1="242.0" y1="220" x2="242.0" y2="162.4" class="plot-strip" />
+            <line x1="278.0" y1="220" x2="278.0" y2="90.4" class="plot-strip" />
+            <line x1="50" y1="204.0" x2="132.05" y2="204.0" class="plot-strip plot-strip--h" />
+            <line x1="50" y1="188.0" x2="116.33" y2="188.0" class="plot-strip plot-strip--h" />
+            <line x1="50" y1="172.0" x2="104.27" y2="172.0" class="plot-strip plot-strip--h" />
+            <line x1="50" y1="156.0" x2="94.11" y2="156.0" class="plot-strip plot-strip--h" />
+            <line x1="207.95" y1="204.0" x2="290" y2="204.0" class="plot-strip plot-strip--h" />
+            <line x1="223.67" y1="188.0" x2="290" y2="188.0" class="plot-strip plot-strip--h" />
+            <line x1="235.73" y1="172.0" x2="290" y2="172.0" class="plot-strip plot-strip--h" />
+            <line x1="245.89" y1="156.0" x2="290" y2="156.0" class="plot-strip plot-strip--h" />
+            <circle cx="50" cy="220" r="5" class="plot-point" />
+            <circle cx="170" cy="220" r="5" class="plot-point" />
+            <circle cx="290" cy="220" r="5" class="plot-point" />
+            <text x="300" y="238" class="plot-axis-label">x</text>
+            <text x="158" y="36" class="plot-axis-label">y</text>
+            <text x="50" y="240" text-anchor="middle" class="plot-point-label">−1</text>
+            <text x="170" y="240" text-anchor="middle" class="plot-point-label">0</text>
+            <text x="290" y="240" text-anchor="middle" class="plot-point-label">1</text>
+            <text x="292" y="60" class="plot-boundary-label">y = x²</text>
+            <text x="150" y="80" class="plot-boundary-label">y = 1</text>
           </svg>
-          <figcaption>Los dos órdenes recorren la misma región y dan 1/6: el área no depende de cómo la recorras.
+          <figcaption>Franjas <strong>verticales</strong> (una sola integral, tipo I) y franjas
+            <strong>horizontales</strong> (dos tramos, tipo II). Ambas dan 2/3, pero el tipo I es más simple aquí.
           </figcaption>
         </figure>
       </div>
@@ -637,7 +665,8 @@
           </article>
           <article class="takeaway takeaway--sand reveal"><span>02</span>
             <h3>Tipos</h3>
-            <p>Tipo I con franjas verticales, tipo II con horizontales. Mismo resultado, distinto orden.</p>
+            <p>Tipo I con franjas verticales, tipo II con horizontales. Mismo resultado; elige el que no te obligue a
+              partir.</p>
           </article>
           <article class="takeaway takeaway--dark reveal"><span>03</span>
             <h3>Límites</h3>
