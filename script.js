@@ -9,8 +9,16 @@
   var navLinks = Array.prototype.slice.call(document.querySelectorAll('.site-nav a[href^="#"]'));
   var progress = document.getElementById('readingProgress');
   var fullscreenButton = document.querySelector('.fullscreen-button');
-  var activeSectionId = '';
+  var activeSectionIndex = -1;
   var scheduled = false;
+
+  /* The navigation lists the themes, not every chapter: each link owns the
+     chapters that follow it, so the active link is the last one already started. */
+  var navTargets = navLinks.map(function (link) {
+    var id = link.getAttribute('href').slice(1);
+    var index = sections.findIndex(function (section) { return section.id === id; });
+    return { link: link, index: index };
+  }).filter(function (target) { return target.index >= 0; });
 
   document.documentElement.classList.add('js');
 
@@ -43,15 +51,20 @@
     progress.style.width = percentage + '%';
 
     var readingLine = window.innerHeight * 0.34;
-    var current = sections[0];
-    sections.forEach(function (section) {
-      if (section.getBoundingClientRect().top <= readingLine) current = section;
+    var currentIndex = -1;
+    sections.forEach(function (section, index) {
+      if (section.getBoundingClientRect().top <= readingLine) currentIndex = index;
     });
 
-    if (current && current.id !== activeSectionId) {
-      activeSectionId = current.id;
+    var activeLink = null;
+    navTargets.forEach(function (target) {
+      if (target.index <= currentIndex) activeLink = target.link;
+    });
+
+    if (currentIndex !== activeSectionIndex) {
+      activeSectionIndex = currentIndex;
       navLinks.forEach(function (link) {
-        if (link.getAttribute('href') === '#' + activeSectionId) {
+        if (link === activeLink) {
           link.setAttribute('aria-current', 'location');
         } else {
           link.removeAttribute('aria-current');
@@ -73,8 +86,7 @@
 
   /* Keyboard support keeps the web presentation comfortable to present. */
   function moveSection(direction) {
-    var currentIndex = sections.findIndex(function (section) { return section.id === activeSectionId; });
-    if (currentIndex < 0) currentIndex = 0;
+    var currentIndex = activeSectionIndex < 0 ? 0 : activeSectionIndex;
     var destination = sections[Math.max(0, Math.min(sections.length - 1, currentIndex + direction))];
     if (destination) destination.scrollIntoView({ behavior: 'smooth', block: 'start' });
   }
