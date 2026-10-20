@@ -85,6 +85,7 @@
     order: byId('missionOrderLabel'),
     formula: byId('missionFormula'),
     accumulation: byId('missionAccumulation'),
+    integralResolution: byId('missionIntegralResolution'),
     stripCalculation: byId('missionStripCalculation'),
     accumulationEquation: byId('missionAccumulationEquation'),
     outerTop: byId('missionOuterTop'),
@@ -193,12 +194,23 @@
   }
 
   function updateAccumulation(order, count, animateLatest) {
-    if (!ui.accumulation || !ui.stripCalculation || !ui.accumulationEquation) return;
+    if (!ui.accumulation || !ui.integralResolution || !ui.stripCalculation || !ui.accumulationEquation) return;
 
     ui.accumulation.hidden = !order;
-    ui.stripCalculation.textContent = order === 'vertical'
-      ? '(∫₀³ 1 dy) · Δx = 3 · 1/3 = 1 u²'
-      : order === 'horizontal' ? '(∫₀² 1 dx) · Δy = 2 · 1/2 = 1 u²' : '';
+    if (order === 'vertical') {
+      ui.integralResolution.textContent = count === STRIP_COUNT
+        ? '∫₀³ 1 dy = 3 → ∫₀² 3 dx = [3x]₀² = 6 u²'
+        : '∫₀³ 1 dy = 3 → ∫₀² 3 dx';
+      ui.stripCalculation.textContent = 'Δx = 2/6 = 1/3 → 3 · 1/3 = 1 u²';
+    } else if (order === 'horizontal') {
+      ui.integralResolution.textContent = count === STRIP_COUNT
+        ? '∫₀² 1 dx = 2 → ∫₀³ 2 dy = [2y]₀³ = 6 u²'
+        : '∫₀² 1 dx = 2 → ∫₀³ 2 dy';
+      ui.stripCalculation.textContent = 'Δy = 3/6 = 1/2 → 2 · 1/2 = 1 u²';
+    } else {
+      ui.integralResolution.textContent = '';
+      ui.stripCalculation.textContent = '';
+    }
 
     while (ui.accumulationEquation.firstChild) {
       ui.accumulationEquation.removeChild(ui.accumulationEquation.firstChild);
