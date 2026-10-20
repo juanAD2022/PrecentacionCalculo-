@@ -93,7 +93,7 @@
 
   document.addEventListener('keydown', function (event) {
     if (event.metaKey || event.ctrlKey || event.altKey) return;
-    if (event.target.closest('a, button, input, textarea, select, [contenteditable="true"]')) return;
+    if (event.target.closest('a, button, input, textarea, select, canvas, [contenteditable="true"]')) return;
 
     if (event.key === 'ArrowRight' || event.key === 'PageDown' || event.key === ' ') {
       event.preventDefault();

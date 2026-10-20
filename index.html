@@ -342,6 +342,138 @@
         </div>
 
         <footer class="next-topic reveal">
+          <div><span class="meta-label">ANTES DE SEGUIR</span>
+            <h3>Misión de campo</h3>
+          </div>
+          <a class="next-topic__link" href="#mision-dron">Cobertura con dron:<br>poné a prueba la integral <span
+              aria-hidden="true">→</span></a>
+          <a href="#inicio" class="back-to-top" aria-label="Volver al inicio">↑</a>
+        </footer>
+      </div>
+    </section>
+
+    <section class="chapter chapter--game" id="mision-dron" aria-labelledby="mision-dron-title">
+      <div class="chapter__inner">
+        <header class="chapter-heading chapter-heading--light reveal">
+          <p class="eyebrow eyebrow--light"><span class="chapter-number">05·B</span> Práctica · Simulador</p>
+          <h2 id="mision-dron-title">Volá, medí<br>y armá la integral.</h2>
+          <p class="chapter-heading__intro">El lote es un rectángulo de <em>2 × 3</em>. Reconocé sus límites, elegí cómo
+            barrerlo y comprobá que la cobertura es la misma integral iterada.</p>
+        </header>
+
+        <div class="mission-layout reveal">
+          <div class="mission-stage">
+            <div class="mission-stage__top">
+              <span class="step-label">DRON SURVEY · SECTOR A-12</span>
+              <span class="mission-phase" id="missionPhase">Reconocimiento</span>
+            </div>
+            <div class="mission-canvas" id="droneGame" aria-describedby="missionControls">
+              <p class="mission-fallback" id="missionFallback" hidden>No se pudo cargar el simulador. Revisá la conexión
+                a internet y recargá la página: Phaser se descarga desde un CDN.</p>
+            </div>
+            <p class="mission-controls" id="missionControls">Arrastrá o tocá el mapa para volar. En escritorio también
+              podés hacer clic y usar <kbd>↑</kbd><kbd>↓</kbd><kbd>←</kbd><kbd>→</kbd> o
+              <kbd>W</kbd><kbd>A</kbd><kbd>S</kbd><kbd>D</kbd>.</p>
+          </div>
+
+          <aside class="mission-console" aria-label="Panel de misión">
+            <div class="mission-objective">
+              <span class="meta-label">OBJETIVO</span>
+              <p>Calcular la cobertura del lote rectangular <em>2 × 3</em>.</p>
+            </div>
+
+            <div class="mission-block">
+              <span class="meta-label">LÍMITES REGISTRADOS</span>
+              <ul class="mission-limits" id="missionLimits">
+                <li class="mission-limit" data-limit="xMin"><span class="mission-limit__dot"></span><span>x
+                    mín</span><strong data-limit-value>?</strong></li>
+                <li class="mission-limit" data-limit="xMax"><span class="mission-limit__dot"></span><span>x
+                    máx</span><strong data-limit-value>?</strong></li>
+                <li class="mission-limit" data-limit="yMin"><span class="mission-limit__dot"></span><span>y
+                    mín</span><strong data-limit-value>?</strong></li>
+                <li class="mission-limit" data-limit="yMax"><span class="mission-limit__dot"></span><span>y
+                    máx</span><strong data-limit-value>?</strong></li>
+              </ul>
+            </div>
+
+            <div class="mission-formula">
+              <div class="mission-formula__top">
+                <span class="meta-label">INTEGRAL DE LA MISIÓN</span>
+                <span class="mission-order" id="missionOrderLabel">sin definir</span>
+              </div>
+              <div class="formula formula--mission" id="missionFormula"
+                aria-label="Integral iterada por completar">
+                <span class="int"><span class="lim" id="missionOuterTop">?</span><span class="sym">∫</span><span
+                    class="lim" id="missionOuterBottom">?</span></span>
+                <span class="int"><span class="lim" id="missionInnerTop">?</span><span class="sym">∫</span><span
+                    class="lim" id="missionInnerBottom">?</span></span>
+                <span class="mrow">1</span>
+                <span class="d" id="missionInnerDiff">d<em>y</em></span>
+                <span class="d" id="missionOuterDiff">d<em>x</em></span>
+              </div>
+              <div class="mission-accumulation" id="missionAccumulation" hidden>
+                <div class="mission-accumulation__contribution">
+                  <span class="meta-label">APORTE POR FRANJA</span>
+                  <p id="missionStripCalculation"></p>
+                </div>
+                <div class="mission-accumulation__sum">
+                  <span class="meta-label">SUMA ACUMULADA</span>
+                  <div class="mission-accumulation__equation" id="missionAccumulationEquation" role="img"
+                    aria-label="Acumulado: cero unidades cuadradas"></div>
+                </div>
+              </div>
+              <p class="mission-formula__result" id="missionFormulaResult" hidden></p>
+            </div>
+
+            <div class="mission-progress">
+              <div class="mission-progress__top">
+                <span id="missionStatus">Recolectá los cuatro límites del lote.</span>
+                <strong id="missionArea">0 / 6 u²</strong>
+              </div>
+              <div class="mission-progress__bar" aria-hidden="true"><span id="missionProgressFill"></span></div>
+            </div>
+
+            <div class="mission-actions" aria-label="Orden del barrido">
+              <button class="mission-button" type="button" data-sweep="vertical" disabled>
+                <span class="mission-button__label">Franjas verticales</span>
+                <span class="mission-button__math">∫∫ 1 dy dx</span>
+              </button>
+              <button class="mission-button" type="button" data-sweep="horizontal" disabled>
+                <span class="mission-button__label">Franjas horizontales</span>
+                <span class="mission-button__math">∫∫ 1 dx dy</span>
+              </button>
+            </div>
+
+            <div class="mission-console__foot">
+              <button class="mission-restart" type="button" data-mission-restart>Reiniciar misión</button>
+              <p class="mission-live" id="missionLive" role="status" aria-live="polite"></p>
+            </div>
+          </aside>
+        </div>
+
+        <aside class="mission-bonus" id="missionBonus" hidden aria-labelledby="mission-bonus-title">
+          <div class="mission-bonus__intro">
+            <span class="meta-label">RETO BONUS · DESBLOQUEADO</span>
+            <h3 id="mission-bonus-title">Si el sensor midiera <em>f</em>(<em>x</em>, <em>y</em>) = <em>x</em> + 2<em>y</em>,
+              ¿cuánto acumularía?</h3>
+            <p>La integral ya no mide solo superficie: suma una altura sobre cada punto del lote. Elegí el resultado.</p>
+            <div class="formula formula--compact formula--bonus"
+              aria-label="Integral de cero a dos, integral de cero a tres, x más dos y, diferencial y, diferencial x">
+              <span class="int"><span class="lim">2</span><span class="sym">∫</span><span class="lim">0</span></span>
+              <span class="int"><span class="lim">3</span><span class="sym">∫</span><span class="lim">0</span></span>
+              <span class="mrow">(<em>x</em> + 2<em>y</em>)</span>
+              <span class="d">d<em>y</em></span><span class="d">d<em>x</em></span>
+            </div>
+          </div>
+          <div class="mission-bonus__answers" role="group" aria-label="Respuestas del reto bonus">
+            <button type="button" data-bonus-answer="12">12</button>
+            <button type="button" data-bonus-answer="24">24</button>
+            <button type="button" data-bonus-answer="6">6</button>
+          </div>
+          <p class="mission-bonus__feedback" id="missionBonusFeedback" role="status" aria-live="polite"></p>
+        </aside>
+
+        <footer class="next-topic reveal">
           <div><span class="meta-label">A CONTINUACIÓN</span>
             <h3>Jean Paul Reyes</h3>
           </div>
@@ -1380,6 +1512,9 @@
       target="_blank" rel="noreferrer">Imagen: Dietmar Rabich · CC BY-SA 4.0</a>
   </footer>
 
+  <script src="https://cdn.jsdelivr.net/npm/phaser@3.90.0/dist/phaser.min.js" defer
+    onerror="window.__phaserFailed = true"></script>
+  <script src="drone-game.js" defer></script>
   <script src="script.js"></script>
 </body>
 
