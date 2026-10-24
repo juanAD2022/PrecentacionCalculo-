@@ -8,12 +8,12 @@
   var container = document.getElementById('poolVolumeGame');
   if (!container) return;
 
-  var PLAN = { left: 48, right: 302, top: 92, bottom: 454 };
-  var PROFILE = { left: 350, right: 524, top: 150, bottom: 438 };
+  var PLAN = { left: 60, right: 380, top: 80, bottom: 480 };
+  var PROFILE = { left: 420, right: 660, top: 120, bottom: 440 };
   var WORLD = { length: 10, width: 5 };
   var STRIP_COUNT = 8;
   var SPEED = 190;
-  var BEACON_RADIUS = 30;
+  var BEACON_RADIUS = 36;
   var SANS = 'Inter, Manrope, "Helvetica Neue", Arial, sans-serif';
   var MATH = 'Cambria Math, "STIX Two Math", Georgia, serif';
   var COLORS = {
@@ -162,10 +162,10 @@
     drawPool() {
       var graphics = this.add.graphics().setDepth(0);
       graphics.fillStyle(COLORS.background, 1);
-      graphics.fillRect(0, 0, 560, 560);
+      graphics.fillRect(0, 0, 720, 520);
 
-      this.add.text(PLAN.left, PLAN.top - 34, 'PLANTA · 10 m × 5 m', {
-        fontFamily: SANS, fontSize: '14px', color: '#e8d4b7'
+      this.add.text(PLAN.left, PLAN.top - 38, 'PLANTA · 10 m × 5 m', {
+        fontFamily: SANS, fontSize: '18px', color: '#e8d4b7'
       });
       graphics.fillStyle(COLORS.shallow, 0.85);
       graphics.fillRect(PLAN.left, PLAN.top, PLAN.right - PLAN.left, PLAN.bottom - PLAN.top);
@@ -188,18 +188,18 @@
       for (var y = 1; y < WORLD.width; y += 1) graphics.lineBetween(PLAN.left, toY(y), PLAN.right, toY(y));
       graphics.lineStyle(2, COLORS.sand, 0.9);
       graphics.strokeRect(PLAN.left, PLAN.top, PLAN.right - PLAN.left, PLAN.bottom - PLAN.top);
-      this.add.text(PLAN.left, PLAN.bottom + 19, '0', { fontFamily: SANS, fontSize: '13px', color: '#b7c3b7' }).setOrigin(0.5);
-      this.add.text(PLAN.right, PLAN.bottom + 19, '10 m', { fontFamily: SANS, fontSize: '13px', color: '#b7c3b7' }).setOrigin(0.5);
-      this.add.text(PLAN.left - 8, PLAN.top - 10, 'y', { fontFamily: MATH, fontSize: '20px', color: '#e8d4b7' });
-      this.add.text(PLAN.right + 12, PLAN.bottom + 2, 'x', { fontFamily: MATH, fontSize: '20px', color: '#e8d4b7' });
+      this.add.text(PLAN.left, PLAN.bottom + 24, '0', { fontFamily: SANS, fontSize: '16px', color: '#b7c3b7' }).setOrigin(0.5);
+      this.add.text(PLAN.right, PLAN.bottom + 24, '10 m', { fontFamily: SANS, fontSize: '16px', color: '#b7c3b7' }).setOrigin(0.5);
+      this.add.text(PLAN.left - 10, PLAN.top - 14, 'y', { fontFamily: MATH, fontSize: '24px', color: '#e8d4b7' });
+      this.add.text(PLAN.right + 14, PLAN.bottom + 4, 'x', { fontFamily: MATH, fontSize: '24px', color: '#e8d4b7' });
 
       this.drawProfile();
     }
 
     drawProfile() {
       var profile = this.add.graphics().setDepth(1);
-      this.add.text(PROFILE.left, PROFILE.top - 34, 'CORTE LATERAL · PROFUNDIDAD', {
-        fontFamily: SANS, fontSize: '14px', color: '#e8d4b7'
+      this.add.text(PROFILE.left, PROFILE.top - 40, 'CORTE LATERAL · PROFUNDIDAD', {
+        fontFamily: SANS, fontSize: '18px', color: '#e8d4b7'
       });
       profile.fillStyle(0x2e6170, 0.72);
       profile.beginPath();
@@ -220,10 +220,10 @@
         var level = PROFILE.top + depth * 72;
         profile.lineBetween(PROFILE.left - 5, level, PROFILE.left, level);
       }
-      this.add.text(PROFILE.left - 10, PROFILE.bottom - 145, '1 m', { fontFamily: MATH, fontSize: '14px', color: '#b7c3b7' }).setOrigin(1, 0.5);
-      this.add.text(PROFILE.right + 8, PROFILE.bottom - 5, '3 m', { fontFamily: MATH, fontSize: '14px', color: '#b7c3b7' }).setOrigin(0, 0.5);
-      this.add.text(PROFILE.left, PROFILE.bottom + 21, 'extremo superficial', { fontFamily: SANS, fontSize: '11px', color: '#b7c3b7' });
-      this.add.text(PROFILE.right, PROFILE.bottom + 21, 'extremo profundo', { fontFamily: SANS, fontSize: '11px', color: '#b7c3b7' }).setOrigin(1, 0);
+      this.add.text(PROFILE.left - 12, PROFILE.bottom - 145, '1 m', { fontFamily: MATH, fontSize: '17px', color: '#b7c3b7' }).setOrigin(1, 0.5);
+      this.add.text(PROFILE.right + 10, PROFILE.bottom - 5, '3 m', { fontFamily: MATH, fontSize: '17px', color: '#b7c3b7' }).setOrigin(0, 0.5);
+      this.add.text(PROFILE.left, PROFILE.bottom + 24, 'extremo superficial', { fontFamily: SANS, fontSize: '13px', color: '#b7c3b7' });
+      this.add.text(PROFILE.right, PROFILE.bottom + 24, 'extremo profundo', { fontFamily: SANS, fontSize: '13px', color: '#b7c3b7' }).setOrigin(1, 0);
     }
 
     createBeacons() {
@@ -235,10 +235,10 @@
       ];
       this.beacons = configs.map(function (config) {
         var beacon = this.add.container(toX(config.x), toY(config.y)).setDepth(5);
-        var ring = this.add.circle(0, 0, 14, COLORS.ink, 0.8).setStrokeStyle(2, COLORS.sand, 0.95);
-        var dot = this.add.circle(0, 0, 4, COLORS.sand, 1);
-        var check = this.add.text(0, 0, '✓', { fontFamily: SANS, fontSize: '16px', color: '#203327' }).setOrigin(0.5).setVisible(false);
-        var label = this.add.text(0, -25, config.label, { fontFamily: MATH, fontSize: '17px', color: '#e8d4b7' }).setOrigin(0.5);
+        var ring = this.add.circle(0, 0, 18, COLORS.ink, 0.8).setStrokeStyle(2, COLORS.sand, 0.95);
+        var dot = this.add.circle(0, 0, 5, COLORS.sand, 1);
+        var check = this.add.text(0, 0, '✓', { fontFamily: SANS, fontSize: '18px', color: '#203327' }).setOrigin(0.5).setVisible(false);
+        var label = this.add.text(0, -32, config.label, { fontFamily: MATH, fontSize: '20px', color: '#e8d4b7' }).setOrigin(0.5);
         beacon.add([ring, dot, check, label]);
         return { key: config.key, x: toX(config.x), y: toY(config.y), ring: ring, check: check };
       }, this);
@@ -247,13 +247,13 @@
     createProbe() {
       var probe = this.add.container(toX(5), toY(2.5)).setDepth(7);
       var mast = this.add.graphics();
-      mast.lineStyle(2, COLORS.sand, 0.95);
-      mast.lineBetween(0, -20, 0, 12);
-      mast.lineStyle(1, COLORS.scan, 0.8);
-      mast.lineBetween(-9, 12, 9, 12);
-      var head = this.add.rectangle(0, -21, 14, 8, COLORS.paper, 1).setStrokeStyle(2, COLORS.ink, 0.9);
-      var sensor = this.add.circle(0, 13, 4, COLORS.scan, 1).setStrokeStyle(1, COLORS.paper, 0.9);
-      var wave = this.add.arc(0, 18, 12, 25, 205, false, COLORS.scan, 0).setStrokeStyle(1, COLORS.scan, 0.9);
+      mast.lineStyle(3, COLORS.sand, 0.95);
+      mast.lineBetween(0, -26, 0, 16);
+      mast.lineStyle(2, COLORS.scan, 0.8);
+      mast.lineBetween(-12, 16, 12, 16);
+      var head = this.add.rectangle(0, -28, 18, 10, COLORS.paper, 1).setStrokeStyle(2, COLORS.ink, 0.9);
+      var sensor = this.add.circle(0, 17, 5, COLORS.scan, 1).setStrokeStyle(1, COLORS.paper, 0.9);
+      var wave = this.add.arc(0, 22, 16, 25, 205, false, COLORS.scan, 0).setStrokeStyle(2, COLORS.scan, 0.9);
       probe.add([mast, head, sensor, wave]);
       this.probe = probe;
     }
@@ -434,8 +434,8 @@
     new Phaser.Game({
       type: Phaser.AUTO,
       parent: container,
-      width: 560,
-      height: 560,
+      width: 720,
+      height: 520,
       backgroundColor: '#0d1510',
       scale: { mode: Phaser.Scale.FIT, autoCenter: Phaser.Scale.CENTER_BOTH },
       render: { antialias: true },
