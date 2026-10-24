@@ -157,29 +157,112 @@
         </div>
 
         <div class="calculation-grid">
-          <article class="calculation-card reveal">
-            <div class="calculation-card__top"><span class="step-label">PASO 01</span><span
+          <article class="calculation-card calculation-stepper reveal" data-stepper data-stepper-order="1">
+            <div class="calculation-card__top"><span class="step-label">PASO 01 · INTEGRAL INTERIOR</span><span
                 class="calculation-card__variable">d<em>y</em></span></div>
-            <h3>La variable <em>x</em> es constante.</h3>
-            <div class="calculation-lines">
-              <p><span class="math-symbol">∫</span><sub>0</sub><sup>3</sup> (<em>x</em> + 2<em>y</em>) d<em>y</em></p>
-              <p class="calculation-lines__sub">= [<em>xy</em> + <em>y</em><sup>2</sup>]<sub>0</sub><sup>3</sup></p>
-              <p class="calculation-lines__answer">= 3<em>x</em> + 9</p>
+            <div class="stepper-heading">
+              <div>
+                <span class="stepper-kicker" data-stepper-status aria-live="polite">SUBPASO 1 DE 5</span>
+                <h3 data-stepper-title>Identificamos la variable constante.</h3>
+              </div>
+              <span class="stepper-index" data-stepper-index>01</span>
+            </div>
+            <div class="stepper-content" data-stepper-content>
+              <div class="calculation-step" data-step>
+                <p>Como estamos integrando respecto de <em>y</em>, la variable <em>x</em> se comporta como un número fijo.</p>
+                <div class="calculation-lines calculation-lines--focus">
+                  <p><span class="math-symbol">∫</span><sub>0</sub><sup>3</sup> (<em>x</em> + 2<em>y</em>) d<em>y</em></p>
+                  <p class="calculation-lines__sub"><em>x</em> permanece constante</p>
+                </div>
+              </div>
+              <div class="calculation-step" data-step hidden>
+                <p>Separamos los términos para integrar cada uno por separado.</p>
+                <div class="calculation-lines calculation-lines--focus">
+                  <p><span class="math-symbol">∫</span><sub>0</sub><sup>3</sup> <em>x</em> d<em>y</em> + <span class="math-symbol">∫</span><sub>0</sub><sup>3</sup> 2<em>y</em> d<em>y</em></p>
+                  <p class="calculation-lines__sub">La linealidad permite dividir la integral.</p>
+                </div>
+              </div>
+              <div class="calculation-step" data-step hidden>
+                <p>Buscamos una primitiva de cada término con respecto a <em>y</em>.</p>
+                <div class="calculation-lines calculation-lines--focus">
+                  <p><span class="math-symbol">∫</span> <em>x</em> d<em>y</em> = <em>xy</em></p>
+                  <p class="calculation-lines__sub"><span class="math-symbol">∫</span> 2<em>y</em> d<em>y</em> = <em>y</em><sup>2</sup></p>
+                </div>
+              </div>
+              <div class="calculation-step" data-step hidden>
+                <p>Evaluamos la primitiva en el límite superior y restamos su valor en el límite inferior.</p>
+                <div class="calculation-lines calculation-lines--focus">
+                  <p>[<em>xy</em> + <em>y</em><sup>2</sup>]<sub>0</sub><sup>3</sup></p>
+                  <p class="calculation-lines__sub">= (<em>x</em> · 3 + 3<sup>2</sup>) − (<em>x</em> · 0 + 0<sup>2</sup>)</p>
+                </div>
+              </div>
+              <div class="calculation-step" data-step hidden>
+                <p>La integral interior queda resuelta y ahora solo depende de <em>x</em>.</p>
+                <div class="calculation-lines calculation-lines--focus">
+                  <p class="calculation-lines__answer">= 3<em>x</em> + 9</p>
+                  <p class="calculation-lines__sub">Este resultado pasa a la integral exterior.</p>
+                </div>
+              </div>
+            </div>
+            <div class="stepper-controls">
+              <button type="button" class="stepper-button stepper-button--previous" data-stepper-previous>Anterior</button>
+              <button type="button" class="stepper-button" data-stepper-next>Siguiente subpaso <span aria-hidden="true">→</span></button>
             </div>
           </article>
 
-          <article class="calculation-card reveal">
-            <div class="calculation-card__top"><span class="step-label">PASO 02</span><span
+          <article class="calculation-card calculation-stepper calculation-stepper--locked reveal" data-stepper data-stepper-order="2" aria-disabled="true">
+            <div class="calculation-card__top"><span class="step-label">PASO 02 · INTEGRAL EXTERIOR</span><span
                 class="calculation-card__variable">d<em>x</em></span></div>
-            <h3>Integramos el resultado.</h3>
-            <div class="calculation-lines">
-              <p><span class="math-symbol">∫</span><sub>0</sub><sup>2</sup> (3<em>x</em> + 9) d<em>x</em></p>
-              <p class="calculation-lines__sub">= [3<em>x</em><sup>2</sup>/2 + 9<em>x</em>]<sub>0</sub><sup>2</sup></p>
-              <p class="calculation-lines__answer">= 6 + 18</p>
+            <div class="stepper-heading">
+              <div>
+                <span class="stepper-kicker" data-stepper-status aria-live="polite">COMPLETÁ EL PASO 01</span>
+                <h3 data-stepper-title>Integramos el resultado.</h3>
+              </div>
+              <span class="stepper-index" data-stepper-index>02</span>
+            </div>
+            <p class="stepper-locked-message" data-stepper-locked-message>Avanzá por los subpasos anteriores para continuar con la integral exterior.</p>
+            <div class="stepper-content" data-stepper-content>
+              <div class="calculation-step" data-step>
+                <p>Reemplazamos la integral interior por el resultado que acabamos de obtener.</p>
+                <div class="calculation-lines calculation-lines--focus">
+                  <p><span class="math-symbol">∫</span><sub>0</sub><sup>2</sup> (3<em>x</em> + 9) d<em>x</em></p>
+                </div>
+              </div>
+              <div class="calculation-step" data-step hidden>
+                <p>Integramos cada término con respecto a <em>x</em>.</p>
+                <div class="calculation-lines calculation-lines--focus">
+                  <p><span class="math-symbol">∫</span> 3<em>x</em> d<em>x</em> = 3<em>x</em><sup>2</sup>/2</p>
+                  <p class="calculation-lines__sub"><span class="math-symbol">∫</span> 9 d<em>x</em> = 9<em>x</em></p>
+                </div>
+              </div>
+              <div class="calculation-step" data-step hidden>
+                <p>Escribimos la primitiva completa antes de evaluar los límites.</p>
+                <div class="calculation-lines calculation-lines--focus">
+                  <p>[3<em>x</em><sup>2</sup>/2 + 9<em>x</em>]<sub>0</sub><sup>2</sup></p>
+                </div>
+              </div>
+              <div class="calculation-step" data-step hidden>
+                <p>Evaluamos en <em>x</em> = 2 y en <em>x</em> = 0.</p>
+                <div class="calculation-lines calculation-lines--focus">
+                  <p class="calculation-lines__sub">= (3 · 2<sup>2</sup>/2 + 9 · 2) − (0)</p>
+                  <p class="calculation-lines__answer">= 6 + 18</p>
+                </div>
+              </div>
+              <div class="calculation-step" data-step hidden>
+                <p>Sumamos las dos contribuciones para obtener el valor total.</p>
+                <div class="calculation-lines calculation-lines--focus">
+                  <p class="calculation-lines__answer">= 24</p>
+                  <p class="calculation-lines__sub">La integral iterada sobre el rectángulo vale 24.</p>
+                </div>
+              </div>
+            </div>
+            <div class="stepper-controls">
+              <button type="button" class="stepper-button stepper-button--previous" data-stepper-previous>Anterior</button>
+              <button type="button" class="stepper-button" data-stepper-next>Siguiente subpaso <span aria-hidden="true">→</span></button>
             </div>
           </article>
 
-          <aside class="answer-card reveal">
+          <aside class="answer-card reveal" data-final-answer>
             <span class="answer-card__label">VALOR DE LA INTEGRAL</span>
             <strong>24</strong>
             <span class="answer-card__detail">área acumulada sobre la región</span>
@@ -211,21 +294,107 @@
         </div>
 
         <div class="order-grid">
-          <article class="order-card order-card--dark reveal">
+          <article class="order-card order-card--dark calculation-stepper reveal" data-stepper data-stepper-order="3">
             <div class="order-card__label"><span>ORDEN A</span><span>d<em>y</em> → d<em>x</em></span></div>
-            <h3>Primero integramos en <em>y</em>.</h3>
-            <div class="order-card__math">
-              <p><span class="math-symbol">∫</span><sub>0</sub><sup>2</sup> (3<em>x</em> + 9) d<em>x</em></p>
-              <p class="order-card__result">= 24</p>
+            <div class="stepper-heading">
+              <div>
+                <span class="stepper-kicker" data-stepper-status aria-live="polite">SUBPASO 1 DE 5</span>
+                <h3 data-stepper-title>Elegimos el orden de integración.</h3>
+              </div>
+              <span class="stepper-index" data-stepper-index>03</span>
+            </div>
+            <div class="stepper-content" data-stepper-content>
+              <div class="calculation-step" data-step>
+                <p>En este recorrido integramos primero en <em>y</em> y después en <em>x</em>.</p>
+                <div class="calculation-lines calculation-lines--focus">
+                  <p>d<em>y</em> → d<em>x</em></p>
+                  <p class="calculation-lines__sub">La variable interior es <em>y</em>.</p>
+                </div>
+              </div>
+              <div class="calculation-step" data-step hidden>
+                <p>Resolvemos la integral interior manteniendo <em>x</em> como constante.</p>
+                <div class="calculation-lines calculation-lines--focus">
+                  <p><span class="math-symbol">∫</span><sub>0</sub><sup>3</sup> (<em>x</em> + 2<em>y</em>) d<em>y</em></p>
+                  <p class="calculation-lines__sub">= 3<em>x</em> + 9</p>
+                </div>
+              </div>
+              <div class="calculation-step" data-step hidden>
+                <p>Ahora integramos el resultado respecto de <em>x</em>.</p>
+                <div class="calculation-lines calculation-lines--focus">
+                  <p><span class="math-symbol">∫</span><sub>0</sub><sup>2</sup> (3<em>x</em> + 9) d<em>x</em></p>
+                  <p class="calculation-lines__sub">= [3<em>x</em><sup>2</sup>/2 + 9<em>x</em>]<sub>0</sub><sup>2</sup></p>
+                </div>
+              </div>
+              <div class="calculation-step" data-step hidden>
+                <p>Evaluamos la primitiva en los extremos del intervalo.</p>
+                <div class="calculation-lines calculation-lines--focus">
+                  <p>= (3 · 2<sup>2</sup>/2 + 9 · 2) − (0)</p>
+                  <p class="calculation-lines__sub">= 6 + 18</p>
+                </div>
+              </div>
+              <div class="calculation-step" data-step hidden>
+                <p>El primer orden de integración produce el valor de la integral doble.</p>
+                <div class="calculation-lines calculation-lines--focus">
+                  <p class="calculation-lines__answer">= 24</p>
+                  <p class="calculation-lines__sub">dy → dx también conduce a 24.</p>
+                </div>
+              </div>
+            </div>
+            <div class="stepper-controls">
+              <button type="button" class="stepper-button stepper-button--previous" data-stepper-previous>Anterior</button>
+              <button type="button" class="stepper-button" data-stepper-next>Siguiente subpaso <span aria-hidden="true">→</span></button>
             </div>
           </article>
-          <article class="order-card order-card--light reveal">
+
+          <article class="order-card order-card--light calculation-stepper reveal" data-stepper data-stepper-order="4">
             <div class="order-card__label"><span>ORDEN B</span><span>d<em>x</em> → d<em>y</em></span></div>
-            <h3>Primero integramos en <em>x</em>.</h3>
-            <p class="order-card__aside">Integral interior: 2 + 4<em>y</em></p>
-            <div class="order-card__math">
-              <p><span class="math-symbol">∫</span><sub>0</sub><sup>3</sup> (2 + 4<em>y</em>) d<em>y</em></p>
-              <p class="order-card__result">= 6 + 18 = 24</p>
+            <div class="stepper-heading">
+              <div>
+                <span class="stepper-kicker" data-stepper-status aria-live="polite">SUBPASO 1 DE 5</span>
+                <h3 data-stepper-title>Elegimos el orden de integración.</h3>
+              </div>
+              <span class="stepper-index" data-stepper-index>04</span>
+            </div>
+            <div class="stepper-content" data-stepper-content>
+              <div class="calculation-step" data-step>
+                <p>En este recorrido integramos primero en <em>x</em> y después en <em>y</em>.</p>
+                <div class="calculation-lines calculation-lines--focus">
+                  <p>d<em>x</em> → d<em>y</em></p>
+                  <p class="calculation-lines__sub">La variable interior es <em>x</em>.</p>
+                </div>
+              </div>
+              <div class="calculation-step" data-step hidden>
+                <p>Integramos en <em>x</em> manteniendo <em>y</em> como constante.</p>
+                <div class="calculation-lines calculation-lines--focus">
+                  <p><span class="math-symbol">∫</span><sub>0</sub><sup>2</sup> (<em>x</em> + 2<em>y</em>) d<em>x</em></p>
+                  <p class="calculation-lines__sub">= 2 + 4<em>y</em></p>
+                </div>
+              </div>
+              <div class="calculation-step" data-step hidden>
+                <p>Integramos el resultado de la integral interior respecto de <em>y</em>.</p>
+                <div class="calculation-lines calculation-lines--focus">
+                  <p><span class="math-symbol">∫</span><sub>0</sub><sup>3</sup> (2 + 4<em>y</em>) d<em>y</em></p>
+                  <p class="calculation-lines__sub">= [2<em>y</em> + 2<em>y</em><sup>2</sup>]<sub>0</sub><sup>3</sup></p>
+                </div>
+              </div>
+              <div class="calculation-step" data-step hidden>
+                <p>Evaluamos la primitiva en <em>y</em> = 3 y <em>y</em> = 0.</p>
+                <div class="calculation-lines calculation-lines--focus">
+                  <p>= (2 · 3 + 2 · 3<sup>2</sup>) − (0)</p>
+                  <p class="calculation-lines__sub">= 6 + 18</p>
+                </div>
+              </div>
+              <div class="calculation-step" data-step hidden>
+                <p>El segundo orden confirma el mismo valor final.</p>
+                <div class="calculation-lines calculation-lines--focus">
+                  <p class="calculation-lines__answer">= 24</p>
+                  <p class="calculation-lines__sub">dx → dy también conduce a 24.</p>
+                </div>
+              </div>
+            </div>
+            <div class="stepper-controls">
+              <button type="button" class="stepper-button stepper-button--previous" data-stepper-previous>Anterior</button>
+              <button type="button" class="stepper-button" data-stepper-next>Siguiente subpaso <span aria-hidden="true">→</span></button>
             </div>
           </article>
         </div>
@@ -259,27 +428,97 @@
               <p>En este orden, <em>e</em><sup><em>y</em><sup>2</sup></sup> no tiene antiderivada elemental.</p>
             </article>
 
-            <div class="region-steps reveal">
-              <span class="meta-label">LEEMOS LA REGIÓN</span>
-              <p><span class="step-index">A</span> <strong>Original:</strong> 0 ≤ <em>x</em> ≤ 1 y <em>x</em> ≤
-                <em>y</em> ≤ 1.
-              </p>
-              <p><span class="step-index">B</span> <strong>Invertida:</strong> 0 ≤ <em>y</em> ≤ 1 y 0 ≤ <em>x</em> ≤
-                <em>y</em>.
-              </p>
-            </div>
-
-            <div class="solution-card reveal">
-              <span class="meta-label">INTEGRAMOS PRIMERO EN x</span>
-              <div class="solution-card__lines">
-                <p><span class="math-symbol">∫</span><sub>0</sub><sup>1</sup><span
-                    class="math-symbol">∫</span><sub>0</sub><sup><em>y</em></sup> e<sup><em>y</em><sup>2</sup></sup>
-                  d<em>x</em> d<em>y</em></p>
-                <p>= <span class="math-symbol">∫</span><sub>0</sub><sup>1</sup>
-                  <em>y</em>e<sup><em>y</em><sup>2</sup></sup> d<em>y</em>
-                </p>
-                <p>= [e<sup><em>y</em><sup>2</sup></sup>/2]<sub>0</sub><sup>1</sup> = <strong>(e − 1)/2 ≈ 0,859</strong>
-                </p>
+            <div class="solution-card calculation-stepper reveal" data-stepper data-stepper-order="5">
+              <div class="calculation-card__top">
+                <span class="meta-label">CAMBIAMOS EL ORDEN</span>
+                <span class="calculation-card__variable">d<em>x</em> d<em>y</em></span>
+              </div>
+              <div class="stepper-heading">
+                <div>
+                  <span class="stepper-kicker" data-stepper-status aria-live="polite">SUBPASO 1 DE 10</span>
+                  <h3 data-stepper-title>Detectamos el problema del orden original.</h3>
+                </div>
+                <span class="stepper-index" data-stepper-index>05</span>
+              </div>
+              <div class="stepper-content" data-stepper-content>
+                <div class="calculation-step" data-step>
+                  <p>La integral original intenta integrar primero en <em>y</em>, pero <em>e</em><sup><em>y</em><sup>2</sup></sup> no tiene una antiderivada elemental.</p>
+                  <div class="calculation-lines calculation-lines--focus">
+                    <p><span class="math-symbol">∫</span><sub>0</sub><sup>1</sup><span class="math-symbol">∫</span><sub><em>x</em></sub><sup>1</sup> e<sup><em>y</em><sup>2</sup></sup> d<em>y</em> d<em>x</em></p>
+                    <p class="calculation-lines__sub">Buscamos un orden más conveniente.</p>
+                  </div>
+                </div>
+                <div class="calculation-step" data-step hidden>
+                  <p>El orden <em>dy dx</em> nos dice que <em>x</em> es la variable externa: sus límites aparecen en la primera integral.</p>
+                  <div class="calculation-lines calculation-lines--focus">
+                    <p>0 ≤ <em>x</em> ≤ 1</p>
+                    <p class="calculation-lines__sub"><em>x</em> recorre todo el intervalo horizontal.</p>
+                  </div>
+                </div>
+                <div class="calculation-step" data-step hidden>
+                  <p>La integral interna está en <em>y</em>, por eso sus límites dependen de la posición fija de <em>x</em>.</p>
+                  <div class="calculation-lines calculation-lines--focus">
+                    <p><em>x</em> ≤ <em>y</em> ≤ 1</p>
+                    <p class="calculation-lines__sub">Para cada <em>x</em>, subimos desde <em>y = x</em> hasta <em>y = 1</em>.</p>
+                  </div>
+                </div>
+                <div class="calculation-step" data-step hidden>
+                  <p>Estas condiciones describen la región entre la recta diagonal, el borde superior y el eje vertical.</p>
+                  <div class="calculation-lines calculation-lines--focus">
+                    <p>0 ≤ <em>x</em> ≤ 1, &nbsp; <em>x</em> ≤ <em>y</em> ≤ 1</p>
+                    <p class="calculation-lines__sub">La región es un triángulo.</p>
+                  </div>
+                </div>
+                <div class="calculation-step" data-step hidden>
+                  <p>Verificamos la lectura en el gráfico: las fronteras son <em>x = 0</em>, <em>y = x</em> y <em>y = 1</em>.</p>
+                  <div class="calculation-lines calculation-lines--focus">
+                    <p>(0, 0), &nbsp; (0, 1), &nbsp; (1, 1)</p>
+                    <p class="calculation-lines__sub">Los tres vértices confirman la región original.</p>
+                  </div>
+                </div>
+                <div class="calculation-step" data-step hidden>
+                  <p>Al invertir el orden, <em>y</em> pasa a ser la variable externa. Sus valores globales van de 0 a 1.</p>
+                  <div class="calculation-lines calculation-lines--focus">
+                    <p>0 ≤ <em>y</em> ≤ 1</p>
+                    <p class="calculation-lines__sub">Ahora recorremos la región en franjas horizontales.</p>
+                  </div>
+                </div>
+                <div class="calculation-step" data-step hidden>
+                  <p>Con un valor fijo de <em>y</em>, la franja horizontal comienza en el eje <em>y</em> y termina en la recta <em>y = x</em>.</p>
+                  <div class="calculation-lines calculation-lines--focus">
+                    <p>0 ≤ <em>x</em> ≤ <em>y</em></p>
+                    <p class="calculation-lines__sub">Estos son los nuevos límites internos.</p>
+                  </div>
+                </div>
+                <div class="calculation-step" data-step hidden>
+                  <p>Reescribimos la integral con el orden conveniente <em>dx dy</em>.</p>
+                  <div class="calculation-lines calculation-lines--focus">
+                    <p><span class="math-symbol">∫</span><sub>0</sub><sup>1</sup><span class="math-symbol">∫</span><sub>0</sub><sup><em>y</em></sup> e<sup><em>y</em><sup>2</sup></sup> d<em>x</em> d<em>y</em></p>
+                  </div>
+                </div>
+                <div class="calculation-step" data-step hidden>
+                  <p>Integramos primero en <em>x</em>. Como el integrando no depende de <em>x</em>, solo aparece la longitud del intervalo.</p>
+                  <div class="calculation-lines calculation-lines--focus">
+                    <p><span class="math-symbol">∫</span><sub>0</sub><sup><em>y</em></sup> e<sup><em>y</em><sup>2</sup></sup> d<em>x</em> = <em>y</em>e<sup><em>y</em><sup>2</sup></sup></p>
+                  </div>
+                </div>
+                <div class="calculation-step" data-step hidden>
+                  <p>Integramos en <em>y</em> usando la sustitución <em>u = y²</em>.</p>
+                  <div class="calculation-lines calculation-lines--focus">
+                    <p><span class="math-symbol">∫</span><sub>0</sub><sup>1</sup> <em>y</em>e<sup><em>y</em><sup>2</sup></sup> d<em>y</em> = [e<sup><em>y</em><sup>2</sup></sup>/2]<sub>0</sub><sup>1</sup></p>
+                  </div>
+                </div>
+                <div class="calculation-step" data-step hidden>
+                  <p>Evaluamos los límites y obtenemos el valor de la integral sobre la región triangular.</p>
+                  <div class="calculation-lines calculation-lines--focus">
+                    <p class="calculation-lines__answer">= (e − 1)/2 ≈ 0,859</p>
+                    <p class="calculation-lines__sub">Cambiar el orden convirtió el problema en uno resoluble.</p>
+                  </div>
+                </div>
+              </div>
+              <div class="stepper-controls">
+                <button type="button" class="stepper-button stepper-button--previous" data-stepper-previous>Anterior</button>
+                <button type="button" class="stepper-button" data-stepper-next>Siguiente subpaso <span aria-hidden="true">→</span></button>
               </div>
             </div>
           </div>
@@ -554,8 +793,38 @@
             recorren rectas horizontales. La fórmula es la misma; cambian los límites.</p>
         </header>
 
+        <div class="type-explorer reveal" data-type-explorer>
+          <div class="type-explorer__top">
+            <div>
+              <span class="meta-label">EXPLORADOR DE CORTES</span>
+              <p class="type-explorer__prompt">Elegí una orientación y seguí cómo se construyen sus límites.</p>
+            </div>
+            <span class="type-explorer__counter" data-type-counter aria-live="polite">ETAPA 1 DE 4</span>
+          </div>
+          <div class="type-explorer__choices" role="group" aria-label="Elegir tipo de región">
+            <button type="button" class="type-choice is-active" data-type-choice="I" aria-pressed="true">
+              <span>TIPO I</span><strong>Franjas verticales</strong>
+            </button>
+            <button type="button" class="type-choice" data-type-choice="II" aria-pressed="false">
+              <span>TIPO II</span><strong>Franjas horizontales</strong>
+            </button>
+          </div>
+          <div class="type-explorer__body">
+            <div>
+              <span class="stepper-kicker" data-type-stage-label>ETAPA 1 · ORIENTACIÓN</span>
+              <h3 data-type-stage-title>La franja se mueve verticalmente.</h3>
+            </div>
+            <p data-type-stage-copy aria-live="polite">Fijamos un valor de <em>x</em>. La franja entra por la curva inferior y sale por la curva superior.</p>
+            <div class="type-explorer__formula" data-type-stage-formula>Variable interna: <em>y</em> · Variable externa: <em>x</em></div>
+          </div>
+          <div class="type-explorer__controls">
+            <button type="button" class="stepper-button stepper-button--previous" data-type-previous>Anterior</button>
+            <button type="button" class="stepper-button" data-type-next>Siguiente etapa <span aria-hidden="true">→</span></button>
+          </div>
+        </div>
+
         <div class="type-grid">
-          <article class="type-panel type-panel--light reveal">
+          <article class="type-panel type-panel--light reveal is-active" data-type-panel="I">
             <div class="type-panel__head"><span>TIPO I</span><span>Verticalmente simple</span></div>
             <h3>Rectas <strong>verticales</strong> entran y salen.</h3>
             <p class="type-panel__definition">Limitada arriba y abajo por curvas y a los lados por rectas verticales,
@@ -598,7 +867,7 @@
             <p class="type-panel__order">Primero d<em>y</em> · después d<em>x</em></p>
           </article>
 
-          <article class="type-panel type-panel--dark reveal">
+          <article class="type-panel type-panel--dark reveal is-muted" data-type-panel="II">
             <div class="type-panel__head"><span>TIPO II</span><span>Horizontalmente simple</span></div>
             <h3>Rectas <strong>horizontales</strong> entran y salen.</h3>
             <p class="type-panel__definition">Limitada a izquierda y derecha por curvas y arriba y abajo por rectas
@@ -737,33 +1006,120 @@
         </div>
 
         <div class="example-area-grid">
-          <article class="example-area-card reveal">
+          <article class="example-area-card calculation-stepper reveal" data-stepper data-stepper-order="6">
             <div class="example-area-card__top"><span>COMO TIPO I</span><span>d<em>y</em> → d<em>x</em></span></div>
-            <p>Con franjas verticales, cada corte entra por el eje <em>x</em> (<em>y</em> = 0) y sale por la parábola
-              (<em>y</em> = <em>x</em>²). Una sola integral alcanza.</p>
-            <div class="example-area-card__math">
-              <p><span class="math-symbol">∫</span><sub>−1</sub><sup>1</sup><span
-                  class="math-symbol">∫</span><sub>0</sub><sup><em>x</em>²</sup> 1 d<em>y</em> d<em>x</em></p>
-              <p>= <span class="math-symbol">∫</span><sub>−1</sub><sup>1</sup> <em>x</em>² d<em>x</em></p>
-              <p>= [ <em>x</em>³/3 ]<sub>−1</sub><sup>1</sup> = 1/3 − (−1/3)</p>
-              <p class="example-area-card__result">= <strong>2/3</strong></p>
+            <div class="stepper-heading">
+              <div>
+                <span class="stepper-kicker" data-stepper-status aria-live="polite">SUBPASO 1 DE 5</span>
+                <h3 data-stepper-title>Elegimos franjas verticales.</h3>
+              </div>
+              <span class="stepper-index" data-stepper-index>06</span>
+            </div>
+            <div class="stepper-content" data-stepper-content>
+              <div class="calculation-step" data-step>
+                <p>Una franja vertical atraviesa la región desde el eje <em>x</em> hasta la parábola.</p>
+                <div class="calculation-lines calculation-lines--focus">
+                  <p><em>y</em> = 0 → <em>y</em> = <em>x</em>²</p>
+                  <p class="calculation-lines__sub">La región es tipo I porque una sola franja la recorre completa.</p>
+                </div>
+              </div>
+              <div class="calculation-step" data-step hidden>
+                <p>El intervalo horizontal va desde <em>x</em> = −1 hasta <em>x</em> = 1. Para cada <em>x</em>, <em>y</em> va de 0 a <em>x</em>².</p>
+                <div class="calculation-lines calculation-lines--focus">
+                  <p>−1 ≤ <em>x</em> ≤ 1</p>
+                  <p class="calculation-lines__sub">0 ≤ <em>y</em> ≤ <em>x</em>²</p>
+                </div>
+              </div>
+              <div class="calculation-step" data-step hidden>
+                <p>Como el integrando es 1, planteamos la integral que suma el área de todas las franjas.</p>
+                <div class="calculation-lines calculation-lines--focus">
+                  <p><span class="math-symbol">∫</span><sub>−1</sub><sup>1</sup><span class="math-symbol">∫</span><sub>0</sub><sup><em>x</em>²</sup> 1 d<em>y</em> d<em>x</em></p>
+                </div>
+              </div>
+              <div class="calculation-step" data-step hidden>
+                <p>Integramos primero en <em>y</em>. La longitud vertical de cada franja es <em>x</em>² − 0.</p>
+                <div class="calculation-lines calculation-lines--focus">
+                  <p>= <span class="math-symbol">∫</span><sub>−1</sub><sup>1</sup> <em>x</em>² d<em>x</em></p>
+                  <p class="calculation-lines__sub">= [<em>x</em>³/3]<sub>−1</sub><sup>1</sup></p>
+                </div>
+              </div>
+              <div class="calculation-step" data-step hidden>
+                <p>Evaluamos en los dos extremos del intervalo y sumamos ambas mitades simétricas.</p>
+                <div class="calculation-lines calculation-lines--focus">
+                  <p class="calculation-lines__answer">= 1/3 − (−1/3) = 2/3</p>
+                  <p class="calculation-lines__sub">El área de la región es 2/3 unidades cuadradas.</p>
+                </div>
+              </div>
+            </div>
+            <div class="stepper-controls">
+              <button type="button" class="stepper-button stepper-button--previous" data-stepper-previous>Anterior</button>
+              <button type="button" class="stepper-button" data-stepper-next>Siguiente subpaso <span aria-hidden="true">→</span></button>
             </div>
           </article>
 
-          <article class="example-area-card example-area-card--dark reveal">
+          <article class="example-area-card example-area-card--dark calculation-stepper reveal" data-stepper data-stepper-order="7">
             <div class="example-area-card__top"><span>COMO TIPO II</span><span>d<em>x</em> → d<em>y</em></span></div>
-            <p>Con franjas horizontales, para cada <em>y</em> el corte atraviesa <strong>dos tramos separados</strong>:
-              de <em>x</em> = −1 a <em>x</em> = −√<em>y</em> y de <em>x</em> = √<em>y</em> a <em>x</em> = 1. Hay que
-              partir la región.</p>
-            <div class="example-area-card__math">
-              <p><span class="math-symbol">∫</span><sub>0</sub><sup>1</sup><span
-                  class="math-symbol">∫</span><sub>−1</sub><sup>−√<em>y</em></sup> 1 d<em>x</em> d<em>y</em> +
-                <span class="math-symbol">∫</span><sub>0</sub><sup>1</sup><span
-                  class="math-symbol">∫</span><sub>√<em>y</em></sub><sup>1</sup> 1 d<em>x</em> d<em>y</em>
-              </p>
-              <p>= <span class="math-symbol">∫</span><sub>0</sub><sup>1</sup> 2(1 − √<em>y</em>) d<em>y</em></p>
-              <p>= [ 2<em>y</em> − (4/3)<em>y</em><sup>3/2</sup> ]<sub>0</sub><sup>1</sup> = 2 − 4/3</p>
-              <p class="example-area-card__result">= <strong>2/3</strong></p>
+            <div class="stepper-heading">
+              <div>
+                <span class="stepper-kicker" data-stepper-status aria-live="polite">SUBPASO 1 DE 7</span>
+                <h3 data-stepper-title>Elegimos franjas horizontales.</h3>
+              </div>
+              <span class="stepper-index" data-stepper-index>07</span>
+            </div>
+            <div class="stepper-content" data-stepper-content>
+              <div class="calculation-step" data-step>
+                <p>Una franja horizontal atraviesa la región, pero encuentra dos partes separadas por la zona exterior de la parábola.</p>
+                <div class="calculation-lines calculation-lines--focus">
+                  <p>d<em>x</em> → d<em>y</em></p>
+                  <p class="calculation-lines__sub">Por eso Tipo II requiere partir la región.</p>
+                </div>
+              </div>
+              <div class="calculation-step" data-step hidden>
+                <p>La parábola alcanza su altura máxima 1 en los extremos <em>x</em> = −1 y <em>x</em> = 1.</p>
+                <div class="calculation-lines calculation-lines--focus">
+                  <p>0 ≤ <em>y</em> ≤ 1</p>
+                  <p class="calculation-lines__sub">Este es el rango vertical de la región.</p>
+                </div>
+              </div>
+              <div class="calculation-step" data-step hidden>
+                <p>Despejamos la parábola: de <em>y</em> = <em>x</em>² obtenemos <em>x</em> = ±√<em>y</em>.</p>
+                <div class="calculation-lines calculation-lines--focus">
+                  <p>−√<em>y</em> ≤ <em>x</em> ≤ √<em>y</em></p>
+                  <p class="calculation-lines__sub">Estos son los bordes de la zona ocupada por la parábola.</p>
+                </div>
+              </div>
+              <div class="calculation-step" data-step hidden>
+                <p>La franja completa va de −1 a 1, pero la región queda a los lados de la parábola.</p>
+                <div class="calculation-lines calculation-lines--focus">
+                  <p>Tramo izquierdo: −1 ≤ <em>x</em> ≤ −√<em>y</em></p>
+                  <p class="calculation-lines__sub">Tramo derecho: √<em>y</em> ≤ <em>x</em> ≤ 1</p>
+                </div>
+              </div>
+              <div class="calculation-step" data-step hidden>
+                <p>Planteamos una integral para cada tramo horizontal y las sumamos.</p>
+                <div class="calculation-lines calculation-lines--focus">
+                  <p><span class="math-symbol">∫</span><sub>0</sub><sup>1</sup><span class="math-symbol">∫</span><sub>−1</sub><sup>−√<em>y</em></sup> 1 d<em>x</em> d<em>y</em> +</p>
+                  <p><span class="math-symbol">∫</span><sub>0</sub><sup>1</sup><span class="math-symbol">∫</span><sub>√<em>y</em></sub><sup>1</sup> 1 d<em>x</em> d<em>y</em></p>
+                </div>
+              </div>
+              <div class="calculation-step" data-step hidden>
+                <p>Integramos en <em>x</em>: la suma de las longitudes de ambos tramos es 2(1 − √<em>y</em>).</p>
+                <div class="calculation-lines calculation-lines--focus">
+                  <p>= <span class="math-symbol">∫</span><sub>0</sub><sup>1</sup> 2(1 − √<em>y</em>) d<em>y</em></p>
+                  <p class="calculation-lines__sub">= [2<em>y</em> − (4/3)<em>y</em><sup>3/2</sup>]<sub>0</sub><sup>1</sup></p>
+                </div>
+              </div>
+              <div class="calculation-step" data-step hidden>
+                <p>Evaluamos entre 0 y 1: aunque el planteamiento fue más largo, el área es la misma.</p>
+                <div class="calculation-lines calculation-lines--focus">
+                  <p class="calculation-lines__answer">= 2 − 4/3 = 2/3</p>
+                  <p class="calculation-lines__sub">Tipo I y Tipo II describen la misma región.</p>
+                </div>
+              </div>
+            </div>
+            <div class="stepper-controls">
+              <button type="button" class="stepper-button stepper-button--previous" data-stepper-previous>Anterior</button>
+              <button type="button" class="stepper-button" data-stepper-next>Siguiente subpaso <span aria-hidden="true">→</span></button>
             </div>
           </article>
         </div>
@@ -810,6 +1166,60 @@
             <strong>horizontales</strong> (dos tramos, tipo II). Ambas dan 2/3, pero el tipo I es más simple aquí.
           </figcaption>
         </figure>
+      </div>
+    </section>
+
+    <section class="chapter chapter--game area-mission" id="mision-area" aria-labelledby="mision-area-title">
+      <div class="chapter__inner">
+        <header class="chapter-heading chapter-heading--light reveal">
+          <p class="eyebrow eyebrow--light"><span class="chapter-number">09·B</span> Práctica · Misión agrícola</p>
+          <h2 id="mision-area-title">Medí el terreno<br>y decidí qué sembrar.</h2>
+          <p class="chapter-heading__intro">Una parcela irregular está delimitada por <em>y = x</em>² y el eje <em>x</em>. Volá con el dron, reconocé sus límites y estimá la superficie cultivable.</p>
+        </header>
+
+        <div class="area-mission-layout reveal">
+          <div class="area-mission-stage">
+            <div class="mission-stage__top">
+              <span class="step-label">AGRO SURVEY · PARCELA R-01</span>
+              <span class="mission-phase" id="areaMissionPhase">Reconocimiento</span>
+            </div>
+            <div class="area-mission-canvas" id="areaDroneGame" aria-describedby="areaMissionControls">
+              <p class="mission-fallback" id="areaMissionFallback" hidden>No se pudo cargar la misión agrícola. La fórmula exacta es A = 2/3 u².</p>
+            </div>
+            <p class="mission-controls" id="areaMissionControls">Arrastrá o tocá el mapa para volar. En escritorio también podés usar <kbd>↑</kbd><kbd>↓</kbd><kbd>←</kbd><kbd>→</kbd>.</p>
+          </div>
+
+          <aside class="area-mission-console" aria-label="Panel de misión agrícola">
+            <div class="mission-objective">
+              <span class="meta-label">OBJETIVO</span>
+              <p>Estimar la superficie cultivable de la parcela <em>R</em>.</p>
+            </div>
+            <div class="area-mission-block">
+              <span class="meta-label">LÍMITES RECONOCIDOS</span>
+              <ul class="area-mission-limits">
+                <li data-area-limit="left"><span>izquierda</span><strong>?</strong></li>
+                <li data-area-limit="right"><span>derecha</span><strong>?</strong></li>
+                <li data-area-limit="base"><span>base</span><strong>?</strong></li>
+                <li data-area-limit="curve"><span>curva</span><strong>?</strong></li>
+              </ul>
+            </div>
+            <div class="area-mission-formula">
+              <div class="mission-formula__top"><span class="meta-label">ÁREA CULTIVABLE</span><span id="areaMissionType">sin definir</span></div>
+              <div class="area-mission-equation" id="areaMissionEquation" aria-label="Integral del área por completar">A = ∬<sub>R</sub> 1 dA</div>
+              <p id="areaMissionReadout">Primero reconocé las cuatro fronteras.</p>
+            </div>
+            <div class="mission-progress">
+              <div class="mission-progress__top"><span>FRANJAS MEDIDAS</span><strong id="areaMissionProgress">0 / 8</strong></div>
+              <div class="mission-progress__bar" aria-hidden="true"><span id="areaMissionProgressFill"></span></div>
+            </div>
+            <div class="area-mission-actions" role="group" aria-label="Elegir estrategia de medición">
+              <button type="button" class="mission-button" data-area-sweep="vertical" disabled><span class="mission-button__label">Tipo I</span><span class="mission-button__math">∫∫ 1 dy dx</span></button>
+              <button type="button" class="mission-button" data-area-sweep="horizontal" disabled><span class="mission-button__label">Tipo II</span><span class="mission-button__math">∫∫ 1 dx dy</span></button>
+            </div>
+            <button class="mission-restart" type="button" data-area-restart>Reiniciar misión</button>
+            <p class="mission-live" id="areaMissionLive" role="status" aria-live="polite"></p>
+          </aside>
+        </div>
       </div>
     </section>
 
@@ -1112,11 +1522,16 @@
         </header>
 
         <div class="practice-grid">
-          <article class="practice-card reveal">
+          <article class="practice-card practice-stepper reveal" data-stepper data-stepper-order="8">
             <div class="practice-card__top"><span>PROBLEMA 1 · RECTANGULAR</span><span>d<em>x</em> d<em>y</em></span>
             </div>
-            <p class="practice-card__statement">Volumen bajo <em>f(x,y) = 2x + y</em> sobre <em>R</em>: 0 ≤ <em>x</em> ≤
-              1, 0 ≤ <em>y</em> ≤ 2.</p>
+            <div class="stepper-heading">
+              <div>
+                <span class="stepper-kicker" data-stepper-status aria-live="polite">SUBPASO 1 DE 8</span>
+                <h3 data-stepper-title>Identificamos la base.</h3>
+              </div>
+              <span class="stepper-index" data-stepper-index>08</span>
+            </div>
             <figure class="mini-plot">
               <svg viewBox="0 0 150 160" role="img"
                 aria-label="Región rectangular de x de cero a uno y y de cero a dos, con una franja vertical">
@@ -1132,25 +1547,57 @@
                 <text x="30" y="146" text-anchor="middle" class="plot-point-label">0</text>
               </svg>
             </figure>
-            <div class="practice-card__math">
-              <p><span class="math-symbol">∫</span><sub>0</sub><sup>2</sup><span
-                  class="math-symbol">∫</span><sub>0</sub><sup>1</sup> (2<em>x</em> + <em>y</em>) d<em>x</em>
-                d<em>y</em></p>
-              <p class="practice-card__sub">Interna: ∫₀¹ (2<em>x</em> + <em>y</em>) d<em>x</em> = [<em>x</em>² +
-                <em>yx</em>]₀¹ = 1 + <em>y</em>
-              </p>
-              <p class="practice-card__sub">Externa: ∫₀² (1 + <em>y</em>) d<em>y</em> = [<em>y</em> +
-                <em>y</em>²/2]₀² = 2 + 2
-              </p>
-              <p class="practice-card__result">V = <strong>4</strong> unidades cúbicas</p>
+            <div class="stepper-content" data-stepper-content>
+              <div class="calculation-step" data-step>
+                <p>La base es el rectángulo <em>R</em>, y sobre cada punto levantamos una columna de altura <em>f(x,y)</em>.</p>
+                <div class="calculation-lines calculation-lines--focus"><p>0 ≤ <em>x</em> ≤ 1</p><p class="calculation-lines__sub">0 ≤ <em>y</em> ≤ 2</p></div>
+              </div>
+              <div class="calculation-step" data-step hidden>
+                <p>El techo que determina la altura de cada columna es <em>f(x,y) = 2x + y</em>.</p>
+                <div class="calculation-lines calculation-lines--focus"><p><em>V</em> = ∬<sub>R</sub> (2<em>x</em> + <em>y</em>) d<em>A</em></p></div>
+              </div>
+              <div class="calculation-step" data-step hidden>
+                <p>Usamos el orden indicado: integramos primero en <em>x</em> y después en <em>y</em>.</p>
+                <div class="calculation-lines calculation-lines--focus"><p><span class="math-symbol">∫</span><sub>0</sub><sup>2</sup><span class="math-symbol">∫</span><sub>0</sub><sup>1</sup> (2<em>x</em> + <em>y</em>) d<em>x</em> d<em>y</em></p></div>
+              </div>
+              <div class="calculation-step" data-step hidden>
+                <p>Integramos la parte interna en <em>x</em>, tratando <em>y</em> como constante.</p>
+                <div class="calculation-lines calculation-lines--focus"><p><span class="math-symbol">∫</span> (2<em>x</em> + <em>y</em>) d<em>x</em> = <em>x</em>² + <em>yx</em></p></div>
+              </div>
+              <div class="calculation-step" data-step hidden>
+                <p>Evaluamos la primitiva entre <em>x</em> = 0 y <em>x</em> = 1.</p>
+                <div class="calculation-lines calculation-lines--focus"><p>[<em>x</em>² + <em>yx</em>]<sub>0</sub><sup>1</sup> = 1 + <em>y</em></p></div>
+              </div>
+              <div class="calculation-step" data-step hidden>
+                <p>Ahora queda la integral externa en <em>y</em>.</p>
+                <div class="calculation-lines calculation-lines--focus"><p><span class="math-symbol">∫</span><sub>0</sub><sup>2</sup> (1 + <em>y</em>) d<em>y</em></p><p class="calculation-lines__sub">= [<em>y</em> + <em>y</em>²/2]<sub>0</sub><sup>2</sup></p></div>
+              </div>
+              <div class="calculation-step" data-step hidden>
+                <p>Evaluamos en <em>y</em> = 2 y <em>y</em> = 0.</p>
+                <div class="calculation-lines calculation-lines--focus"><p>= (2 + 2) − 0</p><p class="calculation-lines__sub">= 4</p></div>
+              </div>
+              <div class="calculation-step" data-step hidden>
+                <p>El volumen total bajo el techo sobre el rectángulo es:</p>
+                <div class="calculation-lines calculation-lines--focus"><p class="calculation-lines__answer"><em>V</em> = 4 unidades cúbicas</p></div>
+              </div>
+            </div>
+            <div class="stepper-controls">
+              <button type="button" class="stepper-button stepper-button--previous" data-stepper-previous>Anterior</button>
+              <button type="button" class="stepper-button" data-stepper-next>Siguiente subpaso <span aria-hidden="true">→</span></button>
             </div>
           </article>
 
-          <article class="practice-card practice-card--dark reveal">
+          <article class="practice-card practice-card--dark practice-stepper reveal" data-stepper data-stepper-order="9">
             <div class="practice-card__top"><span>PROBLEMA 2 · POLAR</span><span><em>r</em> d<em>r</em>
-                d<em>θ</em></span>
+              d<em>θ</em></span>
             </div>
-            <p class="practice-card__statement">Volumen bajo <em>z = 4 − r²</em> sobre el disco <em>r</em> ≤ 1.</p>
+            <div class="stepper-heading">
+              <div>
+                <span class="stepper-kicker" data-stepper-status aria-live="polite">SUBPASO 1 DE 9</span>
+                <h3 data-stepper-title>Identificamos la base circular.</h3>
+              </div>
+              <span class="stepper-index" data-stepper-index>09</span>
+            </div>
             <figure class="mini-plot">
               <svg viewBox="0 0 150 160" role="img"
                 aria-label="Disco unitario con radio r igual a uno, recorrido con anillos de radio r y ángulo teta">
@@ -1163,16 +1610,47 @@
                 <text x="102" y="76" class="plot-boundary-label">r</text>
               </svg>
             </figure>
-            <div class="practice-card__math">
-              <p><span class="math-symbol">∫</span><sub>0</sub><sup>2π</sup><span
-                  class="math-symbol">∫</span><sub>0</sub><sup>1</sup> (4 − <em>r</em>²) <em>r</em> d<em>r</em>
-                d<em>θ</em></p>
-              <p class="practice-card__sub">Expandir: (4 − <em>r</em>²)<em>r</em> = 4<em>r</em> − <em>r</em>³</p>
-              <p class="practice-card__sub">Interna: ∫₀¹ (4<em>r</em> − <em>r</em>³) d<em>r</em> = [2<em>r</em>² −
-                <em>r</em>⁴/4]₀¹ = 2 − 1/4 = 7/4
-              </p>
-              <p class="practice-card__sub">Externa: ∫₀²π (7/4) d<em>θ</em> = (7/4)(2π)</p>
-              <p class="practice-card__result">V = <strong>7π/2</strong> unidades cúbicas</p>
+            <div class="stepper-content" data-stepper-content>
+              <div class="calculation-step" data-step>
+                <p>La base es el disco unitario, así que el radio va de 0 a 1 y damos una vuelta completa.</p>
+                <div class="calculation-lines calculation-lines--focus"><p>0 ≤ <em>r</em> ≤ 1</p><p class="calculation-lines__sub">0 ≤ <em>θ</em> ≤ 2π</p></div>
+              </div>
+              <div class="calculation-step" data-step hidden>
+                <p>El techo curvo indica la altura de cada columna sobre el disco.</p>
+                <div class="calculation-lines calculation-lines--focus"><p><em>z</em> = 4 − <em>r</em>²</p><p class="calculation-lines__sub">La altura depende de la distancia al centro.</p></div>
+              </div>
+              <div class="calculation-step" data-step hidden>
+                <p>En polares, el elemento de área incluye el factor geométrico <em>r</em>.</p>
+                <div class="calculation-lines calculation-lines--focus"><p>d<em>A</em> = <em>r</em> d<em>r</em> d<em>θ</em></p></div>
+              </div>
+              <div class="calculation-step" data-step hidden>
+                <p>Planteamos el volumen integrando primero en <em>r</em> y después en <em>θ</em>.</p>
+                <div class="calculation-lines calculation-lines--focus"><p><span class="math-symbol">∫</span><sub>0</sub><sup>2π</sup><span class="math-symbol">∫</span><sub>0</sub><sup>1</sup> (4 − <em>r</em>²)<em>r</em> d<em>r</em> d<em>θ</em></p></div>
+              </div>
+              <div class="calculation-step" data-step hidden>
+                <p>Expandimos el integrando para poder encontrar la primitiva.</p>
+                <div class="calculation-lines calculation-lines--focus"><p>(4 − <em>r</em>²)<em>r</em> = 4<em>r</em> − <em>r</em>³</p></div>
+              </div>
+              <div class="calculation-step" data-step hidden>
+                <p>Integramos en <em>r</em> y evaluamos entre 0 y 1.</p>
+                <div class="calculation-lines calculation-lines--focus"><p>[2<em>r</em>² − <em>r</em>⁴/4]<sub>0</sub><sup>1</sup></p><p class="calculation-lines__sub">= 2 − 1/4 = 7/4</p></div>
+              </div>
+              <div class="calculation-step" data-step hidden>
+                <p>El resultado de la integral radial es constante, por eso pasa a la integral angular.</p>
+                <div class="calculation-lines calculation-lines--focus"><p><span class="math-symbol">∫</span><sub>0</sub><sup>2π</sup> (7/4) d<em>θ</em></p></div>
+              </div>
+              <div class="calculation-step" data-step hidden>
+                <p>Integramos en <em>θ</em> durante una vuelta completa.</p>
+                <div class="calculation-lines calculation-lines--focus"><p>=(7/4)(2π)</p><p class="calculation-lines__sub">= 7π/2</p></div>
+              </div>
+              <div class="calculation-step" data-step hidden>
+                <p>El volumen bajo la superficie sobre el disco es:</p>
+                <div class="calculation-lines calculation-lines--focus"><p class="calculation-lines__answer"><em>V</em> = 7π/2 unidades cúbicas</p></div>
+              </div>
+            </div>
+            <div class="stepper-controls">
+              <button type="button" class="stepper-button stepper-button--previous" data-stepper-previous>Anterior</button>
+              <button type="button" class="stepper-button" data-stepper-next>Siguiente subpaso <span aria-hidden="true">→</span></button>
             </div>
           </article>
         </div>
@@ -1342,6 +1820,80 @@
           <figcaption>Misma base, dos techos. Con un número solo la altura no cambia de punto en punto y la tapa es
             un plano. Con variables la altura cambia y la tapa se curva.</figcaption>
         </figure>
+      </div>
+    </section>
+
+    <section class="chapter chapter--game pool-mission" id="mision-piscina" aria-labelledby="mision-piscina-title">
+      <div class="chapter__inner">
+        <header class="chapter-heading chapter-heading--light reveal">
+          <p class="eyebrow eyebrow--light"><span class="chapter-number">15·B</span> Práctica · Ingeniería hidráulica</p>
+          <h2 id="mision-piscina-title">Llená la piscina<br>sin adivinar la profundidad.</h2>
+          <p class="chapter-heading__intro">El fondo está inclinado: mide 1 m en un extremo y 3 m en el otro. Usá la sonda hidráulica, medí sus franjas y calculá cuánta agua hace falta.</p>
+        </header>
+
+        <div class="pool-mission-layout reveal">
+          <div class="pool-mission-views">
+            <div class="pool-mission-stage">
+              <div class="mission-stage__top">
+                <span class="step-label">MEDICIÓN · PLANTA + CORTE</span>
+                <span class="mission-phase" id="poolMissionPhase">Inspección</span>
+              </div>
+              <div class="pool-mission-canvas" id="poolVolumeGame" aria-describedby="poolMissionControls">
+                <p class="mission-fallback" id="poolMissionFallback" hidden>No se pudo cargar la medición 2D. El volumen exacto de la piscina es 100 m³.</p>
+              </div>
+              <p class="mission-controls" id="poolMissionControls">Mové la sonda por la planta para medir. También podés usar <kbd>↑</kbd><kbd>↓</kbd><kbd>←</kbd><kbd>→</kbd>. El corte lateral muestra la profundidad.</p>
+            </div>
+            <div class="pool-mission-stage pool-mission-stage--3d">
+              <div class="mission-stage__top">
+                <span class="step-label">VISOR 3D · PISCINA COMPLETA</span>
+                <span class="pool-3d-state" id="pool3dState">Esperando mediciones</span>
+              </div>
+              <div class="pool-mission-canvas" id="poolVolume3d" aria-label="Piscina 3D rotatable con fondo inclinado"></div>
+              <p class="mission-controls">Arrastrá para rotar y usá la rueda para acercarte. La piscina se llena en 3D al terminar las mediciones.</p>
+              <div class="pool-view-controls" role="group" aria-label="Controles de cámara 3D">
+                <button type="button" data-pool-view="top">Vista superior</button>
+                <button type="button" data-pool-view="side">Vista lateral</button>
+                <button type="button" data-pool-view="reset">Restablecer vista</button>
+              </div>
+            </div>
+          </div>
+
+          <aside class="pool-mission-console" aria-label="Panel de llenado de piscina">
+            <div class="mission-objective">
+              <span class="meta-label">OBJETIVO</span>
+              <p>Calcular el agua necesaria para llenar una piscina de <em>10 m × 5 m</em> con fondo inclinado.</p>
+            </div>
+            <div class="pool-mission-block">
+              <span class="meta-label">DATOS MEDIDOS</span>
+              <ul class="pool-mission-limits">
+                <li data-pool-limit="shallow"><span>extremo bajo</span><strong>?</strong></li>
+                <li data-pool-limit="deep"><span>extremo profundo</span><strong>?</strong></li>
+                <li data-pool-limit="length"><span>largo</span><strong>?</strong></li>
+                <li data-pool-limit="width"><span>ancho</span><strong>?</strong></li>
+              </ul>
+            </div>
+            <div class="pool-mission-formula">
+              <div class="mission-formula__top"><span class="meta-label">VOLUMEN DE AGUA</span><span id="poolMissionOrder">sin definir</span></div>
+              <div class="pool-mission-equation" id="poolMissionEquation">V = ∬<sub>R</sub> h(x,y) dA</div>
+              <p id="poolMissionReadout">Reconocé los cuatro bordes de la piscina.</p>
+            </div>
+            <div class="mission-progress">
+              <div class="mission-progress__top"><span>FRANJAS MEDIDAS</span><strong id="poolMissionProgress">0 / 8</strong></div>
+              <div class="mission-progress__bar" aria-hidden="true"><span id="poolMissionProgressFill"></span></div>
+            </div>
+            <div class="pool-mission-flow">
+              <label for="poolFlowRate">CAUDAL DE LA TUBERÍA</label>
+              <div><input id="poolFlowRate" type="number" min="0.1" step="0.1" value="2.5"><span>m³/min</span></div>
+            </div>
+            <div class="pool-mission-results" aria-live="polite">
+              <p><span>Volumen</span><strong id="poolMissionVolume">—</strong></p>
+              <p><span>Tiempo de llenado</span><strong id="poolMissionTime">—</strong></p>
+            </div>
+            <button class="mission-button pool-mission-start" type="button" data-pool-start disabled>Medir por franjas verticales</button>
+            <button class="mission-restart" type="button" data-pool-restart>Reiniciar inspección</button>
+            <p class="mission-live" id="poolMissionLive" role="status" aria-live="polite"></p>
+          </aside>
+        </div>
       </div>
     </section>
 
@@ -1519,6 +2071,13 @@
   <script src="https://cdn.jsdelivr.net/npm/phaser@3.90.0/dist/phaser.min.js" defer
     onerror="window.__phaserFailed = true"></script>
   <script src="drone-game.js" defer></script>
+  <script src="area-drone-game.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/build/three.min.js" defer
+    onerror="window.__poolThreeFailed = true"></script>
+  <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js" defer
+    onerror="window.__poolThreeFailed = true"></script>
+  <script src="pool-volume-game.js" defer></script>
+  <script src="pool-volume-3d.js" defer></script>
   <script src="script.js"></script>
 </body>
 
